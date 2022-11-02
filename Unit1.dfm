@@ -5,6 +5,8 @@ object Form1: TForm1
   ClientHeight = 411
   ClientWidth = 672
   Color = clBtnFace
+  Constraints.MinHeight = 200
+  Constraints.MinWidth = 400
   UseDockManager = True
   DockSite = True
   DoubleBuffered = True
@@ -15,6 +17,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  ScreenSnap = True
   Visible = True
   OnClose = FormClose
   OnCreate = FormCreate
@@ -31,7 +34,7 @@ object Form1: TForm1
     BorderStyle = bsNone
     Color = clWhite
     Font.Charset = EASTEUROPE_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clGray
     Font.Height = 25
     Font.Name = 'Segoe UI'
     Font.Style = []
@@ -77,11 +80,12 @@ object Form1: TForm1
     object Edit1: TEdit
       Left = 152
       Top = 4
-      Width = 345
+      Width = 337
       Height = 28
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
       Visible = False
+      OnKeyDown = Edit1KeyDown
     end
     object Button1: TButton
       Left = 503
@@ -165,7 +169,7 @@ object Form1: TForm1
         OnClick = Odtwarzacz1Click
       end
       object Przegldarkaobrazw1: TMenuItem
-        Caption = 'Przegl'#261'darka obraz'#243'w'
+        Caption = 'Obrazy'
         OnClick = Przegldarkaobrazw1Click
       end
       object Kalkulator1: TMenuItem
@@ -182,10 +186,6 @@ object Form1: TForm1
       end
       object N2: TMenuItem
         Caption = '-'
-      end
-      object Ustawienia1: TMenuItem
-        Caption = 'Ustawienia'
-        OnClick = Ustawienia1Click
       end
       object WyczMultiNote1: TMenuItem
         Caption = 'Wy'#322#261'cz program (Alt+F4)'
@@ -205,21 +205,18 @@ object Form1: TForm1
       end
       object Zoompolatekstowego1: TMenuItem
         Caption = 'Zoom pola tekstowego'
-        object N751: TMenuItem
-          Caption = '75%'
-          OnClick = N751Click
-        end
         object N1001: TMenuItem
-          Caption = '100%'
+          Caption = 'Domy'#347'lny'
+          Checked = True
           OnClick = N1001Click
         end
-        object N1251: TMenuItem
-          Caption = '125%'
-          OnClick = N1251Click
+        object Podwjny1: TMenuItem
+          Caption = 'Podw'#243'jny'
+          OnClick = Podwjny1Click
         end
-        object N1501: TMenuItem
-          Caption = '150%'
-          OnClick = N1501Click
+        object Potrjny1: TMenuItem
+          Caption = 'Potr'#243'jny'
+          OnClick = Potrjny1Click
         end
       end
       object Pooenietekstu1: TMenuItem
@@ -250,38 +247,48 @@ object Form1: TForm1
       end
     end
     object Pomoc1: TMenuItem
-      Caption = 'Pomoc'
+      Caption = 'Pomoc i ustawienia'
       object Oprogramie1: TMenuItem
         Caption = 'O programie'
         OnClick = Oprogramie1Click
       end
       object Pomocsieciowa1: TMenuItem
-        Caption = 'Pomoc online'
+        Caption = 'Porady '
         OnClick = Pomocsieciowa1Click
+      end
+      object Ustawienia1: TMenuItem
+        Caption = 'Ustawienia i wsparcie'
+        OnClick = Ustawienia1Click
       end
     end
   end
   object OpenDialog1: TOpenDialog
-    Filter = 'Plik tekstowy|*.txt|Plik HTML|*.html|Wszystko|*.*'
+    Filter = 
+      'Plik tekstowy bez formatowania (TXT)|*.txt|Plik tekstowy z forma' +
+      'towaniem (RTF)|*.rtf|Plik HTML|*.html|Wszystkie pliki|*.*'
+    Title = 'Wczytaj tekst'
     Left = 160
     Top = 72
   end
   object SaveDialog1: TSaveDialog
-    Filter = 'Plik tekstowy|*.txt|Plik HTML|*.html|Wszystkie pliki|*.*'
+    Filter = 
+      'Plik tekstowy bez formatowania (TXT)|*.txt|Plik tekstowy z forma' +
+      'towaniem (RTF)|*.rtf|Plik HTML|*.html'
+    Title = 'Zapisz tekst'
     Left = 224
     Top = 72
   end
   object FontDialog1: TFontDialog
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Tahoma'
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
     Font.Style = []
     Left = 296
     Top = 72
   end
   object PopupMenu1: TPopupMenu
-    Left = 368
+    Left = 376
     Top = 72
     object Odtwarzacz2: TMenuItem
       Caption = 'Odtwarzacz'
@@ -335,10 +342,11 @@ object Form1: TForm1
     end
   end
   object TrayIcon1: TTrayIcon
+    Hint = 'Multi Note 14'
     PopupMenu = PopupMenu1
     Visible = True
     OnClick = TrayIcon1Click
-    Left = 448
+    Left = 440
     Top = 72
   end
 end

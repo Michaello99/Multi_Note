@@ -69,16 +69,16 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;vclimg.lib;vclx.lib;vclwinx.lib;bindengine.lib;bcbsmp.lib;appanalytics.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;vclimg.lib;vclx.lib;vclwinx.lib;bindengine.lib;bcbsmp.lib;appanalytics.lib;vclactnband.lib;IndyIPServer.lib;IndyIPCommon.lib;CustomIPTransport.lib;IndySystem.lib;IndyProtocols.lib;IndyCore.lib;IndyIPClient.lib;tethering.lib;SynEditCR.lib;dbrtl.lib;vcldb.lib;VclSmp.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
-        <IncludePath>Multi Note odzysk\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>Multi Note odzysk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>..\..\..\mnmodul\;..\Multi Note API\;Multi Note odzysk\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\..\..\mnmodul\;..\Multi Note API\;Multi Note odzysk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <SanitizedProjectName>Multi_Note</SanitizedProjectName>
-        <Custom_Styles>&quot;Windows10 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Dark.vsf&quot;</Custom_Styles>
+        <Custom_Styles>&quot;Windows10 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Dark.vsf&quot;;&quot;Cobalt XEMedia|VCLSTYLE|$(BDSCOMMONDIR)\Styles\CobaltXEMedia.vsf&quot;</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACIBDriver;FireDACMSAccDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;svn;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -89,12 +89,10 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <BCC_PCHName_Clang>Multi NotePCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACIBDriver;FireDACMSAccDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
-        <BCC_PCHName_Clang>Multi NotePCH1.h</BCC_PCHName_Clang>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -141,11 +139,16 @@
         <UsePackages>false</UsePackages>
         <DynamicRTL>false</DynamicRTL>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;vclx.lib;vclwinx.lib;bindengine.lib;bcbsmp.lib;appanalytics.lib</LinkPackageStatics>
-        <Icon_MainIcon>Multi Note_Icon.ico</Icon_MainIcon>
-        <UWP_CppLogo44>..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN13.png</UWP_CppLogo44>
-        <UWP_CppLogo150>..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN13.png</UWP_CppLogo150>
+        <VerInfo_Locale>1045</VerInfo_Locale>
+        <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;vclx.lib;vclwinx.lib;bindengine.lib;bcbsmp.lib;appanalytics.lib;vclactnband.lib;IndyIPServer.lib;IndyIPCommon.lib;CustomIPTransport.lib;IndySystem.lib;IndyProtocols.lib;IndyCore.lib;IndyIPClient.lib;tethering.lib;SynEditCR.lib;dbrtl.lib;vcldb.lib;VclSmp.lib</LinkPackageStatics>
+        <Icon_MainIcon>Multi Note_Icon2.ico</Icon_MainIcon>
+        <UWP_CppLogo44>..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN14.png</UWP_CppLogo44>
+        <UWP_CppLogo150>..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN14.png</UWP_CppLogo150>
+        <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
+        <VerInfo_MajorVer>14</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=Michaello99;FileDescription=$(MSBuildProjectName);FileVersion=14.1.0.0;InternalName=;LegalCopyright=Michaello99;LegalTrademarks=;OriginalFilename=Multi Note;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=14.1.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -155,22 +158,16 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
-        <BCC_PCHName_Clang>Multi NotePCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <BCC_PCHName_Clang>Multi NotePCH1.h</BCC_PCHName_Clang>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <ItemGroup>
-        <RcItem Include="..\..\Grafika do programów\Multi Note wewnętrzne\close_hover1.png">
-            <ResourceType>RCDATA</ResourceType>
-            <ResourceId>PngImage_1</ResourceId>
-        </RcItem>
-        <RcItem Include="..\..\Grafika do programów\Multi Note wewnętrzne\close_idle1.png">
-            <ResourceType>RCDATA</ResourceType>
-            <ResourceId>PngImage_2</ResourceId>
-        </RcItem>
+        <CppCompile Include="..\..\..\mnmodul\mnmodul.cpp">
+            <DependentOn>..\..\..\mnmodul\mnmodul.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Multi Note.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -226,14 +223,14 @@
             <DependentOn>Unit8.h</DependentOn>
             <BuildOrder>9</BuildOrder>
         </CppCompile>
-        <FormResources Include="Unit5.dfm"/>
         <FormResources Include="Unit4.dfm"/>
-        <FormResources Include="Unit3.dfm"/>
-        <FormResources Include="Unit8.dfm"/>
-        <FormResources Include="Unit7.dfm"/>
+        <FormResources Include="Unit5.dfm"/>
         <FormResources Include="Unit6.dfm"/>
-        <FormResources Include="Unit2.dfm"/>
+        <FormResources Include="Unit7.dfm"/>
+        <FormResources Include="Unit8.dfm"/>
+        <FormResources Include="Unit3.dfm"/>
         <FormResources Include="Unit1.dfm"/>
+        <FormResources Include="Unit2.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -271,8 +268,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -312,12 +309,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\Grafika do programów\Multi Note wewnętrzne\close_hover1.png" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName=".\Win32\Debug\Multi Note.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>Multi_Note.exe</RemoteName>
@@ -329,13 +320,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\Grafika do programów\Multi Note wewnętrzne\close_idle1.png" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN13.png" Configuration="Debug" Class="UWP_CppLogo44">
+                <DeployFile LocalName="..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN14.png" Configuration="Debug" Class="UWP_CppLogo44">
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
@@ -347,8 +332,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX64">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

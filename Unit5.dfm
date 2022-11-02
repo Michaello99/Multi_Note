@@ -9,6 +9,7 @@ object Form5: TForm5
   Color = clBtnFace
   UseDockManager = True
   DockSite = True
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -57,7 +58,7 @@ object Form5: TForm5
     ParentFont = False
   end
   object Edit1: TEdit
-    Left = 7
+    Left = 8
     Top = 88
     Width = 193
     Height = 33
@@ -156,6 +157,7 @@ object Form5: TForm5
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 6
   end
   object Panel1: TPanel
@@ -166,18 +168,21 @@ object Form5: TForm5
     Hint = 'Panel g'#243'rny'
     Align = alTop
     AutoSize = True
+    DockSite = True
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 7
     object Label10: TLabel
       Left = 52
       Top = 10
-      Width = 111
-      Height = 35
+      Width = 114
+      Height = 36
       Caption = 'Kalkulator'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = 35
+      Font.Height = 36
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False

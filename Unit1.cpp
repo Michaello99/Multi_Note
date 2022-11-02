@@ -22,23 +22,36 @@ using namespace std;
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-AnsiString nazwae;
+AnsiString name_without_path;
+unsigned int number_of_line;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
- tresc->Alignment=taLeftJustify;
+
+try
+ {
+  tresc->Lines->LoadFromFile(ParamStr(1));
+  nazwapliku=ParamStr(1);
+  name_without_path=ExtractFileName(ParamStr(1));
+  Form1->Caption="Multi Note - "+name_without_path;
+ }
+ catch(...)
+ {
+  return;
+ }
 
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Oprogramie1Click(TObject *Sender)
 {
  Form2->Show();
+ Form2->WindowState=wsNormal;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Nowyplik1Click(TObject *Sender)
 {
-		if (Application->MessageBox(L"Czy utworzenie nowego pliku jest zamierzone?",L"PotwierdŸ",MB_YESNOCANCEL | MB_ICONQUESTION) == IDYES)
+		if (Application->MessageBox(L"Czy utworzenie nowego pliku jest zamierzone?",L"PotwierdŸ",MB_YESNO | MB_ICONQUESTION) == IDYES)
 		{
 		tresc->Lines->Clear();
 		nazwapliku="";
@@ -61,12 +74,10 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
  {
    try
    {
-
    tresc->Lines->LoadFromFile(OpenDialog1->FileName);
    nazwapliku=OpenDialog1->FileName;
-   nazwae=ExtractFileName(OpenDialog1->FileName);
-   Form1->Caption="Multi Note - "+nazwae;
-
+   name_without_path=ExtractFileName(OpenDialog1->FileName);
+   Form1->Caption="Multi Note - "+name_without_path;
    }
    catch (...)
    {
@@ -84,18 +95,25 @@ void __fastcall TForm1::Zapiszjakonowy1Click(TObject *Sender)
 		try{          //automatyczne dopisywanie rozszerzeñ
 			if( SaveDialog1->FilterIndex == 1 )
 			{
-			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".txt" );
-			tresc->Modified = true;
+			tresc->PlainText=true;
+			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".txt");
 			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".txt";
+			tresc->PlainText=false;
 			}
 			if( SaveDialog1->FilterIndex == 2 )
 			{
-			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".html" );
-			tresc->Modified = true;
+			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".rtf");
+			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".rtf";
+			}
+			if( SaveDialog1->FilterIndex == 3 )
+			{
+			tresc->PlainText=true;
+			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".html");
 			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".html";
+            tresc->PlainText=false;
 			}
 			}
-			catch (...)
+		catch (...)
 			{
 			ShowMessage("Zapis pliku niemo¿liwy :(");
 			}
@@ -213,41 +231,49 @@ void __fastcall TForm1::ylkodoodczytu1Click(TObject *Sender)
 
 void __fastcall TForm1::Odtwarzacz1Click(TObject *Sender)
 {
-Form3->Show();
-Form3->WindowState=wsNormal;
+	
+	Form3->Show();
+	Form3->WindowState=wsNormal;
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Przegldarkaobrazw1Click(TObject *Sender)
 {
-Form4->Show();
+
+	Form4->Show();
+   Form4->WindowState=wsNormal;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::N751Click(TObject *Sender)
-{
- tresc->Zoom=75;
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TForm1::N1001Click(TObject *Sender)
 {
  tresc->Zoom=100;
+ N1001->Checked=true;
+ Podwjny1->Checked=false;
+ Potrjny1->Checked=false;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::N1251Click(TObject *Sender)
+void __fastcall TForm1::Podwjny1Click(TObject *Sender)
 {
- tresc->Zoom=125;
+ tresc->Zoom=200;
+ N1001->Checked=false;
+ Podwjny1->Checked=true;
+ Potrjny1->Checked=false;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::N1501Click(TObject *Sender)
+void __fastcall TForm1::Potrjny1Click(TObject *Sender)
 {
-  tresc->Zoom=150;
+ tresc->Zoom=300;
+ N1001->Checked=false;
+ Podwjny1->Checked=false;
+ Potrjny1->Checked=true;
 }
 //---------------------------------------------------------------------------
-
+//---------------------------------------------------------------------------
 void __fastcall TForm1::Dolewej1Click(TObject *Sender)
 {
 tresc->Paragraph->Alignment=taLeftJustify;  //przesuniecie linii do lewej
@@ -268,25 +294,31 @@ void __fastcall TForm1::Doprawej1Click(TObject *Sender)
 
 void __fastcall TForm1::Kalkulator1Click(TObject *Sender)
 {
-Form5->Show();
+  
+	Form5->Show();
+	 Form5->WindowState=wsNormal;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Kalendarz1Click(TObject *Sender)
 {
-Form6->Show();
+	
+	Form6->Show();
+   Form6->WindowState=wsNormal;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Rysownik1Click(TObject *Sender)
 {
- Form7->Show();
+	Form7->Show();
+	Form7->WindowState=wsNormal;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Ustawienia1Click(TObject *Sender)
 {
- Form8->Show();
+	Form8->Show();
+   Form8->WindowState=wsNormal;
 }
 //---------------------------------------------------------------------------
 
@@ -333,20 +365,12 @@ Form6->WindowState=wsNormal;
 void __fastcall TForm1::Wznw1Click(TObject *Sender)
 {
 Form3->Button5Click(Form3);
-TrayIcon1->BalloonHint="Wznowiono odtwarzanie utworu";
-TrayIcon1->BalloonTitle="Wznowiono";
-TrayIcon1->BalloonFlags=bfNone;
-TrayIcon1->ShowBalloonHint();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Zatrzymaj1Click(TObject *Sender)
 {
 Form3->Button3Click(Form3);
-TrayIcon1->BalloonHint="Wstrzymano odtwarzanie utworu";
-TrayIcon1->BalloonTitle="Zatrzymano";
-TrayIcon1->BalloonFlags=bfNone;
-TrayIcon1->ShowBalloonHint();
 }
 //---------------------------------------------------------------------------
 
@@ -359,22 +383,28 @@ Form3->Button2Click(Form3);
 void __fastcall TForm1::Nastpny1Click(TObject *Sender)
 {
 Form3->Button7Click(Form3);
-TrayIcon1->BalloonHint=Form3->traypokaz;
-TrayIcon1->BalloonTitle="Zmiana utworu";
-Sleep(300);
-Application->ProcessMessages();
-TrayIcon1->ShowBalloonHint();
+	if(Form8->windows_notifications)
+	{
+	TrayIcon1->BalloonHint=Form3->trayshow;
+	TrayIcon1->BalloonTitle="Zmiana utworu";
+	Sleep(300);
+	Application->ProcessMessages();
+	TrayIcon1->ShowBalloonHint();
+	}
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Poprzedni1Click(TObject *Sender)
 {
 Form3->Button6Click(Form3);
-TrayIcon1->BalloonHint=Form3->traypokaz;
-TrayIcon1->BalloonTitle="Zmiana utworu";
-Sleep(300);
-Application->ProcessMessages();
-TrayIcon1->ShowBalloonHint();
+	if(Form8->windows_notifications)
+	{
+	TrayIcon1->BalloonHint=Form3->trayshow;
+	TrayIcon1->BalloonTitle="Zmiana utworu";
+	Sleep(300);
+	Application->ProcessMessages();
+	TrayIcon1->ShowBalloonHint();
+    }
 }
 //---------------------------------------------------------------------------
 
@@ -387,13 +417,26 @@ Form3->Button4Click(Form3);
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
  TSearchTypes st;
+ if(Form8->letter_size==true){
+  st << stMatchCase;
+ }
+ else if(Form8->letter_size==false){
+     st>>stMatchCase;
+ }
 
- String fText = Edit1->Text.Trim().LowerCase();
+ if(Form8->whole_word==true){
+ st<<stWholeWord;
+ }
+ else if(Form8->whole_word==false){
+   st>>stWholeWord;
+ }
+
+ String fText = Edit1->Text.Trim();
 
  if(tresc->SelLength)
   tresc->SelStart += 1;
 
- int fPos = tresc->FindText(fText, tresc->SelStart, tresc->Text.LowerCase().Length(), st);
+ int fPos = tresc->FindText(fText, tresc->SelStart, tresc->Text.Length(), st);
  tresc->SelStart = fPos;
  tresc->SelLength = fText.Length();
  tresc->SetFocus();
@@ -429,7 +472,7 @@ Button1->Visible=false;
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 tresc->Perform(EM_EXLIMITTEXT, 0, 4194176);   //zwiekszanie limitu tekstu
-DragAcceptFiles(Handle, true);
+	
 }
 //---------------------------------------------------------------------------
 
@@ -451,4 +494,26 @@ void __fastcall TForm1::WyczMultiNote2Click(TObject *Sender)
 Application->Terminate();
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+
+{
+	if(Key == VK_RETURN)
+	{
+	 tresc->SelStart = 0;
+     Form1->Button1Click(this);
+	}
+}
+//---------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
 

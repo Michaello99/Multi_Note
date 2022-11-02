@@ -7,6 +7,9 @@ object Form7: TForm7
   ClientHeight = 436
   ClientWidth = 709
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -38,10 +41,12 @@ object Form7: TForm7
     Height = 50
     Hint = 'Panel g'#243'rny'
     Align = alTop
+    DockSite = True
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
-    ExplicitWidth = 699
     DesignSize = (
       709
       50)
@@ -138,7 +143,7 @@ object Form7: TForm7
       Top = 0
       Width = 50
       Height = 50
-      Hint = 'Zmie'#324' kolor pi'#243'ra'
+      Hint = 'Zmie'#324' kolor p'#281'dzla'
       Anchors = [akTop, akRight]
       Center = True
       IncrementalDisplay = True
@@ -204,7 +209,7 @@ object Form7: TForm7
       Top = 0
       Width = 50
       Height = 50
-      Hint = 'Zmie'#324' grubo'#347#263' pi'#243'ra'
+      Hint = 'Zmie'#324' grubo'#347#263' p'#281'dzla'
       Anchors = [akTop, akRight]
       Center = True
       IncrementalDisplay = True
@@ -223,9 +228,9 @@ object Form7: TForm7
     object Label2: TLabel
       Left = 436
       Top = 18
-      Width = 76
+      Width = 83
       Height = 13
-      Caption = 'Grubo'#347#263' pi'#243'ra:'
+      Caption = 'Grubo'#347#263' p'#281'dzla:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -234,7 +239,7 @@ object Form7: TForm7
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 518
+      Left = 523
       Top = 18
       Width = 6
       Height = 13

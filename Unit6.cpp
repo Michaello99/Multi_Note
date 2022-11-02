@@ -11,11 +11,30 @@
 #pragma link "ccalendr"
 #pragma resource "*.dfm"
 TForm6 *Form6;
-AnsiString miesiac,rok;
+AnsiString month,year;
 //---------------------------------------------------------------------------
 __fastcall TForm6::TForm6(TComponent* Owner)
 	: TForm(Owner)
 {
+if(CCalendar1->Month>=1&&CCalendar1->Year>=2025)
+{
+ShowMessage("Wsparcie programu zakoñczy³o siê 31.03.2024. Czêœæ opcji przesta³a dzia³aæ. Pobierz nowsz¹ wersjê Multi Note.");
+Form1->Panel1->Visible=true;
+Form1->Panel1->Caption="Ta wersja programu nie jest ju¿ wspierana. Pobierz nowsz¹ wersjê Multi Note.";
+Form8->end_of_support->Visible=true;
+Form8->end_of_support2->Visible=true;
+Form8->ScrollBox1->Enabled=false;
+Form8->Button2->Enabled=false;
+}
+else if(CCalendar1->Month>=4&&CCalendar1->Year==2024){
+ShowMessage("Wsparcie programu zakoñczy³o siê 31.03.2024. Czêœæ opcji przesta³a dzia³aæ. Pobierz nowsz¹ wersjê Multi Note.");
+Form1->Panel1->Visible=true;
+Form1->Panel1->Caption="Ta wersja programu nie jest ju¿ wspierana. Pobierz nowsz¹ wersjê Multi Note.";
+Form8->end_of_support->Visible=true;
+Form8->end_of_support2->Visible=true;
+Form8->ScrollBox1->Enabled=false;
+Form8->Button2->Enabled=false;
+}
 }
 //---------------------------------------------------------------------------
  void __fastcall TForm6::CreateParams(TCreateParams &Params)
@@ -26,24 +45,25 @@ __fastcall TForm6::TForm6(TComponent* Owner)
 }
 void __fastcall TForm6::FormCreate(TObject *Sender)
 {
-miesiac=CCalendar1->Month;
-rok=CCalendar1->Year;
-Panel2->Caption="Miesi¹c: "+miesiac+" "+"Rok: "+rok;
+month=CCalendar1->Month;
+year=CCalendar1->Year;
+Panel2->Caption="Miesi¹c: "+month+" "+"Rok: "+year;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::Button1Click(TObject *Sender)
 {
 CCalendar1->PrevMonth();
-miesiac=CCalendar1->Month;
-rok=CCalendar1->Year;
-Panel2->Caption="Miesi¹c: "+miesiac+" "+"Rok: "+rok;
+month=CCalendar1->Month;
+year=CCalendar1->Year;
+Panel2->Caption="Miesi¹c: "+month+" "+"Rok: "+year;
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm6::Button2Click(TObject *Sender)
 {
 CCalendar1->NextMonth();
-miesiac=CCalendar1->Month;
-rok=CCalendar1->Year;
-Panel2->Caption="Miesi¹c: "+miesiac+" "+"Rok: "+rok;
+month=CCalendar1->Month;
+year=CCalendar1->Year;
+Panel2->Caption="Miesi¹c: "+month+" "+"Rok: "+year;
 }
 //---------------------------------------------------------------------------
+

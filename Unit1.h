@@ -12,6 +12,8 @@
 #include <Vcl.Dialogs.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include <Vcl.CustomizeDlg.hpp>
+#include <Vcl.Samples.Gauges.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -54,10 +56,7 @@ __published:	// IDE-managed Components
 	TTrayIcon *TrayIcon1;
 	TPanel *Panel1;
 	TMenuItem *N3;
-	TMenuItem *N751;
 	TMenuItem *N1001;
-	TMenuItem *N1251;
-	TMenuItem *N1501;
 	TMenuItem *Dolewej1;
 	TMenuItem *Narodku1;
 	TMenuItem *Doprawej1;
@@ -79,6 +78,8 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TMenuItem *Wyszukajwtekcie1;
 	TButton *Button2;
+	TMenuItem *Podwjny1;
+	TMenuItem *Potrjny1;
 	void __fastcall Oprogramie1Click(TObject *Sender);
 	void __fastcall Nowyplik1Click(TObject *Sender);
 	void __fastcall WyczMultiNote1Click(TObject *Sender);
@@ -95,10 +96,7 @@ __published:	// IDE-managed Components
 	void __fastcall ylkodoodczytu1Click(TObject *Sender);
 	void __fastcall Odtwarzacz1Click(TObject *Sender);
 	void __fastcall Przegldarkaobrazw1Click(TObject *Sender);
-	void __fastcall N751Click(TObject *Sender);
 	void __fastcall N1001Click(TObject *Sender);
-	void __fastcall N1251Click(TObject *Sender);
-	void __fastcall N1501Click(TObject *Sender);
 	void __fastcall Dolewej1Click(TObject *Sender);
 	void __fastcall Narodku1Click(TObject *Sender);
 	void __fastcall Doprawej1Click(TObject *Sender);
@@ -123,12 +121,15 @@ __published:	// IDE-managed Components
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall WyczMultiNote2Click(TObject *Sender);
+	void __fastcall Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
+	void __fastcall Podwjny1Click(TObject *Sender);
+	void __fastcall Potrjny1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
     AnsiString nazwapliku="";
 	int width  = Screen->Width; // mierzy szerokoœæ ekranu.
-	int height = Screen->Height; // mierzy wysokoœæ ekranu.
+	int height = Screen->Height; // mierzy wysokoœæ ekranu
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

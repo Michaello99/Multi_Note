@@ -39,6 +39,9 @@ __published:	// IDE-managed Components
 	TImage *Image4;
 	TPanel *Panel2;
 	TMediaPlayer *MediaPlayer1;
+	TPanel *Panel3;
+	TTimer *Timer1;
+	TTrayIcon *TrayIcon1;
 	void __fastcall FormActivate(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -55,15 +58,17 @@ __published:	// IDE-managed Components
 	void __fastcall Image4Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
 private:	// User declarations
 void __fastcall CreateParams(TCreateParams &Params);
 void __fastcall LoadFiles(void);
 	void __fastcall PlayFile(int index);
 	AnsiString FullTime(void);
-	TStringList *Lista;
+
 public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
-    AnsiString traypokaz,otwarto,pauza;
+    TStringList *Lista;
+	AnsiString trayshow,opened,pause;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm3 *Form3;

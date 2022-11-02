@@ -10,6 +10,7 @@
 #include "Unit6.h"
 #include "Unit7.h"
 #include "Unit8.h"
+#include <IniFiles.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -26,55 +27,16 @@ __fastcall TForm8::TForm8(TComponent* Owner)
  Params.ExStyle |= WS_EX_APPWINDOW;
  Params.WndParent = GetDesktopWindow();
 }
-void __fastcall TForm8::CheckBox1Click(TObject *Sender)
-{
-	if(CheckBox1->Checked==true)
-	{
-	Form1->Panel1->Visible=true;
-	int bity = GetDeviceCaps(Canvas->Handle, BITSPIXEL);
-	int refresh = GetDeviceCaps(Canvas->Handle, VREFRESH);
-	if(Form1->width<1366||Form1->height<768)
-	{
-	Form1->Panel1->Caption = "Zbyt niska rozdzielczoœæ ekranu; Program zosta³ automatycznie okrojony z funkcji";
-	}
-	else if(Form1->width==1366||Form1->height==768)
-	{
-	Form1->Panel1->Caption="Rozdzielczoœæ ekranu "+IntToStr(Form1->width)+"x"+IntToStr(Form1->height)+", "+IntToStr(bity)+" bity, "+"odœwie¿anie: "+IntToStr(refresh)+"Hz"+", niektóre elementy interfejsu ukryte";
-	}
-	else
-	{
-	Form1->Panel1->Caption = "Rozdzielczoœæ ekranu OK: "+IntToStr(Form1->width)+"x"+IntToStr(Form1->height)+", "+IntToStr(bity)+" bity,"+" odœwie¿anie: "+IntToStr(refresh)+"Hz";
-	}
-	}
-	if(CheckBox1->Checked==false)
-	{
-	Form1->Panel1->Visible=false;
-	}
-}
-//---------------------------------------------------------------------------
+//--------------------------------------------------------
 void __fastcall TForm8::CheckBox2Click(TObject *Sender)
 {
 	if (CheckBox2->Checked==true)
 	{
-	autoodtwarzanie="tak";
+	autoplay=true;
 	}
 	else
 	{
-	autoodtwarzanie="nie";
-	}
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm8::CheckBox5Click(TObject *Sender)
-{
-	if(CheckBox5->Checked==false)
-	{
-        SetPriorityClass(GetCurrentProcess(), NORMAL_PRIORITY_CLASS);
-         CheckBox5->Caption="Wy³¹czone";
-	}
-	else if(CheckBox5->Checked==true)
-	{
-        SetPriorityClass(GetCurrentProcess(), HIGH_PRIORITY_CLASS);
-        CheckBox5->Caption="W³¹czone";
+	autoplay=false;
 	}
 }
 //---------------------------------------------------------------------------
@@ -82,11 +44,12 @@ void __fastcall TForm8::CheckBox6Click(TObject *Sender)
 {
 		if(CheckBox6->Checked==false)
 		{
-        	adaptrys=false;
+			adaptivedraw=false;
 		}
         else if(CheckBox6->Checked==true)
-        {
-        	adaptrys=true;
+		{
+
+			adaptivedraw=true;
 			if(Form7->Image1->Canvas->Brush->Color==clBlack)
         	{
 				 Form7->Image1->Canvas->Pen->Color=clWhite;
@@ -99,6 +62,8 @@ void __fastcall TForm8::CheckBox6Click(TObject *Sender)
 			{
 				 Form7->Image1->Canvas->Pen->Color=clWhite;
 			}
+
+
 		}
 }
 //---------------------------------------------------------------------------
@@ -107,12 +72,147 @@ void __fastcall TForm8::CheckBox7Click(TObject *Sender)
 {
 	if(CheckBox7->Checked==false)
 	{
-	ochrona=false;
+	protect=false;                     //ochrona sluchu
 	}
 	else if (CheckBox7->Checked==true)
 	{
-    ochrona=true;
+    protect=true;
 	}
+}
+//---------------------------------------------------------------------------
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox9Click(TObject *Sender)
+{
+	if(CheckBox9->Checked)
+	{
+	whole_word=true;
+	}
+	else
+	{
+	whole_word=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm8::CheckBox8Click(TObject *Sender)
+{
+	if(CheckBox8->Checked)
+	{
+	letter_size=true;
+	}
+	else
+	{
+	letter_size=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift,
+          TPoint &MousePos, bool &Handled)
+{
+ScrollBox1->VertScrollBar->Position+=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::ScrollBox1MouseWheelUp(TObject *Sender, TShiftState Shift,
+          TPoint &MousePos, bool &Handled)
+{
+ScrollBox1->VertScrollBar->Position-=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::FormCreate(TObject *Sender)
+{
+TIniFile *Ini = new TIniFile(ExtractFilePath(Application->ExeName)+"\\Ustawienia.ini");
+CheckBox2->Checked=Ini->ReadBool("Ustawienia", "autoodtwarzanie", true);
+CheckBox7->Checked=Ini->ReadBool("Ustawienia","ochronasluchu",true);
+CheckBox3->Checked=Ini->ReadBool("Ustawienia","czyscskladnik",true);
+CheckBox4->Checked=Ini->ReadBool("Ustawienia","autolistaobrazow",true);
+CheckBox8->Checked=Ini->ReadBool("Ustawienia","wielkoscliter",false);
+CheckBox9->Checked=Ini->ReadBool("Ustawienia","caleslowa",false);
+CheckBox10->Checked=Ini->ReadBool("Ustawienia","interaktywnaikona",true);
+CheckBox11->Checked=Ini->ReadBool("Ustawienia","powiadomieniawysuwane",true);
+	try{
+	CheckBox6->Checked=Ini->ReadBool("Ustawienia","adaptacyjnypedzel",false);
+	}
+	catch(...)
+	{
+	return;
+	}
+delete Ini;
+//---------------
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::FormClose(TObject *Sender, TCloseAction &Action)
+{
+TIniFile *Ini = new TIniFile(ExtractFilePath(Application->ExeName)+"\\Ustawienia.ini");
+Ini->WriteBool("Ustawienia", "autoodtwarzanie", CheckBox2->Checked);
+Ini->WriteBool("Ustawienia","ochronasluchu", CheckBox7->Checked);
+Ini->WriteBool("Ustawienia","czyscskladnik", CheckBox3->Checked);
+Ini->WriteBool("Ustawienia","autolistaobrazow", CheckBox4->Checked);
+Ini->WriteBool("Ustawienia","wielkoscliter", CheckBox8->Checked);
+Ini->WriteBool("Ustawienia","caleslowa", CheckBox9->Checked);
+Ini->WriteBool("Ustawienia","adaptacyjnypedzel", CheckBox6->Checked);
+Ini->WriteBool("Ustawienia","interaktywnaikona", CheckBox10->Checked);
+Ini->WriteBool("Ustawienia","powiadomieniawysuwane", CheckBox11->Checked);
+delete Ini;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox10Click(TObject *Sender)
+{
+	if(CheckBox10->Checked)
+	{
+	Form1->TrayIcon1->Visible=true;
+	}
+	else
+	{
+    Form1->TrayIcon1->Visible=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm8::CheckBox11Click(TObject *Sender)
+{
+	if(CheckBox11->Checked)
+	{
+	windows_notifications = true;
+	}
+	else{
+	windows_notifications = false;
+    }
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+void __fastcall TForm8::Button1Click(TObject *Sender)
+{
+ShellExecuteA(NULL, ("open"), LPCSTR("https://michaello99.wixsite.com/michaello99/flagowy-produkt-multi-note"), NULL, NULL, SW_SHOWNORMAL);
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm8::Button2Click(TObject *Sender)
+{
+ShellExecuteA(NULL, _NULL, LPCSTR("mailto:michaello99@op.pl"), NULL, NULL, SW_SHOWNORMAL);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::Label2DblClick(TObject *Sender)
+{
+Form8->ScrollBox1->Enabled=true;
 }
 //---------------------------------------------------------------------------
 

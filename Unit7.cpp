@@ -2,7 +2,7 @@
 
 #include <vcl.h>
 #pragma hdrstop
-
+#include "Unit1.h"
 #include "Unit7.h"
 #include "Unit8.h"
 //---------------------------------------------------------------------------
@@ -81,14 +81,14 @@ if(SaveDialog1->Execute())
 
 void __fastcall TForm7::Image2Click(TObject *Sender)
 {
-   if(Form8->adaptrys==false)
+   if(Form8->adaptivedraw==false)
     {
 	if(ColorDialog1->Execute())
 	{
 	Image1->Canvas->Pen->Color=ColorDialog1->Color;
 	}
     }
-    else if(Form8->adaptrys==true)
+	else if(Form8->adaptivedraw==true)
     {
     ShowMessage("Adaptacyjny kolor pióra jest w³¹czony. Wy³¹cz go w Ustawieniach.");
     }
@@ -122,7 +122,7 @@ void __fastcall TForm7::Image7Click(TObject *Sender)
     {
 	Image1->Canvas->Brush->Color = clBlack;
 	Image1->Canvas->FillRect(TRect(0,0,Image1->Width,Image1->Height));
-        if(Form8->adaptrys==true)
+		if(Form8->adaptivedraw==true)
         {
          Image1->Canvas->Pen->Color=clWhite;
         }
@@ -131,7 +131,7 @@ void __fastcall TForm7::Image7Click(TObject *Sender)
     {
        Image1->Canvas->Brush->Color = clBlue;
 	Image1->Canvas->FillRect(TRect(0,0,Image1->Width,Image1->Height));
-         if(Form8->adaptrys==true)
+		 if(Form8->adaptivedraw==true)
         {
          Image1->Canvas->Pen->Color=clWhite;
         }
@@ -140,11 +140,12 @@ void __fastcall TForm7::Image7Click(TObject *Sender)
     {
      	Image1->Canvas->Brush->Color = clWhite;
 	Image1->Canvas->FillRect(TRect(0,0,Image1->Width,Image1->Height));
-         if(Form8->adaptrys==true)
+         if(Form8->adaptivedraw==true)
         {
          Image1->Canvas->Pen->Color=clBlack;
         }
     }
 }
 //---------------------------------------------------------------------------
+
 

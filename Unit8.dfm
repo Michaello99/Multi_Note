@@ -3,99 +3,63 @@ object Form8: TForm8
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'Ustawienia'
+  Caption = 'Ustawienia i wsparcie'
   ClientHeight = 392
-  ClientWidth = 571
+  ClientWidth = 625
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
   DesignSize = (
-    571
+    625
     392)
   PixelsPerInch = 96
   TextHeight = 13
-  object Label9: TLabel
+  object Label4: TLabel
     Left = 8
     Top = 62
-    Width = 150
+    Width = 182
     Height = 30
-    Caption = 'Zaawansowane'
+    Caption = 'Ustawienia og'#243'lne'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-  end
-  object Label11: TLabel
-    Left = 8
-    Top = 98
-    Width = 207
-    Height = 13
-    Caption = 'Je'#347'li nie musisz, nie zmieniaj tych ustawie'#324'!'
   end
   object Label2: TLabel
-    Left = 8
-    Top = 127
-    Width = 142
-    Height = 21
-    Caption = 'Informacje o ekranie'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 22
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label5: TLabel
-    Left = 8
-    Top = 201
-    Width = 193
-    Height = 21
-    Caption = 'Zwi'#281'ksz priorytet programu'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 22
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label4: TLabel
-    Left = 280
+    Left = 352
     Top = 62
-    Width = 72
+    Width = 89
     Height = 30
-    Caption = 'Og'#243'lne'
+    Caption = 'Wsparcie'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-  end
-  object Panel2: TPanel
-    Left = 256
-    Top = 46
-    Width = 18
-    Height = 360
-    Anchors = [akLeft, akTop, akBottom]
-    TabOrder = 1
+    OnDblClick = Label2DblClick
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 571
+    Width = 625
     Height = 56
     Hint = 'Panel g'#243'rny'
     Align = alTop
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
-    ExplicitWidth = 537
     object Image2: TImage
       Left = 0
       Top = 0
@@ -151,9 +115,9 @@ object Form8: TForm8
     object Label1: TLabel
       Left = 63
       Top = 7
-      Width = 124
+      Width = 243
       Height = 36
-      Caption = 'Ustawienia'
+      Caption = 'Ustawienia i wsparcie'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 36
@@ -161,52 +125,52 @@ object Form8: TForm8
       Font.Style = []
       ParentFont = False
     end
-  end
-  object CheckBox1: TCheckBox
-    Left = 8
-    Top = 154
-    Width = 209
-    Height = 26
-    Caption = 'Pokazuj w g'#322#243'wnym oknie'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 20
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 2
-    OnClick = CheckBox1Click
-  end
-  object CheckBox5: TCheckBox
-    Left = 8
-    Top = 228
-    Width = 97
-    Height = 27
-    Caption = 'Wy'#322#261'czone'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 20
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    OnClick = CheckBox5Click
+    object end_of_support2: TLabel
+      Left = 352
+      Top = 28
+      Width = 228
+      Height = 15
+      Caption = 'Pobierz nowsz'#261' wersj'#281' (przycisk poni'#380'ej).'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = 15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Visible = False
+    end
+    object end_of_support: TLabel
+      Left = 352
+      Top = 9
+      Width = 254
+      Height = 15
+      Caption = 'Wsparcie dla tej wersji programu zako'#324'czone.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = 15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Visible = False
+    end
   end
   object ScrollBox1: TScrollBox
-    Left = 280
+    Left = 8
     Top = 98
-    Width = 283
-    Height = 286
+    Width = 329
+    Height = 287
+    Margins.Bottom = 10
     VertScrollBar.Smooth = True
     VertScrollBar.Tracking = True
     Anchors = [akLeft, akTop, akRight, akBottom]
     BorderStyle = bsNone
     DockSite = True
-    DoubleBuffered = False
+    DoubleBuffered = True
+    Padding.Bottom = 10
     ParentDoubleBuffered = False
-    TabOrder = 4
+    TabOrder = 1
+    OnMouseWheelDown = ScrollBox1MouseWheelDown
+    OnMouseWheelUp = ScrollBox1MouseWheelUp
     object Label8: TLabel
       Left = 3
       Top = 3
@@ -236,9 +200,9 @@ object Form8: TForm8
     object Label3: TLabel
       Left = 3
       Top = 165
-      Width = 204
+      Width = 66
       Height = 30
-      Caption = 'Przegl'#261'darka obraz'#243'w'
+      Caption = 'Obrazy'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 30
@@ -252,6 +216,46 @@ object Form8: TForm8
       Width = 86
       Height = 30
       Caption = 'Rysownik'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 30
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label13: TLabel
+      Left = 3
+      Top = 287
+      Width = 220
+      Height = 30
+      Caption = 'Wyszukiwanie w tek'#347'cie'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 30
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label14: TLabel
+      Left = 27
+      Top = 551
+      Width = 226
+      Height = 15
+      Alignment = taCenter
+      Caption = 'Wi'#281'cej mo'#380'liwo'#347'ci personalizacji wkr'#243'tce :)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 3
+      Top = 373
+      Width = 207
+      Height = 30
+      Caption = 'Integracja z systemem'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 30
@@ -307,8 +311,9 @@ object Form8: TForm8
       Top = 201
       Width = 242
       Height = 19
-      Hint = 'Gdy odznaczone, lista b'#281'dzie ukrywa'#263' si'#281' automatycznie'
-      Caption = 'Zawsze widoczna lista obraz'#243'w'
+      Hint = 'Gdy zaznaczone, lista pokazuje si'#281' i ukrywa automatycznie'
+      Caption = 'Automatyczna lista obraz'#243'w'
+      Checked = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 20
@@ -317,6 +322,7 @@ object Form8: TForm8
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      State = cbChecked
       TabOrder = 2
     end
     object CheckBox6: TCheckBox
@@ -325,9 +331,9 @@ object Form8: TForm8
       Width = 242
       Height = 19
       Hint = 
-        'Kolor pi'#243'ra dostosuje si'#281' do koloru t'#322'a, r'#281'czna zmiana koloru ni' +
-        'e zadzia'#322'a'
-      Caption = 'Adaptacyjny kolor pi'#243'ra'
+        'Kolor p'#281'dzla dostosuje si'#281' do koloru t'#322'a, r'#281'czna zmiana koloru n' +
+        'ie zadzia'#322'a'
+      Caption = 'Adaptacyjny kolor p'#281'dzla'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 20
@@ -359,5 +365,207 @@ object Form8: TForm8
       TabOrder = 4
       OnClick = CheckBox7Click
     end
+    object CheckBox9: TCheckBox
+      Left = 3
+      Top = 348
+      Width = 242
+      Height = 19
+      Caption = 'Szukaj jako ca'#322'e s'#322'owo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+      OnClick = CheckBox9Click
+    end
+    object CheckBox8: TCheckBox
+      Left = 3
+      Top = 323
+      Width = 242
+      Height = 19
+      Caption = 'Uwzgl'#281'dniaj wielko'#347#263' liter'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 6
+      OnClick = CheckBox8Click
+    end
+    object CheckBox10: TCheckBox
+      Left = 3
+      Top = 409
+      Width = 286
+      Height = 19
+      Hint = 
+        'W tacce systemowej wy'#347'wietli si'#281' ikona, kt'#243'ra po klikni'#281'ciu praw' +
+        'ym przyciskiem jest skr'#243'tem do funkcji Multi Note'
+      Caption = 'Interaktywna ikona w tacce systemowej'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 7
+      OnClick = CheckBox10Click
+    end
+    object CheckBox11: TCheckBox
+      Left = 3
+      Top = 434
+      Width = 262
+      Height = 19
+      Hint = 
+        'Umo'#380'liwia pokazywanie powiadomie'#324' Multi Note w centrum powiadomi' +
+        'e'#324' Windows'
+      Caption = 'Pokazuj powiadomienia wysuwane'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 8
+      OnClick = CheckBox11Click
+    end
+  end
+  object ScrollBox2: TScrollBox
+    Left = 352
+    Top = 98
+    Width = 265
+    Height = 235
+    VertScrollBar.Smooth = True
+    VertScrollBar.Tracking = True
+    AutoScroll = False
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    BorderStyle = bsNone
+    TabOrder = 2
+    object Label5: TLabel
+      Left = 3
+      Top = 39
+      Width = 188
+      Height = 28
+      Caption = 'Zako'#324'czenie wsparcia'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 28
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 3
+      Top = 68
+      Width = 97
+      Height = 20
+      Caption = '31 marca 2024'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 3
+      Top = 101
+      Width = 209
+      Height = 15
+      Caption = 'Wsparcie mo'#380'esz uzyska'#263' pod adresem:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 3
+      Top = 122
+      Width = 105
+      Height = 15
+      Caption = 'michaello99@op.pl'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label15: TLabel
+      Left = 3
+      Top = 180
+      Width = 257
+      Height = 45
+      Caption = 
+        'W e-mailu opisz sw'#243'j problem bardzo dok'#322'adnie, ze szczeg'#243#322'ami. K' +
+        'a'#380'da drobnostka mo'#380'e przyda'#263' si'#281' przy rozwi'#261'zywaniu problemu :)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      WordWrap = True
+    end
+    object Label16: TLabel
+      Left = 3
+      Top = 3
+      Width = 140
+      Height = 30
+      Caption = 'Multi Note 14.1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 30
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object Button2: TButton
+      Left = 0
+      Top = 143
+      Width = 265
+      Height = 31
+      Caption = 'Uzyskaj wsparcie'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button2Click
+    end
+  end
+  object Button1: TButton
+    Left = 352
+    Top = 339
+    Width = 265
+    Height = 45
+    Caption = 'Pobierz najnowsz'#261' wersj'#281' Multi Note'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnClick = Button1Click
   end
 end

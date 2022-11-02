@@ -2,7 +2,8 @@
 
 #include <vcl.h>
 #pragma hdrstop
-
+#include "Unit1.h"
+#include "Unit8.h"
 #include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -21,6 +22,23 @@ void __fastcall TForm2::CreateParams(TCreateParams &Params)
  Params.WndParent = GetDesktopWindow();
 }
 
+
+//----------------------------------------------------------------
+
+
+void __fastcall TForm2::ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift,
+          TPoint &MousePos, bool &Handled)
+{
+ScrollBox1->VertScrollBar->Position+=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::ScrollBox1MouseWheelUp(TObject *Sender, TShiftState Shift,
+          TPoint &MousePos, bool &Handled)
+{
+ScrollBox1->VertScrollBar->Position-=10;
+}
+//---------------------------------------------------------------------------
 
 
 

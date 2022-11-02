@@ -3,22 +3,26 @@ object Form3: TForm3
   Top = 0
   Caption = 'Odtwarzacz'
   ClientHeight = 516
-  ClientWidth = 602
+  ClientWidth = 556
   Color = clBtnFace
+  Constraints.MinHeight = 483
+  Constraints.MinWidth = 571
   UseDockManager = True
   DockSite = True
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = 20
   Font.Name = 'Segoe UI'
   Font.Style = []
   OldCreateOrder = False
+  ScreenSnap = True
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
   DesignSize = (
-    602
+    556
     516)
   PixelsPerInch = 96
   TextHeight = 20
@@ -62,7 +66,7 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 216
+    Left = 194
     Top = 257
     Width = 147
     Height = 25
@@ -75,6 +79,7 @@ object Form3: TForm3
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    ExplicitLeft = 216
   end
   object Image3: TImage
     Left = 8
@@ -113,7 +118,7 @@ object Form3: TForm3
     OnClick = Image3Click
   end
   object Image4: TImage
-    Left = 553
+    Left = 507
     Top = 442
     Width = 41
     Height = 43
@@ -166,6 +171,7 @@ object Form3: TForm3
       88B7FD0392F4F14FDE186F960000000049454E44AE426082}
     ShowHint = True
     OnClick = Image4Click
+    ExplicitLeft = 553
   end
   object MediaPlayer1: TMediaPlayer
     Left = 334
@@ -178,12 +184,12 @@ object Form3: TForm3
     DoubleBuffered = True
     Visible = False
     ParentDoubleBuffered = False
-    TabOrder = 11
+    TabOrder = 6
   end
   object Panel1: TPanel
     Left = -46
     Top = -3
-    Width = 648
+    Width = 602
     Height = 58
     Hint = 'Panel g'#243'rny'
     Anchors = [akLeft, akTop, akRight]
@@ -193,7 +199,7 @@ object Form3: TForm3
     ShowHint = True
     TabOrder = 0
     DesignSize = (
-      648
+      602
       58)
     object Label10: TLabel
       Left = 111
@@ -237,7 +243,7 @@ object Form3: TForm3
         F449EF3162848C830000000049454E44AE426082}
     end
     object Button2: TButton
-      Left = 435
+      Left = 390
       Top = 3
       Width = 212
       Height = 54
@@ -256,112 +262,22 @@ object Form3: TForm3
   object ProgressBar1: TProgressBar
     Left = 61
     Top = 127
-    Width = 533
+    Width = 487
     Height = 27
     Anchors = [akLeft, akTop, akRight]
-    DoubleBuffered = False
+    DoubleBuffered = True
     ParentDoubleBuffered = False
+    Smooth = True
+    SmoothReverse = True
     TabOrder = 1
-  end
-  object Button5: TButton
-    Left = 8
-    Top = 167
-    Width = 186
-    Height = 35
-    Hint = 'Kontynuuj odtwarzanie zatrzymanego pliku'
-    Align = alCustom
-    Caption = 'Wzn'#243'w'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 23
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 2
-    OnClick = Button5Click
-  end
-  object Button3: TButton
-    Left = 200
-    Top = 167
-    Width = 210
-    Height = 35
-    Hint = 'Pauza w odtwarzaniu'
-    Align = alCustom
-    Caption = 'Zatrzymaj'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 23
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 3
-    OnClick = Button3Click
-  end
-  object Button4: TButton
-    Left = 416
-    Top = 167
-    Width = 178
-    Height = 35
-    Hint = 'Przewi'#324' do pocz'#261'tku'
-    Align = alCustom
-    Caption = 'Zresetuj utw'#243'r'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 23
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 4
-    OnClick = Button4Click
-  end
-  object Button7: TButton
-    Left = 303
-    Top = 208
-    Width = 291
-    Height = 35
-    Hint = 'Odtw'#243'rz nast'#281'pny plik z listy'
-    Caption = 'Nast'#281'pny plik'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 23
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 5
-    OnClick = Button7Click
-  end
-  object Button6: TButton
-    Left = 8
-    Top = 208
-    Width = 289
-    Height = 35
-    Hint = 'Odtw'#243'rz poprzedni plik z listy'
-    Caption = 'Poprzedni plik'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = 23
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 6
-    OnClick = Button6Click
   end
   object ListBox1: TListBox
     Left = 8
     Top = 288
-    Width = 586
+    Width = 540
     Height = 109
     Hint = 'Kliknij plik dwa razy, aby go odtworzy'#263
+    Align = alCustom
     Anchors = [akLeft, akTop, akRight, akBottom]
     DoubleBuffered = False
     Font.Charset = DEFAULT_CHARSET
@@ -375,13 +291,13 @@ object Form3: TForm3
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 7
+    TabOrder = 2
     OnDblClick = ListBox1DblClick
   end
   object Button1: TButton
     Left = 8
     Top = 403
-    Width = 586
+    Width = 540
     Height = 33
     Hint = 'Usu'#324' wszystkie pliki z listy odtwarzania'
     Anchors = [akLeft, akRight, akBottom]
@@ -394,13 +310,13 @@ object Form3: TForm3
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 8
+    TabOrder = 3
     OnClick = Button1Click
   end
   object TrackBar1: TTrackBar
     Left = 59
     Top = 450
-    Width = 488
+    Width = 442
     Height = 31
     Hint = 'Ustaw g'#322'o'#347'no'#347#263' d'#378'wi'#281'ku'
     Anchors = [akLeft, akRight, akBottom]
@@ -408,13 +324,13 @@ object Form3: TForm3
     ParentShowHint = False
     Position = 13000
     ShowHint = True
-    TabOrder = 9
+    TabOrder = 4
     OnChange = TrackBar1Change
   end
   object Panel2: TPanel
     Left = 0
     Top = 495
-    Width = 602
+    Width = 556
     Height = 21
     Align = alBottom
     Caption = 'Kliknij dwa razy plik na li'#347'cie odtwarzania, aby go odtworzy'#263' '
@@ -424,7 +340,118 @@ object Form3: TForm3
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 5
+  end
+  object Panel3: TPanel
+    Left = 8
+    Top = 168
+    Width = 540
+    Height = 83
+    Anchors = [akTop]
+    BevelOuter = bvNone
+    DockSite = True
+    ShowCaption = False
+    TabOrder = 7
+    DesignSize = (
+      540
+      83)
+    object Button3: TButton
+      Left = 141
+      Top = 1
+      Width = 255
+      Height = 35
+      Hint = 'Pauza w odtwarzaniu'
+      Align = alCustom
+      Anchors = [akRight]
+      Caption = 'Zatrzymaj'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 402
+      Top = 1
+      Width = 135
+      Height = 35
+      Hint = 'Przewi'#324' do pocz'#261'tku'
+      Align = alCustom
+      Anchors = [akRight]
+      Caption = 'Zresetuj utw'#243'r'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      OnClick = Button4Click
+    end
+    object Button5: TButton
+      Left = 3
+      Top = 1
+      Width = 132
+      Height = 35
+      Hint = 'Kontynuuj odtwarzanie zatrzymanego pliku'
+      Anchors = [akRight]
+      Caption = 'Wzn'#243'w'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      OnClick = Button5Click
+    end
+    object Button6: TButton
+      Left = 3
+      Top = 40
+      Width = 260
+      Height = 35
+      Hint = 'Odtw'#243'rz poprzedni plik z listy'
+      Anchors = [akLeft]
+      Caption = 'Poprzedni plik'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      OnClick = Button6Click
+    end
+    object Button7: TButton
+      Left = 269
+      Top = 40
+      Width = 268
+      Height = 35
+      Hint = 'Odtw'#243'rz nast'#281'pny plik z listy'
+      Anchors = [akRight]
+      Caption = 'Nast'#281'pny plik'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+      OnClick = Button7Click
+    end
   end
   object OpenDialog1: TOpenDialog
     Filter = 'Wszystkie pliki|*.*|Plik MP4|*.mp4|Plik WAV|*.wav|Plik MP3|*.mp3'
@@ -437,5 +464,15 @@ object Form3: TForm3
     OnTimer = Timer2Timer
     Left = 296
     Top = 8
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 152
+    Top = 40
+  end
+  object TrayIcon1: TTrayIcon
+    Left = 384
+    Top = 64
   end
 end

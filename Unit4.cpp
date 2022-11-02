@@ -11,7 +11,7 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm4 *Form4;
-bool otwarte;
+bool opened;
 //---------------------------------------------------------------------------
 __fastcall TForm4::TForm4(TComponent* Owner)
 	: TForm(Owner)
@@ -32,57 +32,6 @@ Listao = new TStringList;
 //----------------
 
 
- void __fastcall TForm4::Image3Click(TObject *Sender)
-{
-WczytajObrazek();
-}
-//--------------------------------
-
-
-
-
-
-void __fastcall TForm4::Wyrodkujobrazek1Click(TObject *Sender)
-{
-
- if(Image1->Center==true){
-	Image1->Center=false;
-	Wyrodkujobrazek1->Checked=false;
- }
- else{
-	Image1->Center=true;
-	Wyrodkujobrazek1->Checked=true;
- }
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm4::Proportional1Click(TObject *Sender)
-{
-  if(Image1->Proportional==true){
-	Image1->Proportional=false;
-	Proportional1->Checked=true;
- }
- else{
-	Image1->Proportional=true;
-	Proportional1->Checked=false;
- }
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm4::Rozcignijobrazek1Click(TObject *Sender)
-{
-  if(Image1->Stretch==true){
-	Image1->Stretch=false;
-	Rozcignijobrazek1->Checked=false;
- }
- else{
-	Image1->Stretch=true;
-	Rozcignijobrazek1->Checked=true;
- }
-}
-//---------------------------------------------------------------------------
-
-
 //---------------------------------------------------------------------------
 void __fastcall TForm4::WczytajObrazek(void)    //funkcja do wywo³ania wczytywania obrazka
 {
@@ -97,15 +46,16 @@ void __fastcall TForm4::WczytajObrazek(void)    //funkcja do wywo³ania wczytywan
 	 Listao->Add(OpenDialog1->FileName); //dodaje do listy plik
 	 ListBox1->Items->Add(ExtractFileName(OpenDialog1->FileName));
 	 Image1->Show();
+
 	 if(Listao->Count>=2)
 	 {
 	 ListBox1->Visible=true;
      }
-	 if(Listao->Count==1&&otwarte!=true)
+	 if(Listao->Count==1&&opened!=true)
 	 {
 	 ListBox1->ItemIndex=0;
 	 PokazObrazek(ListBox1->ItemIndex);
-     otwarte=true;
+	 opened=true;
 	 }
 	}
 	catch(...)
@@ -128,7 +78,7 @@ void __fastcall TForm4::FormDestroy(TObject *Sender)
 {
       Listao->Clear();
 	  Listao->Free();
-	  otwarte=false;
+	  opened=false;
 }
 //---------------------------------------------------------------------------
 
@@ -164,7 +114,7 @@ void __fastcall TForm4::Image4Click(TObject *Sender)
 
 void __fastcall TForm4::FormActivate(TObject *Sender)
 {
-	if(Form8->CheckBox4->Checked==true)
+	if(Form8->CheckBox4->Checked==false)
 	{
 	ListBox1->Visible=true;
 	}
@@ -182,10 +132,63 @@ void __fastcall TForm4::Image6Click(TObject *Sender)
 {
 	ListBox1->Items->Clear();
 	Listao->Clear();
-	if(Form8->CheckBox4->Checked!=true)
+	if(Form8->CheckBox4->Checked!=false)
 	{
 	ListBox1->Visible=false;
 	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm4::ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift,
+          TPoint &MousePos, bool &Handled)
+{
+ScrollBox1->VertScrollBar->Position+=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm4::ScrollBox1MouseWheelUp(TObject *Sender, TShiftState Shift,
+          TPoint &MousePos, bool &Handled)
+{
+ScrollBox1->VertScrollBar->Position-=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm4::Dopasujdookna1Click(TObject *Sender)
+{
+	if(Image1->Align==alNone)
+	{
+	Image1->Align=alClient;
+	Image1->Proportional=true;
+	Dopasujdookna1->Checked=true;
+	}
+	else if(Image1->Align==alClient)
+	{
+	Image1->Align=alNone;
+    Image1->Proportional=false;
+    Dopasujdookna1->Checked=false;
+    }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm4::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+
+{
+ 	if(Key==VK_DOWN||Key==VK_RIGHT)
+	{
+		Form4->Image4Click(this);
+	}
+	if(Key==VK_UP||VK_LEFT)
+	{
+		Form4->Image5Click(this);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm4::Button1Click(TObject *Sender)
+{
+WczytajObrazek();
 }
 //---------------------------------------------------------------------------
 

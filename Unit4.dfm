@@ -1,10 +1,12 @@
 object Form4: TForm4
   Left = 0
   Top = 0
-  Caption = 'Przegl'#261'darka obraz'#243'w'
+  Caption = 'Obrazy'
   ClientHeight = 411
-  ClientWidth = 709
+  ClientWidth = 643
   Color = clBtnFace
+  Constraints.MinHeight = 280
+  Constraints.MinWidth = 565
   UseDockManager = True
   DockSite = True
   DoubleBuffered = True
@@ -14,55 +16,42 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  ScreenSnap = True
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
-  object Image1: TImage
-    Left = 0
-    Top = 63
-    Width = 552
-    Height = 328
-    Hint = 'Prawy przycisk myszy - opcje obrazka'
-    Align = alClient
-    AutoSize = True
-    Center = True
-    ParentShowHint = False
-    PopupMenu = PopupMenu1
-    ShowHint = True
-    Transparent = True
-    ExplicitLeft = -6
-    ExplicitTop = 62
-    ExplicitWidth = 430
-    ExplicitHeight = 265
-  end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 709
+    Width = 643
     Height = 63
     Hint = 'Panel g'#243'rny'
     Align = alTop
-    AutoSize = True
+    DockSite = True
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
+    ExplicitTop = -6
+    ExplicitWidth = 654
     DesignSize = (
-      709
+      643
       63)
     object Label10: TLabel
-      Left = 52
-      Top = 16
-      Width = 246
+      Left = 62
+      Top = 15
+      Width = 79
       Height = 35
-      Caption = 'Przegl'#261'darka obraz'#243'w'
+      Caption = 'Obrazy'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 35
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      Layout = tlCenter
     end
     object Image2: TImage
       Left = 0
@@ -99,39 +88,8 @@ object Form4: TForm4
         A24F1138ECEBC6275300A6D50F1CF481E9E4267853BD40B7B0ED0F1C85260F80
         B73C00DEF20078EB3731A22E4086FE35930000000049454E44AE426082}
     end
-    object Image3: TImage
-      Left = 652
-      Top = 1
-      Width = 57
-      Height = 56
-      Hint = 'Wczytaj obrazek'
-      Anchors = [akTop, akRight]
-      Center = True
-      ParentShowHint = False
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
-        003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000001
-        D04944415478DAEDD93D4BC3401807F0E7FAA2B555B458719188255A3B68A543
-        D1C1769058075F68555C44C46F20829FC0DD2FA25004075B37C1D95141EDE02A
-        8A7592A63DEF091444149A6B5E2EE5FE4BE810F2FC12FEB9D023E0F110B70790
-        00B327549EA8023EFD142864D9CF988DB3BD120A373A6D1CAFA8A1474B00383C
-        21FA1D0588DA38F8EF01DF1BCD402AAF9297CE01D5FA39BBF345A7866F85DDB0
-        B3E57870BB73C073BDC60E034E03583EB47870C80A00756178230CF0E7AC1220
-        011220015D08B8BE7880A5D529203EEB3EB51C059C1C956162721836F7662114
-        0E7A138089C6FA60E7200DB1D1883701187C02F824F0897812605C8475415B4B
-        4026AB7813D04A7A610CF2C524F839CA2D0400C35B6ED3805CE1D2B6773E4FB9
-        850260CC965B3880717113E51616802BF67C6EDC7B8070A407B6F653A0C4DBFB
-        7F40280096174B8C656E37C2BC46D5E408147667A0371430851602905954405B
-        4F707DA5BA0AC0951757605C8979E31AC06C598502F0945518006F598500944B
-        F7DC6515026047244002244002BA03F0C90EFD2ECC5F6380412B002576D8707A
-        7ACB36F9AEAA5FD37EEABB75729B95E5ADD90CCC59B2CD8AF9B1D1AD81BD3B96
-        B8235A61C31FFE373C1740B44880DBF906251CF531E9274E530000000049454E
-        44AE426082}
-      ShowHint = True
-      OnClick = Image3Click
-    end
     object Image4: TImage
-      Left = 497
+      Left = 349
       Top = 2
       Width = 55
       Height = 55
@@ -155,9 +113,10 @@ object Form4: TForm4
         6980EC344076E401EF2F60B031DDB791860000000049454E44AE426082}
       Transparent = True
       OnClick = Image4Click
+      ExplicitLeft = 360
     end
     object Image5: TImage
-      Left = 443
+      Left = 293
       Top = 2
       Width = 55
       Height = 55
@@ -182,9 +141,10 @@ object Form4: TForm4
         D100EA68007534803AEC013F2E977D3162B760580000000049454E44AE426082}
       Transparent = True
       OnClick = Image5Click
+      ExplicitLeft = 304
     end
     object Image6: TImage
-      Left = 568
+      Left = 425
       Top = 2
       Width = 55
       Height = 55
@@ -225,10 +185,28 @@ object Form4: TForm4
         0049454E44AE426082}
       Proportional = True
       OnClick = Image6Click
+      ExplicitLeft = 436
+    end
+    object Button1: TButton
+      Left = 486
+      Top = 1
+      Width = 157
+      Height = 62
+      Anchors = [akTop, akRight]
+      Caption = 'Wczytaj obraz'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 24
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button1Click
+      ExplicitLeft = 497
     end
   end
   object ListBox1: TListBox
-    Left = 552
+    Left = 486
     Top = 63
     Width = 157
     Height = 328
@@ -246,11 +224,12 @@ object Form4: TForm4
     TabOrder = 1
     Visible = False
     OnClick = ListBox1Click
+    ExplicitLeft = 497
   end
   object Panel2: TPanel
     Left = 0
     Top = 391
-    Width = 709
+    Width = 643
     Height = 20
     Align = alBottom
     Alignment = taLeftJustify
@@ -258,27 +237,39 @@ object Form4: TForm4
       'Kliknij prawym przyciskiem myszy na obrazku, by wy'#347'wietli'#263' wi'#281'ce' +
       'j opcji'
     TabOrder = 2
+    ExplicitWidth = 654
   end
-  object PopupMenu1: TPopupMenu
-    MenuAnimation = [maTopToBottom]
-    Left = 312
-    Top = 80
-    object Wyrodkujobrazek1: TMenuItem
-      Caption = 'Ustaw obrazek na '#347'rodku'
-      Checked = True
-      OnClick = Wyrodkujobrazek1Click
-    end
-    object Proportional1: TMenuItem
-      Caption = 'Rozci'#261'gnij obrazek (wype'#322'nij okno)'
-      Checked = True
-      OnClick = Proportional1Click
-    end
-    object Rozcignijobrazek1: TMenuItem
-      Caption = 'Dopasuj do rozmiar'#243'w okna'
-      OnClick = Rozcignijobrazek1Click
-    end
-    object N1: TMenuItem
-      Caption = '-'
+  object ScrollBox1: TScrollBox
+    Left = 0
+    Top = 63
+    Width = 486
+    Height = 328
+    HorzScrollBar.Smooth = True
+    HorzScrollBar.Tracking = True
+    VertScrollBar.Smooth = True
+    VertScrollBar.Tracking = True
+    Align = alClient
+    BorderStyle = bsNone
+    DockSite = True
+    DoubleBuffered = True
+    ParentDoubleBuffered = False
+    TabOrder = 3
+    OnMouseWheelDown = ScrollBox1MouseWheelDown
+    OnMouseWheelUp = ScrollBox1MouseWheelUp
+    ExplicitWidth = 497
+    object Image1: TImage
+      Left = 11
+      Top = 13
+      Width = 480
+      Height = 300
+      Hint = 'Prawy przycisk myszy - opcje obrazka'
+      AutoSize = True
+      Center = True
+      IncrementalDisplay = True
+      ParentShowHint = False
+      PopupMenu = PopupMenu1
+      ShowHint = True
+      Transparent = True
     end
   end
   object OpenDialog1: TOpenDialog
@@ -286,7 +277,15 @@ object Form4: TForm4
       'Wszystkie pliki|*.*|Obrazy o du'#380'ej dok'#322'adno'#347'ci (PNG)|*.png|Obraz' +
       'y o ma'#322'ej wielko'#347'ci pliku (JPG)|*.jpg'
     Title = 'Wczytywanie obrazka'
-    Left = 384
-    Top = 79
+    Left = 304
+    Top = 103
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 400
+    Top = 103
+    object Dopasujdookna1: TMenuItem
+      Caption = 'Dopasuj do okna'
+      OnClick = Dopasujdookna1Click
+    end
   end
 end

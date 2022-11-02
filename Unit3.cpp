@@ -9,14 +9,14 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm3 *Form3;
+int protecttime=0;
 //---------------------------------------------------------------------------
 __fastcall TForm3::TForm3(TComponent* Owner)
 	: TForm(Owner)
 {
 Application->HintHidePause = 10000;
-otwarto="nie";
-pauza="nie";
-
+opened="nie";
+pause="nie";
 
 }
 //---------------------------------------------------------------------------
@@ -30,7 +30,7 @@ pauza="nie";
 
 void __fastcall TForm3::FormActivate(TObject *Sender)
 {
- if(otwarto=="tak")
+ if(opened=="tak")
    {
    Label1->Caption=ExtractFileName(MediaPlayer1->FileName);
    }
@@ -51,12 +51,13 @@ void __fastcall TForm3::FormCreate(TObject *Sender)
 
 void __fastcall TForm3::Button3Click(TObject *Sender)
 {
-if(pauza=="nie")
+if(pause=="nie")
   {
 	try{
 	Timer2->Enabled = false;
 	MediaPlayer1->Pause();
-	pauza="tak";
+	pause="tak";
+	protecttime=0;
 	}
 	catch(...)
 	{
@@ -72,7 +73,7 @@ void __fastcall TForm3::Button4Click(TObject *Sender)
 	Timer2->Enabled=false;
 	MediaPlayer1->Enabled=false;
 	MediaPlayer1->Close();
-	otwarto="nie";
+	opened="nie";
 	PlayFile(ListBox1->ItemIndex);
 	}
 	catch(...)
@@ -85,12 +86,12 @@ void __fastcall TForm3::Button4Click(TObject *Sender)
 void __fastcall TForm3::Button5Click(TObject *Sender)
 {
 try{
-	if(pauza=="tak")
+	if(pause=="tak")
 	{
 	Timer2->Enabled = true;
 	MediaPlayer1->Play();
-	pauza="nie";
-    	otwarto="tak";
+	pause="nie";
+	opened="tak";
 	}
 }
 catch(...)
@@ -103,6 +104,30 @@ catch(...)
 void __fastcall TForm3::TrackBar1Change(TObject *Sender)
 {
 waveOutSetVolume(0, (TrackBar1->Position * 65536) + TrackBar1->Position);
+if(TrackBar1->Position==65535)
+{
+   if(Form8->protect==true)
+  {
+   TrackBar1->Position=40000;
+	if (Application->MessageBox(L"Czy na pewno chcesz aktywowaæ maksymaln¹ g³oœnoœæ programu?\n \nUpewnij siê, ¿e g³oœnoœæ ogólna systemu nie jest zbyt wysoka, aby nie naraziæ siê na uszkodzenie s³uchu.",L"Ostrze¿enie",MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
+	{
+	TrackBar1->Position=65530;
+	}
+	else
+	{
+    return;
+	}
+  }
+}
+	if(TrackBar1->Position>40000&&Form8->protect)
+	{
+     Timer1->Enabled=true;
+	}
+	else
+	{
+	 Timer1->Enabled=false;
+	 protecttime=0;
+    }
 }
 //---------------------------------------------------------------------------
 
@@ -126,11 +151,11 @@ Timer2->Enabled=false;
 		if(Lista->Count==1)
 		{
 		     //autoodtw pierwszego pliku
-			if(Form8->autoodtwarzanie=="tak"&&otwarto!="tak")
+			if(Form8->autoplay==true&&opened!="tak")
 			{
 			ListBox1->ItemIndex=0;
 			PlayFile(ListBox1->ItemIndex);
-			otwarto="tak";
+			opened="tak";
 			}
 		}
 	 }
@@ -164,24 +189,24 @@ void __fastcall TForm3::PlayFile(int index)
 {
 	try
 	{
-          	if(FileExists(Lista->Strings[index])==1)
+	    if(FileExists(Lista->Strings[index])==1)
    		{
 		MediaPlayer1->FileName = Lista->Strings[index];
 		MediaPlayer1->Open();
 		Label1->Caption=ExtractFileName(MediaPlayer1->FileName);
-		traypokaz=Label1->Caption;
+		trayshow=Label1->Caption;
 		MediaPlayer1->Enabled=true;
-		Timer2->Enabled = true;
 		ProgressBar1->Max = MediaPlayer1->Length;
 		MediaPlayer1->Play();
+		Timer2->Enabled = true;
 		Label3->Caption=FullTime();
-		pauza="nie";
-		otwarto="tak";
+		pause="nie";
+		opened="tak";
    		}
-                else
-                {
-                ShowMessage("Ten utwór zosta³ przeniesiony lub jest uszkodzony");
-                }
+		else
+		{
+		ShowMessage("Ten utwór zosta³ przeniesiony lub jest uszkodzony");
+		}
 
 	}
 	catch(...)
@@ -196,8 +221,8 @@ void __fastcall TForm3::Timer2Timer(TObject *Sender)
 	ProgressBar1->Position = MediaPlayer1->Position;
 	if(ProgressBar1->Position == MediaPlayer1->Length)
 	{
-	Timer2->Enabled = false;
-	   if(Form8->autoodtwarzanie=="tak")
+	   Timer2->Enabled = false;
+	   if(Form8->autoplay==true)
 	   {
 		if(ListBox1->ItemIndex < ListBox1->Items->Count - 1)
 		{
@@ -257,7 +282,7 @@ TrackBar1->Position=1;
 
 void __fastcall TForm3::Image4Click(TObject *Sender)
 {
-  if(Form8->ochrona==true)
+  if(Form8->protect==true)
   {
 	if (Application->MessageBox(L"Czy na pewno chcesz aktywowaæ maksymaln¹ g³oœnoœæ programu?\n \nUpewnij siê, ¿e g³oœnoœæ ogólna systemu nie jest zbyt wysoka, aby nie naraziæ siê na uszkodzenie s³uchu.",L"Ostrze¿enie",MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
 	{
@@ -276,7 +301,7 @@ void __fastcall TForm3::Button2Click(TObject *Sender)
  try
   {
   LoadFiles();
-  otwarto="tak";
+  opened="tak";
   }
   catch(...)
   {
@@ -287,10 +312,37 @@ void __fastcall TForm3::Button2Click(TObject *Sender)
 
 void __fastcall TForm3::FormShow(TObject *Sender)
 {
-	if(Form8->ochrona==true)
+	if(Form8->protect==true)
 	{
 	waveOutSetVolume(0, (TrackBar1->Position * 65536) + TrackBar1->Position);
 	}
 }
 //---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm3::Timer1Timer(TObject *Sender)
+{
+protecttime+=1;
+	if(protecttime>=300&&pause=="nie"&&opened=="tak")
+	{
+	 protecttime=0;
+	 if(Form8->windows_notifications)
+	 {
+	 TrayIcon1->Visible=true;
+	 TrayIcon1->BalloonHint="S³uchasz muzyki zbyt g³oœno. Rozwa¿ zmniejszenie g³oœnoœci odtwarzacza";
+	 TrayIcon1->BalloonTitle="Multi Note - Ochrona s³uchu";
+	 TrayIcon1->ShowBalloonHint();
+	 TrayIcon1->Visible=false;
+	 }
+	 else
+	 {
+      ShowMessage("S³uchasz muzyki zbyt g³oœno. Rozwa¿ zmniejszenie g³oœnoœci odtwarzacza");
+     }
+	}
+}
+//---------------------------------------------------------------------------
+
+
 
