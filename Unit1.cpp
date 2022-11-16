@@ -509,11 +509,29 @@ void __fastcall TForm1::Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shi
 
 
 //---------------------------------------------------------------------------
+void __fastcall TForm1::CheckBox1Click(TObject *Sender)
+{
+	if(CheckBox1->Checked)
+	{
+	Form8->letter_size=true;
+	}
+	else
+	{
+	Form8->letter_size=false;
+	}
+}
+//---------------------------------------------------------------------------
 
-
-
-
-
-
-
+void __fastcall TForm1::CheckBox2Click(TObject *Sender)
+{
+	if(CheckBox2->Checked)
+	{
+	Form8->whole_word=true;
+	}
+	else
+	{
+	Form8->whole_word=false;
+	}
+}
+//---------------------------------------------------------------------------
 

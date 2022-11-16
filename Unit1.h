@@ -80,6 +80,9 @@ __published:	// IDE-managed Components
 	TButton *Button2;
 	TMenuItem *Podwjny1;
 	TMenuItem *Potrjny1;
+	TLabel *Label1;
+	TCheckBox *CheckBox1;
+	TCheckBox *CheckBox2;
 	void __fastcall Oprogramie1Click(TObject *Sender);
 	void __fastcall Nowyplik1Click(TObject *Sender);
 	void __fastcall WyczMultiNote1Click(TObject *Sender);
@@ -124,6 +127,8 @@ __published:	// IDE-managed Components
 	void __fastcall Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 	void __fastcall Podwjny1Click(TObject *Sender);
 	void __fastcall Potrjny1Click(TObject *Sender);
+	void __fastcall CheckBox1Click(TObject *Sender);
+	void __fastcall CheckBox2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

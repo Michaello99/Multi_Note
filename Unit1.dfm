@@ -25,9 +25,9 @@ object Form1: TForm1
   TextHeight = 20
   object tresc: TRichEdit
     Left = 0
-    Top = 35
+    Top = 65
     Width = 672
-    Height = 349
+    Height = 319
     Align = alClient
     BevelInner = bvNone
     BevelOuter = bvNone
@@ -46,6 +46,7 @@ object Form1: TForm1
     TabOrder = 0
     WantTabs = True
     Zoom = 100
+    ExplicitTop = 59
   end
   object Panel1: TPanel
     Left = 0
@@ -68,15 +69,22 @@ object Form1: TForm1
     Left = 0
     Top = 0
     Width = 672
-    Height = 35
+    Height = 65
     Align = alTop
     Alignment = taLeftJustify
-    Caption = 'Tekst do wyszukania:'
+    ShowCaption = False
     TabOrder = 2
     Visible = False
     DesignSize = (
       672
-      35)
+      65)
+    object Label1: TLabel
+      Left = 8
+      Top = 7
+      Width = 136
+      Height = 20
+      Caption = 'Tekst do wyszukania:'
+    end
     object Edit1: TEdit
       Left = 152
       Top = 4
@@ -88,9 +96,9 @@ object Form1: TForm1
       OnKeyDown = Edit1KeyDown
     end
     object Button1: TButton
-      Left = 503
+      Left = 495
       Top = 3
-      Width = 82
+      Width = 81
       Height = 30
       Hint = 'Naciskaj kilka razy aby przechodzi'#263' do kolejnych wynik'#243'w'
       Anchors = [akTop, akRight]
@@ -102,14 +110,32 @@ object Form1: TForm1
       OnClick = Button1Click
     end
     object Button2: TButton
-      Left = 591
+      Left = 582
       Top = 3
-      Width = 75
+      Width = 83
       Height = 30
       Anchors = [akTop, akRight]
       Caption = 'Zamknij'
       TabOrder = 2
       OnClick = Button2Click
+    end
+    object CheckBox1: TCheckBox
+      Left = 8
+      Top = 38
+      Width = 201
+      Height = 21
+      Caption = 'Uwzgl'#281'dniaj wielko'#347#263' liter'
+      TabOrder = 3
+      OnClick = CheckBox1Click
+    end
+    object CheckBox2: TCheckBox
+      Left = 215
+      Top = 38
+      Width = 186
+      Height = 21
+      Caption = 'Szukaj jako ca'#322'e s'#322'owo'
+      TabOrder = 4
+      OnClick = CheckBox2Click
     end
   end
   object MainMenu1: TMainMenu

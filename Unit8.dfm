@@ -223,26 +223,13 @@ object Form8: TForm8
       Font.Style = []
       ParentFont = False
     end
-    object Label13: TLabel
-      Left = 3
-      Top = 287
-      Width = 220
-      Height = 30
-      Caption = 'Wyszukiwanie w tek'#347'cie'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 30
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label14: TLabel
-      Left = 27
-      Top = 551
-      Width = 226
+      Left = 144
+      Top = 438
+      Width = 30
       Height = 15
       Alignment = taCenter
-      Caption = 'Wi'#281'cej mo'#380'liwo'#347'ci personalizacji wkr'#243'tce :)'
+      Caption = '------'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 15
@@ -252,7 +239,7 @@ object Form8: TForm8
     end
     object Label6: TLabel
       Left = 3
-      Top = 373
+      Top = 287
       Width = 207
       Height = 30
       Caption = 'Integracja z systemem'
@@ -365,43 +352,9 @@ object Form8: TForm8
       TabOrder = 4
       OnClick = CheckBox7Click
     end
-    object CheckBox9: TCheckBox
-      Left = 3
-      Top = 348
-      Width = 242
-      Height = 19
-      Caption = 'Szukaj jako ca'#322'e s'#322'owo'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 20
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 5
-      OnClick = CheckBox9Click
-    end
-    object CheckBox8: TCheckBox
-      Left = 3
-      Top = 323
-      Width = 242
-      Height = 19
-      Caption = 'Uwzgl'#281'dniaj wielko'#347#263' liter'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 20
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 6
-      OnClick = CheckBox8Click
-    end
     object CheckBox10: TCheckBox
       Left = 3
-      Top = 409
+      Top = 323
       Width = 286
       Height = 19
       Hint = 
@@ -418,12 +371,12 @@ object Form8: TForm8
       ParentShowHint = False
       ShowHint = True
       State = cbChecked
-      TabOrder = 7
+      TabOrder = 5
       OnClick = CheckBox10Click
     end
     object CheckBox11: TCheckBox
       Left = 3
-      Top = 434
+      Top = 348
       Width = 262
       Height = 19
       Hint = 
@@ -440,7 +393,7 @@ object Form8: TForm8
       ParentShowHint = False
       ShowHint = True
       State = cbChecked
-      TabOrder = 8
+      TabOrder = 6
       OnClick = CheckBox11Click
     end
   end

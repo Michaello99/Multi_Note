@@ -84,33 +84,9 @@ void __fastcall TForm8::CheckBox7Click(TObject *Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TForm8::CheckBox9Click(TObject *Sender)
-{
-	if(CheckBox9->Checked)
-	{
-	whole_word=true;
-	}
-	else
-	{
-	whole_word=false;
-	}
-}
-//---------------------------------------------------------------------------
 
 
 
-void __fastcall TForm8::CheckBox8Click(TObject *Sender)
-{
-	if(CheckBox8->Checked)
-	{
-	letter_size=true;
-	}
-	else
-	{
-	letter_size=false;
-	}
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TForm8::ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift,
           TPoint &MousePos, bool &Handled)
@@ -133,8 +109,8 @@ CheckBox2->Checked=Ini->ReadBool("Ustawienia", "autoodtwarzanie", true);
 CheckBox7->Checked=Ini->ReadBool("Ustawienia","ochronasluchu",true);
 CheckBox3->Checked=Ini->ReadBool("Ustawienia","czyscskladnik",true);
 CheckBox4->Checked=Ini->ReadBool("Ustawienia","autolistaobrazow",true);
-CheckBox8->Checked=Ini->ReadBool("Ustawienia","wielkoscliter",false);
-CheckBox9->Checked=Ini->ReadBool("Ustawienia","caleslowa",false);
+Form1->CheckBox1->Checked=Ini->ReadBool("Ustawienia","wielkoscliter",false);
+Form1->CheckBox2->Checked=Ini->ReadBool("Ustawienia","caleslowa",false);
 CheckBox10->Checked=Ini->ReadBool("Ustawienia","interaktywnaikona",true);
 CheckBox11->Checked=Ini->ReadBool("Ustawienia","powiadomieniawysuwane",true);
 	try{
@@ -157,8 +133,8 @@ Ini->WriteBool("Ustawienia", "autoodtwarzanie", CheckBox2->Checked);
 Ini->WriteBool("Ustawienia","ochronasluchu", CheckBox7->Checked);
 Ini->WriteBool("Ustawienia","czyscskladnik", CheckBox3->Checked);
 Ini->WriteBool("Ustawienia","autolistaobrazow", CheckBox4->Checked);
-Ini->WriteBool("Ustawienia","wielkoscliter", CheckBox8->Checked);
-Ini->WriteBool("Ustawienia","caleslowa", CheckBox9->Checked);
+Ini->WriteBool("Ustawienia","wielkoscliter", Form1->CheckBox1->Checked);
+Ini->WriteBool("Ustawienia","caleslowa", Form1->CheckBox2->Checked);
 Ini->WriteBool("Ustawienia","adaptacyjnypedzel", CheckBox6->Checked);
 Ini->WriteBool("Ustawienia","interaktywnaikona", CheckBox10->Checked);
 Ini->WriteBool("Ustawienia","powiadomieniawysuwane", CheckBox11->Checked);
@@ -191,9 +167,6 @@ void __fastcall TForm8::CheckBox11Click(TObject *Sender)
     }
 }
 //---------------------------------------------------------------------------
-
-
-
 
 
 void __fastcall TForm8::Button1Click(TObject *Sender)

@@ -30,10 +30,7 @@ __published:	// IDE-managed Components
 	TCheckBox *CheckBox6;
 	TLabel *Label4;
 	TCheckBox *CheckBox7;
-	TLabel *Label13;
-	TCheckBox *CheckBox9;
 	TLabel *Label14;
-	TCheckBox *CheckBox8;
 	TLabel *Label6;
 	TCheckBox *CheckBox10;
 	TCheckBox *CheckBox11;
@@ -52,8 +49,6 @@ __published:	// IDE-managed Components
 	void __fastcall CheckBox2Click(TObject *Sender);
 	void __fastcall CheckBox6Click(TObject *Sender);
 	void __fastcall CheckBox7Click(TObject *Sender);
-	void __fastcall CheckBox9Click(TObject *Sender);
-	void __fastcall CheckBox8Click(TObject *Sender);
 	void __fastcall ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift, TPoint &MousePos,
           bool &Handled);
 	void __fastcall ScrollBox1MouseWheelUp(TObject *Sender, TShiftState Shift, TPoint &MousePos,

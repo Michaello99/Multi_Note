@@ -666,10 +666,23 @@ object Form2: TForm2
     end
     object Label7: TLabel
       Left = 3
-      Top = 39
-      Width = 176
+      Top = 38
+      Width = 268
       Height = 15
-      Caption = '3. Przegl'#261'darka obraz'#243'w = obrazy'
+      Caption = '3. Przegl'#261'darka obraz'#243'w [zmiana nazwy] -> Obrazy'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 3
+      Top = 55
+      Width = 207
+      Height = 15
+      Caption = '4. Opcje wyszukiwania '#322'atwiej dost'#281'pne'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
