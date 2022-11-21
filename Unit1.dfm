@@ -46,7 +46,6 @@ object Form1: TForm1
     TabOrder = 0
     WantTabs = True
     Zoom = 100
-    ExplicitTop = 59
   end
   object Panel1: TPanel
     Left = 0
@@ -373,6 +372,12 @@ object Form1: TForm1
     Visible = True
     OnClick = TrayIcon1Click
     Left = 440
+    Top = 72
+  end
+  object Timer1: TTimer
+    Interval = 2000
+    OnTimer = Timer1Timer
+    Left = 496
     Top = 72
   end
 end

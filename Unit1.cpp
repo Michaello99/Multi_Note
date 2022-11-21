@@ -24,6 +24,7 @@ using namespace std;
 TForm1 *Form1;
 AnsiString name_without_path;
 unsigned int number_of_line;
+bool file_opened = false;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
@@ -35,6 +36,7 @@ try
   nazwapliku=ParamStr(1);
   name_without_path=ExtractFileName(ParamStr(1));
   Form1->Caption="Multi Note - "+name_without_path;
+  file_opened = true;
  }
  catch(...)
  {
@@ -56,6 +58,7 @@ void __fastcall TForm1::Nowyplik1Click(TObject *Sender)
 		tresc->Lines->Clear();
 		nazwapliku="";
 		Form1->Caption="Multi Note";
+        file_opened = false;
 		}
 }
 //---------------------------------------------------------------------------
@@ -78,10 +81,12 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
    nazwapliku=OpenDialog1->FileName;
    name_without_path=ExtractFileName(OpenDialog1->FileName);
    Form1->Caption="Multi Note - "+name_without_path;
+   file_opened = true;
    }
    catch (...)
    {
    ShowMessage("B³¹d otwarcia pliku :(");
+   Form2->event_console->Items->Add("Otwieranie pliku: B³¹d");
    }
  }
 }
@@ -92,7 +97,8 @@ void __fastcall TForm1::Zapiszjakonowy1Click(TObject *Sender)
 	   if (SaveDialog1->Execute())
 		{
 
-		try{          //automatyczne dopisywanie rozszerzeñ
+		try
+		{          //automatyczne dopisywanie rozszerzeñ
 			if( SaveDialog1->FilterIndex == 1 )
 			{
 			tresc->PlainText=true;
@@ -112,9 +118,11 @@ void __fastcall TForm1::Zapiszjakonowy1Click(TObject *Sender)
 			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".html";
             tresc->PlainText=false;
 			}
-			}
+            file_opened = true;
+		}
 		catch (...)
 			{
+            Form2->event_console->Items->Add("Zapisywanie jako nowy plik: B³¹d");
 			ShowMessage("Zapis pliku niemo¿liwy :(");
 			}
 		}
@@ -127,12 +135,11 @@ void __fastcall TForm1::Nadpiszbiecerdo1Click(TObject *Sender)
         {     try
               {
               tresc->Lines->SaveToFile(nazwapliku);
-
               }
               catch(...)
               {
               ShowMessage("B³¹d nadpisywania pliku :(");
-
+              Form2->event_console->Items->Add("Nadpisywanie: B³¹d");
               }
         }
         else     //Jeœli plik jeszcze nie ma nazwy(nie istnieje)
@@ -532,6 +539,22 @@ void __fastcall TForm1::CheckBox2Click(TObject *Sender)
 	{
 	Form8->whole_word=false;
 	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+	try
+	{
+		if(file_opened){                         //autosave
+		tresc->Lines->SaveToFile(nazwapliku);
+		}
+	}
+	catch(...){
+    Form2->event_console->Items->Add("Autozapis: B³¹d");
+	}
+
 }
 //---------------------------------------------------------------------------
 

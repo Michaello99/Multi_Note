@@ -83,6 +83,7 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TCheckBox *CheckBox1;
 	TCheckBox *CheckBox2;
+	TTimer *Timer1;
 	void __fastcall Oprogramie1Click(TObject *Sender);
 	void __fastcall Nowyplik1Click(TObject *Sender);
 	void __fastcall WyczMultiNote1Click(TObject *Sender);
@@ -129,12 +130,14 @@ __published:	// IDE-managed Components
 	void __fastcall Potrjny1Click(TObject *Sender);
 	void __fastcall CheckBox1Click(TObject *Sender);
 	void __fastcall CheckBox2Click(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
     AnsiString nazwapliku="";
 	int width  = Screen->Width; // mierzy szerokoœæ ekranu.
 	int height = Screen->Height; // mierzy wysokoœæ ekranu
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

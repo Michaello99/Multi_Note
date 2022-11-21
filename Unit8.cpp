@@ -133,8 +133,6 @@ Ini->WriteBool("Ustawienia", "autoodtwarzanie", CheckBox2->Checked);
 Ini->WriteBool("Ustawienia","ochronasluchu", CheckBox7->Checked);
 Ini->WriteBool("Ustawienia","czyscskladnik", CheckBox3->Checked);
 Ini->WriteBool("Ustawienia","autolistaobrazow", CheckBox4->Checked);
-Ini->WriteBool("Ustawienia","wielkoscliter", Form1->CheckBox1->Checked);
-Ini->WriteBool("Ustawienia","caleslowa", Form1->CheckBox2->Checked);
 Ini->WriteBool("Ustawienia","adaptacyjnypedzel", CheckBox6->Checked);
 Ini->WriteBool("Ustawienia","interaktywnaikona", CheckBox10->Checked);
 Ini->WriteBool("Ustawienia","powiadomieniawysuwane", CheckBox11->Checked);
@@ -162,9 +160,10 @@ void __fastcall TForm8::CheckBox11Click(TObject *Sender)
 	{
 	windows_notifications = true;
 	}
-	else{
+	else
+	{
 	windows_notifications = false;
-    }
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -186,6 +185,19 @@ ShellExecuteA(NULL, _NULL, LPCSTR("mailto:michaello99@op.pl"), NULL, NULL, SW_SH
 void __fastcall TForm8::Label2DblClick(TObject *Sender)
 {
 Form8->ScrollBox1->Enabled=true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox1Click(TObject *Sender)
+{
+	if(CheckBox1->Checked)
+	{
+	autosave = true;
+	}
+	else
+	{
+	autosave = false;
+	}
 }
 //---------------------------------------------------------------------------
 

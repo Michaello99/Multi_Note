@@ -2,20 +2,17 @@
 File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\include\windows\vcl\Vcl.Controls.hpp',0,4,1843,82,1856,0,0,,
 
 [Modules]
-Module0=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
-Module1=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
-Module2=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp
+Module0=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
+Module1=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp
+Module2=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
 Module3=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp
-Module4=default.htm
-Module5=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp
-Module6=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp
-Module7=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit5.cpp
-Module8=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp
+Module4=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp
+Module5=default.htm
+Module6=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp
+Module7=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp
+Module8=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit5.cpp
 Count=9
 EditWindowCount=1
-
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp]
-ModuleType=TSourceModule
 
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp]
 ModuleType=TSourceModule
@@ -23,27 +20,30 @@ ModuleType=TSourceModule
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp]
 ModuleType=TSourceModule
 
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp]
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp]
 ModuleType=TSourceModule
 
-[default.htm]
-ModuleType=TURLModule
-
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp]
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp]
 ModuleType=TSourceModule
 
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp]
 ModuleType=TSourceModule
 
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit5.cpp]
-ModuleType=TSourceModule
+[default.htm]
+ModuleType=TURLModule
 
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp]
 ModuleType=TSourceModule
 
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp]
+ModuleType=TSourceModule
+
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit5.cpp]
+ModuleType=TSourceModule
+
 [EditWindow0]
 ViewCount=9
-CurrentEditView=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
+CurrentEditView=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
 View0=0
 View1=1
 View2=2
@@ -89,20 +89,20 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
-CursorX=31
-CursorY=532
-TopLine=506
+CursorX=41
+CursorY=41
+TopLine=472
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=Borland.FormDesignerView
+EditViewName=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
 
 [View2]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp
 CursorX=1
 CursorY=45
-TopLine=44
+TopLine=29
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -144,9 +144,9 @@ EditViewName=Borland.FormDesignerView
 [View6]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp
-CursorX=31
-CursorY=26
-TopLine=16
+CursorX=48
+CursorY=19
+TopLine=10
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -166,13 +166,13 @@ EditViewName=Borland.FormDesignerView
 [View8]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
-CursorX=1
-CursorY=89
-TopLine=100
+CursorX=6
+CursorY=199
+TopLine=181
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
+EditViewName=Borland.FormDesignerView
 
 [Watches]
 Count=0
@@ -256,7 +256,7 @@ Visible=0
 Docked=1
 State=0
 Left=0
-Top=28
+Top=0
 Width=2767
 Height=1417
 MaxLeft=-1
@@ -309,8 +309,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Align,
-ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,CustomTitleBar=0,Brush=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Pen=1,Touch=0,BevelEdges=0,Font=0
+SelectedItem=Name,
+ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,CustomTitleBar=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Touch=0,BevelEdges=0,Font=0,StyleElements=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -748,7 +748,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1713
 ClientHeight=8167
-TBDockHeight=6306
+TBDockHeight=8167
 LRDockWidth=1713
 Dockable=1
 StayOnTop=0

@@ -39,7 +39,7 @@ object Form2: TForm2
     Left = 0
     Top = 49
     Width = 273
-    Height = 319
+    Height = 263
     Align = alLeft
     Center = True
     IncrementalDisplay = True
@@ -515,7 +515,7 @@ object Form2: TForm2
       2302A204628235ACB1BFFFFDEF9285D2D3D363A38BB70F0F4B937D8B9A9A1AB6
       3E1846C3C0C08024086EB73B448211ECE8E808412CFEF6B7BF8564833D13A2A1
       E4FF0367154B035AC335450000000049454E44AE426082}
-    ExplicitHeight = 248
+    ExplicitHeight = 272
   end
   object Label1: TLabel
     Left = 368
@@ -537,7 +537,7 @@ object Form2: TForm2
     Width = 106
     Height = 30
     Alignment = taCenter
-    Caption = 'Wersja 14.1'
+    Caption = 'Wersja 14.2'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
@@ -629,7 +629,7 @@ object Form2: TForm2
     Left = 279
     Top = 148
     Width = 310
-    Height = 212
+    Height = 220
     VertScrollBar.Smooth = True
     VertScrollBar.Tracking = True
     BevelOuter = bvNone
@@ -641,9 +641,9 @@ object Form2: TForm2
     object Label4: TLabel
       Left = 3
       Top = 3
-      Width = 259
+      Width = 281
       Height = 15
-      Caption = '1. Naprawiony b'#322#261'd ogranicze'#324' skalowania okien '
+      Caption = '1. Zwi'#281'kszone bezpiecze'#324'stwo przy otwieraniu plik'#243'w'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -651,44 +651,15 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
-    object Label5: TLabel
-      Left = 3
-      Top = 21
-      Width = 260
-      Height = 15
-      Caption = '2. Mo'#380'liwo'#347#263' przypisania programu do rozszerze'#324
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label7: TLabel
-      Left = 3
-      Top = 38
-      Width = 268
-      Height = 15
-      Caption = '3. Przegl'#261'darka obraz'#243'w [zmiana nazwy] -> Obrazy'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label8: TLabel
-      Left = 3
-      Top = 55
-      Width = 207
-      Height = 15
-      Caption = '4. Opcje wyszukiwania '#322'atwiej dost'#281'pne'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
+  end
+  object event_console: TListBox
+    Left = 0
+    Top = 312
+    Width = 597
+    Height = 56
+    Align = alBottom
+    ItemHeight = 13
+    TabOrder = 2
+    Visible = False
   end
 end
