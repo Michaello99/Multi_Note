@@ -4,12 +4,12 @@ File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\include\win
 [Modules]
 Module0=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
 Module1=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
-Module2=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp
-Module3=default.htm
-Module4=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp
-Module5=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp
-Module6=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp
-Module7=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp
+Module2=default.htm
+Module3=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp
+Module4=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp
+Module5=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp
+Module6=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp
+Module7=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp
 Module8=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit5.cpp
 Count=9
 EditWindowCount=1
@@ -18,9 +18,6 @@ EditWindowCount=1
 ModuleType=TSourceModule
 
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp]
-ModuleType=TSourceModule
-
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp]
 ModuleType=TSourceModule
 
 [default.htm]
@@ -32,10 +29,13 @@ ModuleType=TSourceModule
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp]
 ModuleType=TSourceModule
 
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp]
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp]
 ModuleType=TSourceModule
 
-[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit4.cpp]
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit7.cpp]
+ModuleType=TSourceModule
+
+[C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit3.cpp]
 ModuleType=TSourceModule
 
 [C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit5.cpp]
@@ -71,13 +71,13 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1896
 LeftPanelClients=PropertyInspector
-LeftPanelData=00000800010100000000C90D0000000000000168070000000000000100000000841800001100000050726F7065727479496E73706563746F72FFFFFFFF
-RightPanelSize=1713
+LeftPanelData=000008000101000000009E110000000000000168070000000000000100000000551F00001100000050726F7065727479496E73706563746F72FFFFFFFF
+RightPanelSize=1999
 RightPanelClients=DockSite2,DockSite3
-RightPanelData=0000080001010100000009000000446F636B5369746532C90D00000000000001B10600000000000001000000008418000009000000446F636B5369746533FFFFFFFF
-BottomPanelSize=1641
+RightPanelData=0000080001010100000009000000446F636B53697465339E1100000000000001CF070000000000000100000000551F000009000000446F636B5369746532FFFFFFFF
+BottomPanelSize=0
 BottomPanelClients=MessageView,DockSite1
-BottomPanelData=0000080001020100000009000000446F636B5369746531AA440000000000000269060000000000000100000000AA4400000F0000004D65737361676556696577466F726DFFFFFFFF
+BottomPanelData=000008000102020000000F0000004D65737361676556696577466F726D09000000446F636B53697465311534000000000000022806000000000000FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779A1D00000000000002F806000000000000FFFFFFFF
@@ -89,9 +89,9 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit1.cpp
-CursorX=31
-CursorY=532
-TopLine=509
+CursorX=41
+CursorY=41
+TopLine=442
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -102,7 +102,7 @@ CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit2.cpp
 CursorX=1
 CursorY=45
-TopLine=44
+TopLine=29
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -144,9 +144,9 @@ EditViewName=Borland.FormDesignerView
 [View6]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit6.cpp
-CursorX=31
-CursorY=26
-TopLine=16
+CursorX=48
+CursorY=19
+TopLine=10
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -166,13 +166,13 @@ EditViewName=Borland.FormDesignerView
 [View8]
 CustomEditViewType=TEditView
 Module=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
-CursorX=69
-CursorY=135
-TopLine=103
+CursorX=6
+CursorY=199
+TopLine=181
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\micha\Desktop\Moje pliki\Moje programy C++\Multi Note odzysk\Unit8.cpp
+EditViewName=Borland.FormDesignerView
 
 [Watches]
 Count=0
@@ -252,18 +252,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=28
-Width=9883
-Height=1361
+Top=0
+Width=2767
+Height=1417
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=9883
-ClientHeight=1361
-TBDockHeight=1361
+ClientWidth=2767
+ClientHeight=1417
+TBDockHeight=1417
 LRDockWidth=2767
 Dockable=1
 StayOnTop=0
@@ -296,11 +296,11 @@ State=0
 Left=0
 Top=28
 Width=1896
-Height=6306
+Height=8167
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1896
-ClientHeight=6306
+ClientHeight=8167
 TBDockHeight=9014
 LRDockWidth=1896
 Dockable=1
@@ -309,8 +309,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,CustomTitleBar=0
+SelectedItem=Hint,
+ExpandedItems=Anchors=0,Constraints=0,Font=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,StyleElements=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -627,12 +627,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1713
-Height=6306
+Width=1999
+Height=9014
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1713
-ClientHeight=6306
+ClientWidth=1999
+ClientHeight=9014
 TBDockHeight=3681
 LRDockWidth=1896
 Dockable=1
@@ -713,7 +713,7 @@ HostDockSite=DockRightPanel
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
 Left=0
@@ -737,19 +737,19 @@ HostDockSite=DockRightPanel
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
-Left=0
-Top=28
-Width=1713
-Height=6306
+Left=8
+Top=8
+Width=1999
+Height=9014
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1713
-ClientHeight=6306
-TBDockHeight=8167
-LRDockWidth=1713
+ClientWidth=1999
+ClientHeight=9014
+TBDockHeight=9014
+LRDockWidth=1999
 Dockable=1
 StayOnTop=0
 TabPosition=1

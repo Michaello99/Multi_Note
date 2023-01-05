@@ -43,6 +43,7 @@ object Form7: TForm7
     Align = alTop
     DockSite = True
     DoubleBuffered = True
+    FullRepaint = False
     ParentDoubleBuffered = False
     ParentShowHint = False
     ShowHint = True
@@ -204,55 +205,21 @@ object Form7: TForm7
       OnClick = Image2Click
       ExplicitLeft = 592
     end
-    object Image5: TImage
-      Left = 545
-      Top = 0
-      Width = 50
-      Height = 50
-      Hint = 'Zmie'#324' grubo'#347#263' p'#281'dzla'
-      Anchors = [akTop, akRight]
-      Center = True
-      IncrementalDisplay = True
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
-        003008060000005702F98700000006624B474400FF00FF00FFA0BDA793000000
-        714944415478DAEDD531158030100451A2063B11812C44C44ED4849602AA14F3
-        F6DE4C7BCDFEEADA115EA30708A00708A00708A00708A00708F83BDCE758F4B8
-        77D7EC9F5BEB0252124027804E005DDD3F2040C0262025017402E804D0D5FD03
-        0204080807A424804E009D003A017402E81E7A9230317A3BFB45000000004945
-        4E44AE426082}
-      Proportional = True
-      OnClick = Image5Click
-      ExplicitLeft = 536
-    end
     object Label2: TLabel
-      Left = 436
-      Top = 18
-      Width = 83
-      Height = 13
+      Left = 221
+      Top = 13
+      Width = 106
+      Height = 20
       Caption = 'Grubo'#347#263' p'#281'dzla:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label3: TLabel
-      Left = 523
-      Top = 18
-      Width = 6
-      Height = 13
-      Caption = '2'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = 20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
     end
     object Image6: TImage
-      Left = 376
+      Left = 545
       Top = 0
       Width = 50
       Height = 50
@@ -295,7 +262,7 @@ object Form7: TForm7
       OnClick = Image6Click
     end
     object Image7: TImage
-      Left = 320
+      Left = 489
       Top = 0
       Width = 50
       Height = 50
@@ -336,6 +303,25 @@ object Form7: TForm7
         0049454E44AE426082}
       Proportional = True
       OnClick = Image7Click
+    end
+    object width_trackbar: TTrackBar
+      AlignWithMargins = True
+      Left = 333
+      Top = 8
+      Width = 144
+      Height = 30
+      Hint = 'Przeci'#261'gnij, by zmieni'#263' grubo'#347#263' p'#281'dzla'
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Max = 6
+      Min = 1
+      ParentShowHint = False
+      PageSize = 1
+      Position = 1
+      ShowHint = True
+      TabOrder = 0
+      OnChange = width_trackbarChange
+      ExplicitWidth = 150
+      ExplicitHeight = 36
     end
   end
   object SaveDialog1: TSaveDialog

@@ -16,7 +16,6 @@ object Form6: TForm6
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  ScreenSnap = True
   OnCreate = FormCreate
   DesignSize = (
     529
@@ -33,6 +32,7 @@ object Form6: TForm6
     AutoSize = True
     DockSite = True
     DoubleBuffered = True
+    FullRepaint = False
     ParentDoubleBuffered = False
     ParentShowHint = False
     ShowHint = True
@@ -103,6 +103,7 @@ object Form6: TForm6
     Height = 33
     Anchors = [akLeft, akTop, akRight]
     Caption = 'Data'
+    FullRepaint = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 20

@@ -16,7 +16,6 @@ object Form3: TForm3
   Font.Name = 'Segoe UI'
   Font.Style = []
   OldCreateOrder = False
-  ScreenSnap = True
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -194,6 +193,7 @@ object Form3: TForm3
     Hint = 'Panel g'#243'rny'
     Anchors = [akLeft, akTop, akRight]
     DockSite = True
+    FullRepaint = False
     ParentShowHint = False
     ShowCaption = False
     ShowHint = True
@@ -334,6 +334,8 @@ object Form3: TForm3
     Height = 21
     Align = alBottom
     Caption = 'Kliknij dwa razy plik na li'#347'cie odtwarzania, aby go odtworzy'#263' '
+    DockSite = True
+    FullRepaint = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 15

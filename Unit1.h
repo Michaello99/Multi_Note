@@ -134,7 +134,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
-    AnsiString nazwapliku="";
+    AnsiString file_name="";
 	int width  = Screen->Width; // mierzy szerokoœæ ekranu.
 	int height = Screen->Height; // mierzy wysokoœæ ekranu
 

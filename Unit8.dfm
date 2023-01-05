@@ -26,9 +26,9 @@ object Form8: TForm8
   object Label4: TLabel
     Left = 8
     Top = 62
-    Width = 182
+    Width = 221
     Height = 30
-    Caption = 'Ustawienia og'#243'lne'
+    Caption = 'Ustawienia Multi Note'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
@@ -57,6 +57,7 @@ object Form8: TForm8
     Height = 56
     Hint = 'Panel g'#243'rny'
     Align = alTop
+    FullRepaint = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
@@ -173,7 +174,7 @@ object Form8: TForm8
     OnMouseWheelUp = ScrollBox1MouseWheelUp
     object Label8: TLabel
       Left = 3
-      Top = 67
+      Top = 94
       Width = 109
       Height = 30
       Caption = 'Odtwarzacz'
@@ -186,7 +187,7 @@ object Form8: TForm8
     end
     object Label10: TLabel
       Left = 3
-      Top = 161
+      Top = 188
       Width = 92
       Height = 30
       Caption = 'Kalkulator'
@@ -199,7 +200,7 @@ object Form8: TForm8
     end
     object Label3: TLabel
       Left = 3
-      Top = 229
+      Top = 256
       Width = 66
       Height = 30
       Caption = 'Obrazy'
@@ -212,7 +213,7 @@ object Form8: TForm8
     end
     object Label12: TLabel
       Left = 3
-      Top = 290
+      Top = 341
       Width = 86
       Height = 30
       Caption = 'Rysownik'
@@ -225,7 +226,7 @@ object Form8: TForm8
     end
     object Label14: TLabel
       Left = 144
-      Top = 438
+      Top = 513
       Width = 30
       Height = 15
       Alignment = taCenter
@@ -239,7 +240,7 @@ object Form8: TForm8
     end
     object Label6: TLabel
       Left = 3
-      Top = 351
+      Top = 402
       Width = 207
       Height = 30
       Caption = 'Integracja z systemem'
@@ -265,7 +266,7 @@ object Form8: TForm8
     end
     object CheckBox2: TCheckBox
       Left = 3
-      Top = 103
+      Top = 130
       Width = 197
       Height = 24
       Hint = 
@@ -287,7 +288,7 @@ object Form8: TForm8
     end
     object CheckBox3: TCheckBox
       Left = 3
-      Top = 197
+      Top = 224
       Width = 214
       Height = 26
       Hint = 
@@ -308,7 +309,7 @@ object Form8: TForm8
     end
     object CheckBox4: TCheckBox
       Left = 3
-      Top = 265
+      Top = 292
       Width = 242
       Height = 19
       Hint = 'Gdy zaznaczone, lista pokazuje si'#281' i ukrywa automatycznie'
@@ -327,7 +328,7 @@ object Form8: TForm8
     end
     object CheckBox6: TCheckBox
       Left = 3
-      Top = 326
+      Top = 377
       Width = 242
       Height = 19
       Hint = 
@@ -347,7 +348,7 @@ object Form8: TForm8
     end
     object CheckBox7: TCheckBox
       Left = 3
-      Top = 131
+      Top = 158
       Width = 197
       Height = 24
       Hint = 'Ograniczenie gwa'#322'townych zmian g'#322'o'#347'no'#347'ci i zmniejszenie jej'
@@ -367,7 +368,7 @@ object Form8: TForm8
     end
     object CheckBox10: TCheckBox
       Left = 3
-      Top = 387
+      Top = 438
       Width = 286
       Height = 19
       Hint = 
@@ -389,12 +390,11 @@ object Form8: TForm8
     end
     object CheckBox11: TCheckBox
       Left = 3
-      Top = 412
+      Top = 463
       Width = 262
       Height = 19
-      Hint = 
-        'Umo'#380'liwia pokazywanie powiadomie'#324' Multi Note w centrum powiadomi' +
-        'e'#324' Windows'
+      Hint = 'Pozwala na pokazywanie powiadomie'#324' akcji Multi Note'
+      ParentCustomHint = False
       Caption = 'Pokazuj powiadomienia wysuwane'
       Checked = True
       Font.Charset = DEFAULT_CHARSET
@@ -415,10 +415,9 @@ object Form8: TForm8
       Width = 295
       Height = 19
       Hint = 
-        #377'r'#243'd'#322'o otwartego pliku jest automatycznie nadpisywany co jaki'#347' c' +
+        #377'r'#243'd'#322'o otwartego pliku jest automatycznie nadpisywane co jaki'#347' c' +
         'zas'
       Caption = 'Automatycznie nadpisuj '#378'r'#243'd'#322'o pliku'
-      Checked = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 20
@@ -427,9 +426,63 @@ object Form8: TForm8
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
-      State = cbChecked
       TabOrder = 7
       OnClick = CheckBox1Click
+    end
+    object CheckBox5: TCheckBox
+      Left = 3
+      Top = 69
+      Width = 295
+      Height = 19
+      Hint = 'Pojawia si'#281' panel z rozmiarem otwartego pliku'
+      Caption = 'Obliczanie rozmiaru otwieranego pliku'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 8
+      OnClick = CheckBox5Click
+    end
+    object CheckBox8: TCheckBox
+      Left = 3
+      Top = 488
+      Width = 262
+      Height = 19
+      Hint = 'Wype'#322'nia ekran oknem programu'
+      ParentCustomHint = False
+      Caption = 'Tryb pe'#322'noekranowy'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 9
+      OnClick = CheckBox8Click
+    end
+    object CheckBox9: TCheckBox
+      Left = 3
+      Top = 317
+      Width = 262
+      Height = 19
+      Hint = 'Obrazek wczytuje si'#281' szybciej kosztem jako'#347'ci'
+      Caption = 'Renderowanie cz'#281#347'ciowe'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 10
+      OnClick = CheckBox9Click
     end
   end
   object ScrollBox2: TScrollBox
@@ -460,9 +513,9 @@ object Form8: TForm8
     object Label7: TLabel
       Left = 3
       Top = 68
-      Width = 254
+      Width = 107
       Height = 20
-      Caption = '31 grudnia 2026 (wyd'#322'u'#380'one wsparcie)'
+      Caption = '31 grudnia 2026'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 20
@@ -530,6 +583,7 @@ object Form8: TForm8
       Top = 143
       Width = 265
       Height = 31
+      Hint = 'Skontaktuj si'#281' z zespo'#322'em wsparcia Multi Note'
       Caption = 'Uzyskaj wsparcie'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -537,6 +591,8 @@ object Form8: TForm8
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 0
       OnClick = Button2Click
     end
@@ -546,6 +602,7 @@ object Form8: TForm8
     Top = 339
     Width = 265
     Height = 45
+    Hint = 'Przejd'#378' do strony WWW pobierania Multi Note'
     Caption = 'Pobierz najnowsz'#261' wersj'#281' Multi Note'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

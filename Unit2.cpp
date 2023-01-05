@@ -43,3 +43,16 @@ ScrollBox1->VertScrollBar->Position-=10;
 
 
 
+void __fastcall TForm2::Image2DblClick(TObject *Sender)
+{
+	if(event_console->Visible)
+	{
+	event_console->Visible = false;
+	}
+	else
+	{
+	event_console->Visible = true;
+	}
+}
+//---------------------------------------------------------------------------
+

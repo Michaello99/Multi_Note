@@ -48,6 +48,9 @@ __published:	// IDE-managed Components
 	TLabel *Label16;
 	TLabel *Label13;
 	TCheckBox *CheckBox1;
+	TCheckBox *CheckBox5;
+	TCheckBox *CheckBox8;
+	TCheckBox *CheckBox9;
 	void __fastcall CheckBox2Click(TObject *Sender);
 	void __fastcall CheckBox6Click(TObject *Sender);
 	void __fastcall CheckBox7Click(TObject *Sender);
@@ -63,6 +66,9 @@ __published:	// IDE-managed Components
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Label2DblClick(TObject *Sender);
 	void __fastcall CheckBox1Click(TObject *Sender);
+	void __fastcall CheckBox5Click(TObject *Sender);
+	void __fastcall CheckBox8Click(TObject *Sender);
+	void __fastcall CheckBox9Click(TObject *Sender);
 
 private:	// User declarations
  void __fastcall CreateParams(TCreateParams &Params);
@@ -71,7 +77,8 @@ public:		// User declarations
 	bool autoplay = true;
 	bool adaptivedraw=false,protect=true,dynamic_form=true,letter_size=false,whole_word=false;
 	bool windows_notifications = true;
-    bool autosave = true;
+	bool autosave = false;
+	bool file_size_panel = false;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm8 *Form8;

@@ -95,20 +95,6 @@ void __fastcall TForm7::Image2Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm7::Image5Click(TObject *Sender)
-{
- 	if(Image1->Canvas->Pen->Width<=5)
-	{
-	Image1->Canvas->Pen->Width++;
-	Label3->Caption=Image1->Canvas->Pen->Width;
-	}
-	else
-	{
-	Image1->Canvas->Pen->Width=1;
-	Label3->Caption="1";
-	}
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TForm7::Image6Click(TObject *Sender)
 {
@@ -138,7 +124,7 @@ void __fastcall TForm7::Image7Click(TObject *Sender)
     }
     else if(Image1->Canvas->Brush->Color==clBlue)
     {
-     	Image1->Canvas->Brush->Color = clWhite;
+	Image1->Canvas->Brush->Color = clWhite;
 	Image1->Canvas->FillRect(TRect(0,0,Image1->Width,Image1->Height));
          if(Form8->adaptivedraw==true)
         {
@@ -148,4 +134,10 @@ void __fastcall TForm7::Image7Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm7::width_trackbarChange(TObject *Sender)
+{
+Image1->Canvas->Pen->Width = width_trackbar->Position;
+}
+//---------------------------------------------------------------------------
 

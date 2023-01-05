@@ -26,6 +26,7 @@ Form8->end_of_support2->Visible=true;
 Form8->ScrollBox1->Enabled=false;
 Form8->Button2->Enabled=false;
 Form8->Label7->Caption="Zakoñczone";
+support_ended = true;
 }
 }
 //---------------------------------------------------------------------------

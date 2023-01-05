@@ -17,7 +17,6 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
-  ScreenSnap = True
   Visible = True
   OnClose = FormClose
   OnCreate = FormCreate
@@ -55,6 +54,7 @@ object Form1: TForm1
     Align = alBottom
     Alignment = taLeftJustify
     Caption = 'NULL'
+    FullRepaint = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 20
@@ -71,6 +71,7 @@ object Form1: TForm1
     Height = 65
     Align = alTop
     Alignment = taLeftJustify
+    FullRepaint = False
     ShowCaption = False
     TabOrder = 2
     Visible = False
@@ -375,7 +376,7 @@ object Form1: TForm1
     Top = 72
   end
   object Timer1: TTimer
-    Interval = 2000
+    Interval = 15000
     OnTimer = Timer1Timer
     Left = 496
     Top = 72

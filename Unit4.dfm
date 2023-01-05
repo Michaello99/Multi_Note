@@ -16,7 +16,6 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  ScreenSnap = True
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -31,11 +30,10 @@ object Form4: TForm4
     Hint = 'Panel g'#243'rny'
     Align = alTop
     DockSite = True
+    FullRepaint = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
-    ExplicitTop = -6
-    ExplicitWidth = 654
     DesignSize = (
       643
       63)
@@ -202,7 +200,6 @@ object Form4: TForm4
       ParentFont = False
       TabOrder = 0
       OnClick = Button1Click
-      ExplicitLeft = 497
     end
   end
   object ListBox1: TListBox
@@ -224,7 +221,6 @@ object Form4: TForm4
     TabOrder = 1
     Visible = False
     OnClick = ListBox1Click
-    ExplicitLeft = 497
   end
   object Panel2: TPanel
     Left = 0
@@ -236,8 +232,8 @@ object Form4: TForm4
     Caption = 
       'Kliknij prawym przyciskiem myszy na obrazku, by wy'#347'wietli'#263' wi'#281'ce' +
       'j opcji'
+    FullRepaint = False
     TabOrder = 2
-    ExplicitWidth = 654
   end
   object ScrollBox1: TScrollBox
     Left = 0
@@ -256,7 +252,6 @@ object Form4: TForm4
     TabOrder = 3
     OnMouseWheelDown = ScrollBox1MouseWheelDown
     OnMouseWheelUp = ScrollBox1MouseWheelUp
-    ExplicitWidth = 497
     object Image1: TImage
       Left = 11
       Top = 13
@@ -265,7 +260,6 @@ object Form4: TForm4
       Hint = 'Prawy przycisk myszy - opcje obrazka'
       AutoSize = True
       Center = True
-      IncrementalDisplay = True
       ParentShowHint = False
       PopupMenu = PopupMenu1
       ShowHint = True

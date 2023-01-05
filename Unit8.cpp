@@ -104,7 +104,7 @@ ScrollBox1->VertScrollBar->Position-=10;
 
 void __fastcall TForm8::FormCreate(TObject *Sender)
 {
-TIniFile *Ini = new TIniFile(ExtractFilePath(Application->ExeName)+"\\Ustawienia.ini");
+TIniFile *Ini = new TIniFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Ustawienia.ini");
 CheckBox2->Checked=Ini->ReadBool("Ustawienia", "autoodtwarzanie", true);
 CheckBox7->Checked=Ini->ReadBool("Ustawienia","ochronasluchu",true);
 CheckBox3->Checked=Ini->ReadBool("Ustawienia","czyscskladnik",true);
@@ -113,6 +113,7 @@ Form1->CheckBox1->Checked=Ini->ReadBool("Ustawienia","wielkoscliter",false);
 Form1->CheckBox2->Checked=Ini->ReadBool("Ustawienia","caleslowa",false);
 CheckBox10->Checked=Ini->ReadBool("Ustawienia","interaktywnaikona",true);
 CheckBox11->Checked=Ini->ReadBool("Ustawienia","powiadomieniawysuwane",true);
+CheckBox5->Checked=Ini->ReadBool("Ustawienia","obliczanierozmiarupliku",false);
 	try{
 	CheckBox6->Checked=Ini->ReadBool("Ustawienia","adaptacyjnypedzel",false);
 	}
@@ -128,7 +129,7 @@ delete Ini;
 
 void __fastcall TForm8::FormClose(TObject *Sender, TCloseAction &Action)
 {
-TIniFile *Ini = new TIniFile(ExtractFilePath(Application->ExeName)+"\\Ustawienia.ini");
+TIniFile *Ini = new TIniFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Ustawienia.ini");
 Ini->WriteBool("Ustawienia", "autoodtwarzanie", CheckBox2->Checked);
 Ini->WriteBool("Ustawienia","ochronasluchu", CheckBox7->Checked);
 Ini->WriteBool("Ustawienia","czyscskladnik", CheckBox3->Checked);
@@ -136,6 +137,7 @@ Ini->WriteBool("Ustawienia","autolistaobrazow", CheckBox4->Checked);
 Ini->WriteBool("Ustawienia","adaptacyjnypedzel", CheckBox6->Checked);
 Ini->WriteBool("Ustawienia","interaktywnaikona", CheckBox10->Checked);
 Ini->WriteBool("Ustawienia","powiadomieniawysuwane", CheckBox11->Checked);
+Ini->WriteBool("Ustawienia","obliczanierozmiarupliku",CheckBox5->Checked);
 delete Ini;
 }
 //---------------------------------------------------------------------------
@@ -185,6 +187,7 @@ ShellExecuteA(NULL, _NULL, LPCSTR("mailto:michaello99@op.pl"), NULL, NULL, SW_SH
 void __fastcall TForm8::Label2DblClick(TObject *Sender)
 {
 Form8->ScrollBox1->Enabled=true;
+Form6->support_ended = false;
 }
 //---------------------------------------------------------------------------
 
@@ -197,6 +200,50 @@ void __fastcall TForm8::CheckBox1Click(TObject *Sender)
 	else
 	{
 	autosave = false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox5Click(TObject *Sender)
+{
+ 	if(CheckBox5->Checked)
+	{
+	file_size_panel = true;
+	}
+	else
+	{
+	file_size_panel = false;
+    Form1->Panel1->Visible = false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox8Click(TObject *Sender)
+{
+	if(CheckBox8->Checked)
+	{
+	Form1->WindowState=wsMaximized;
+	Form1->BorderStyle=bsNone;
+	Form1->Align=alClient;
+	}
+	else
+	{
+	Form1->WindowState=wsNormal;
+	Form1->BorderStyle=bsSizeable;
+	Form1->Align=alNone;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox9Click(TObject *Sender)
+{
+	if(CheckBox9->Checked)
+	{
+    Form4->Image1->IncrementalDisplay = true;
+	}
+	else
+	{
+    Form4->Image1->IncrementalDisplay = false;
 	}
 }
 //---------------------------------------------------------------------------

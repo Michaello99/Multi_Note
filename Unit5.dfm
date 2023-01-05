@@ -170,6 +170,7 @@ object Form5: TForm5
     AutoSize = True
     DockSite = True
     DoubleBuffered = True
+    FullRepaint = False
     ParentDoubleBuffered = False
     ParentShowHint = False
     ShowHint = True

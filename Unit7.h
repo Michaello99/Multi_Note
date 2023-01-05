@@ -10,6 +10,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
 #include <Vcl.Dialogs.hpp>
+#include <Vcl.ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm7 : public TForm
 {
@@ -19,14 +20,13 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TImage *Image4;
 	TImage *Image2;
-	TImage *Image5;
 	TLabel *Label2;
-	TLabel *Label3;
 	TImage *Image6;
 	TImage *Image7;
 	TImage *Image1;
 	TSaveDialog *SaveDialog1;
 	TColorDialog *ColorDialog1;
+	TTrackBar *width_trackbar;
 	void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
           int X, int Y);
 	void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
@@ -35,9 +35,9 @@ __published:	// IDE-managed Components
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Image4Click(TObject *Sender);
 	void __fastcall Image2Click(TObject *Sender);
-	void __fastcall Image5Click(TObject *Sender);
 	void __fastcall Image6Click(TObject *Sender);
 	void __fastcall Image7Click(TObject *Sender);
+	void __fastcall width_trackbarChange(TObject *Sender);
 
 private:	// User declarations
  void __fastcall CreateParams(TCreateParams &Params);

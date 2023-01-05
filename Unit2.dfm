@@ -39,7 +39,7 @@ object Form2: TForm2
     Left = 0
     Top = 49
     Width = 273
-    Height = 263
+    Height = 269
     Align = alLeft
     Center = True
     IncrementalDisplay = True
@@ -610,6 +610,7 @@ object Form2: TForm2
         2D8DE67452158080821C748F82DFABDA3684FC187307DDB1A0FF007AEB3BB74D
         9B403BBA07400000000049454E44AE426082}
       Proportional = True
+      OnDblClick = Image2DblClick
     end
     object Label6: TLabel
       Left = 55
@@ -651,12 +652,77 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
+    object Label5: TLabel
+      Left = 3
+      Top = 20
+      Width = 237
+      Height = 15
+      Caption = '2. Automatyczne nadpisywanie '#378'r'#243'de'#322' plik'#243'w'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 3
+      Top = 37
+      Width = 164
+      Height = 15
+      Caption = '3. Obliczanie rozmiar'#243'w plik'#243'w'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 3
+      Top = 54
+      Width = 283
+      Height = 15
+      Caption = '4. Zredukowane migotanie - zoptymalizowana grafika'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label9: TLabel
+      Left = 3
+      Top = 71
+      Width = 281
+      Height = 15
+      Caption = '5. Poprawione przyci'#261'ganie okien do kraw'#281'dzi ekranu'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label10: TLabel
+      Left = 3
+      Top = 88
+      Width = 177
+      Height = 15
+      Caption = '6. Poprawiony wizualnie rysownik'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
   end
   object event_console: TListBox
     Left = 0
-    Top = 312
+    Top = 318
     Width = 597
-    Height = 56
+    Height = 50
     Align = alBottom
     ItemHeight = 13
     TabOrder = 2

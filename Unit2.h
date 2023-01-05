@@ -23,10 +23,16 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TScrollBox *ScrollBox1;
 	TListBox *event_console;
+	TLabel *Label5;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
+	TLabel *Label10;
 	void __fastcall ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift, TPoint &MousePos,
           bool &Handled);
 	void __fastcall ScrollBox1MouseWheelUp(TObject *Sender, TShiftState Shift, TPoint &MousePos,
           bool &Handled);
+	void __fastcall Image2DblClick(TObject *Sender);
 private:	// User declarations
 void __fastcall CreateParams(TCreateParams &Params);
 public:		// User declarations

@@ -3,10 +3,10 @@
 #include <vcl.h>
 #include <iostream>
 #include <windows.h>
-#include <winbase.h>
-#include <fstream>
 #include <cstdlib>
 #include <ctime>
+#include <string>
+#include <System.IOUtils.hpp>
 #pragma hdrstop
 
 #include "Unit1.h"
@@ -18,6 +18,8 @@
 #include "Unit7.h"
 #include "Unit8.h"
 using namespace std;
+float size_kilobytes,size_megabytes;
+float size_bytes;
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -33,7 +35,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 try
  {
   tresc->Lines->LoadFromFile(ParamStr(1));
-  nazwapliku=ParamStr(1);
+  file_name=ParamStr(1);
   name_without_path=ExtractFileName(ParamStr(1));
   Form1->Caption="Multi Note - "+name_without_path;
   file_opened = true;
@@ -56,7 +58,7 @@ void __fastcall TForm1::Nowyplik1Click(TObject *Sender)
 		if (Application->MessageBox(L"Czy utworzenie nowego pliku jest zamierzone?",L"PotwierdŸ",MB_YESNO | MB_ICONQUESTION) == IDYES)
 		{
 		tresc->Lines->Clear();
-		nazwapliku="";
+		file_name="";
 		Form1->Caption="Multi Note";
         file_opened = false;
 		}
@@ -66,6 +68,7 @@ void __fastcall TForm1::WyczMultiNote1Click(TObject *Sender)
 {
 if (Application->MessageBox(L"Czy jesteœ pewny, ¿e chcesz zamkn¹æ Multi Note?",L"PotwierdŸ",MB_YESNO | MB_ICONQUESTION) == IDYES)
 {
+Form2->event_console->Items->SaveToFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Last_Errors.txt");
 Application->Terminate();
 }
 }
@@ -78,10 +81,38 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
    try
    {
    tresc->Lines->LoadFromFile(OpenDialog1->FileName);
-   nazwapliku=OpenDialog1->FileName;
+   file_name=OpenDialog1->FileName;
    name_without_path=ExtractFileName(OpenDialog1->FileName);
    Form1->Caption="Multi Note - "+name_without_path;
    file_opened = true;
+
+   //file_size -----------------------------------------------------
+	if(Form8->file_size_panel){
+		TSearchRec SFile;
+		FindFirst(file_name, faAnyFile, SFile);
+		size_bytes = SFile.Size;
+			size_kilobytes = (size_bytes)/1024;
+		if(size_kilobytes<1){
+        Panel1->Caption = "Rozmiar pliku: Mniej ni¿ 1 kilobajt";
+		}
+
+		else if(size_kilobytes>=1&&size_kilobytes<1024){
+            size_kilobytes = round(size_kilobytes);
+			Panel1->Caption = "Rozmiar pliku: oko³o "+FloatToStr(size_kilobytes)+" kilobajtów";
+		}
+
+
+		else if(size_kilobytes>=1024)
+		{
+			size_megabytes = size_kilobytes/1024;
+            size_megabytes = round(size_megabytes);
+			Panel1->Caption = "Rozmiar pliku: oko³o "+FloatToStr(size_megabytes)+" megabajtów";
+
+		}
+
+    //size_panel_display --------------------------------
+	Panel1->Visible = true;
+    }
    }
    catch (...)
    {
@@ -131,12 +162,12 @@ void __fastcall TForm1::Zapiszjakonowy1Click(TObject *Sender)
 
 void __fastcall TForm1::Nadpiszbiecerdo1Click(TObject *Sender)
 {
-	   if (nazwapliku!="")         //jeœli plik ma nazwê
+	   if (file_name!="")         //jeœli plik ma nazwê
         {     try
               {
-              tresc->Lines->SaveToFile(nazwapliku);
+			  tresc->Lines->SaveToFile(file_name);
               }
-              catch(...)
+			  catch(...)
               {
               ShowMessage("B³¹d nadpisywania pliku :(");
               Form2->event_console->Items->Add("Nadpisywanie: B³¹d");
@@ -180,7 +211,7 @@ void __fastcall TForm1::Wklej1Click(TObject *Sender)
 
 void __fastcall TForm1::Zawijaniewierszy1Click(TObject *Sender)
 {
-	if(Zawijaniewierszy1->Checked==true)
+		if(Zawijaniewierszy1->Checked==true)
         {
                 Zawijaniewierszy1->Checked=false;
                 tresc->WordWrap=false;
@@ -479,7 +510,15 @@ Button1->Visible=false;
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
 tresc->Perform(EM_EXLIMITTEXT, 0, 4194176);   //zwiekszanie limitu tekstu
-	
+
+ if(TDirectory::Exists((ExtractFilePath(Application->ExeName)+"\\MultiNote_Data"),false))
+ {
+ return;
+ }
+ else
+ {
+ TDirectory::CreateDirectory((ExtractFilePath(Application->ExeName)+"\\MultiNote_Data"));
+ }
 }
 //---------------------------------------------------------------------------
 
@@ -487,17 +526,19 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 {
 if (Application->MessageBox(L"Czy jesteœ pewny, ¿e chcesz zamkn¹æ Multi Note?",L"PotwierdŸ",MB_YESNO | MB_ICONQUESTION) == IDYES)
 {
+Form2->event_console->Items->SaveToFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Last_Errors.txt");
 Application->Terminate();        //zamykanie formy x-em
 }
 else
 {
-Action=caNone;
+Action = caNone;
 }
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::WyczMultiNote2Click(TObject *Sender)
 {
+Form2->event_console->Items->SaveToFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Last_Errors.txt");
 Application->Terminate();
 }
 //---------------------------------------------------------------------------
@@ -508,8 +549,8 @@ void __fastcall TForm1::Edit1KeyDown(TObject *Sender, WORD &Key, TShiftState Shi
 {
 	if(Key == VK_RETURN)
 	{
-	 tresc->SelStart = 0;
-     Form1->Button1Click(this);
+		tresc->SelStart = 0;
+		Form1->Button1Click(this);
 	}
 }
 //---------------------------------------------------------------------------
@@ -548,7 +589,7 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	try
 	{
 		if(file_opened){                         //autosave
-		tresc->Lines->SaveToFile(nazwapliku);
+		tresc->Lines->SaveToFile(file_name);
 		}
 	}
 	catch(...){
