@@ -532,12 +532,12 @@ object Form2: TForm2
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 386
+    Left = 384
     Top = 86
     Width = 106
     Height = 30
     Alignment = taCenter
-    Caption = 'Wersja 14.2'
+    Caption = 'Wersja 14.3'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
@@ -642,74 +642,9 @@ object Form2: TForm2
     object Label4: TLabel
       Left = 3
       Top = 3
-      Width = 281
+      Width = 264
       Height = 15
-      Caption = '1. Zwi'#281'kszone bezpiecze'#324'stwo przy otwieraniu plik'#243'w'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label5: TLabel
-      Left = 3
-      Top = 20
-      Width = 237
-      Height = 15
-      Caption = '2. Automatyczne nadpisywanie '#378'r'#243'de'#322' plik'#243'w'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label7: TLabel
-      Left = 3
-      Top = 37
-      Width = 164
-      Height = 15
-      Caption = '3. Obliczanie rozmiar'#243'w plik'#243'w'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label8: TLabel
-      Left = 3
-      Top = 54
-      Width = 283
-      Height = 15
-      Caption = '4. Zredukowane migotanie - zoptymalizowana grafika'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label9: TLabel
-      Left = 3
-      Top = 71
-      Width = 281
-      Height = 15
-      Caption = '5. Poprawione przyci'#261'ganie okien do kraw'#281'dzi ekranu'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label10: TLabel
-      Left = 3
-      Top = 88
-      Width = 177
-      Height = 15
-      Caption = '6. Poprawiony wizualnie rysownik'
+      Caption = '1. Naprawione zawieszanie si'#281' przy du'#380'ych plikach'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16

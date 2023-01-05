@@ -196,10 +196,12 @@ void __fastcall TForm8::CheckBox1Click(TObject *Sender)
 	if(CheckBox1->Checked)
 	{
 	autosave = true;
+	Form1->Timer1->Enabled = true;
 	}
 	else
 	{
 	autosave = false;
+    Form1->Timer1->Enabled = false;
 	}
 }
 //---------------------------------------------------------------------------

@@ -376,6 +376,7 @@ object Form1: TForm1
     Top = 72
   end
   object Timer1: TTimer
+    Enabled = False
     Interval = 15000
     OnTimer = Timer1Timer
     Left = 496
