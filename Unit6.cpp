@@ -16,9 +16,9 @@ AnsiString month,year;
 __fastcall TForm6::TForm6(TComponent* Owner)
 	: TForm(Owner)
 {
-if(CCalendar1->Month>=1&&CCalendar1->Year>=2027)
+if(CCalendar1->Month>=1&&CCalendar1->Year>=2028)
 {
-ShowMessage("Wsparcie programu zakoñczy³o siê 31.12.2026. Czêœæ opcji przesta³a dzia³aæ. Pobierz nowsz¹ wersjê Multi Note.");
+ShowMessage("Wsparcie programu zakoñczy³o siê 31.12.2027. Czêœæ opcji przesta³a dzia³aæ. Pobierz nowsz¹ wersjê Multi Note.");
 Form1->Panel1->Visible=true;
 Form1->Panel1->Caption="Ta wersja programu nie jest ju¿ wspierana. Pobierz nowsz¹ wersjê Multi Note.";
 Form8->end_of_support->Visible=true;

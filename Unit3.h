@@ -69,6 +69,7 @@ public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
     TStringList *Lista;
 	AnsiString trayshow,opened,pause;
+    int protecttime=0;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm3 *Form3;

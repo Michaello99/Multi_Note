@@ -84,10 +84,11 @@ __published:	// IDE-managed Components
 	TCheckBox *CheckBox1;
 	TCheckBox *CheckBox2;
 	TTimer *Timer1;
+	TPanel *Panel3;
+	TTimer *Timer2;
 	void __fastcall Oprogramie1Click(TObject *Sender);
 	void __fastcall Nowyplik1Click(TObject *Sender);
 	void __fastcall WyczMultiNote1Click(TObject *Sender);
-	void __fastcall Wczytajplik1Click(TObject *Sender);
 	void __fastcall Zapiszjakonowy1Click(TObject *Sender);
 	void __fastcall Nadpiszbiecerdo1Click(TObject *Sender);
 	void __fastcall Cofnij1Click(TObject *Sender);
@@ -131,10 +132,14 @@ __published:	// IDE-managed Components
 	void __fastcall CheckBox1Click(TObject *Sender);
 	void __fastcall CheckBox2Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall Timer2Timer(TObject *Sender);
+	void __fastcall Wczytajplik1Click(TObject *Sender);
 private:	// User declarations
+
 public:		// User declarations
+	void __fastcall load_file();
 	__fastcall TForm1(TComponent* Owner);
-    AnsiString file_name="";
+	AnsiString file_name="";
 	int width  = Screen->Width; // mierzy szerokoœæ ekranu.
 	int height = Screen->Height; // mierzy wysokoœæ ekranu
 

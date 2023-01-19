@@ -26,7 +26,7 @@ object Form1: TForm1
     Left = 0
     Top = 65
     Width = 672
-    Height = 319
+    Height = 292
     Align = alClient
     BevelInner = bvNone
     BevelOuter = bvNone
@@ -137,6 +137,23 @@ object Form1: TForm1
       TabOrder = 4
       OnClick = CheckBox2Click
     end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 357
+    Width = 672
+    Height = 27
+    Align = alBottom
+    Alignment = taLeftJustify
+    Caption = 'Aktywna linia: '
+    FullRepaint = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
   end
   object MainMenu1: TMainMenu
     BiDiMode = bdLeftToRight
@@ -380,6 +397,12 @@ object Form1: TForm1
     Interval = 15000
     OnTimer = Timer1Timer
     Left = 496
+    Top = 72
+  end
+  object Timer2: TTimer
+    Interval = 300
+    OnTimer = Timer2Timer
+    Left = 544
     Top = 72
   end
 end

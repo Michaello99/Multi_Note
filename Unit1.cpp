@@ -7,6 +7,7 @@
 #include <ctime>
 #include <string>
 #include <System.IOUtils.hpp>
+#include <process.h>
 #pragma hdrstop
 
 #include "Unit1.h"
@@ -73,10 +74,9 @@ Application->Terminate();
 }
 }
 //---------------------------------------------------------------------------
-
-void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
+void __fastcall TForm1::load_file()
 {
- if (OpenDialog1->Execute())
+if (OpenDialog1->Execute())
  {
    try
    {
@@ -93,11 +93,11 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
 		size_bytes = SFile.Size;
 			size_kilobytes = (size_bytes)/1024;
 		if(size_kilobytes<1){
-        Panel1->Caption = "Rozmiar pliku: Mniej ni¿ 1 kilobajt";
+		Panel1->Caption = "Rozmiar pliku: Mniej ni¿ 1 kilobajt";
 		}
 
 		else if(size_kilobytes>=1&&size_kilobytes<1024){
-            size_kilobytes = round(size_kilobytes);
+			size_kilobytes = round(size_kilobytes);
 			Panel1->Caption = "Rozmiar pliku: oko³o "+FloatToStr(size_kilobytes)+" kilobajtów";
 		}
 
@@ -105,14 +105,14 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
 		else if(size_kilobytes>=1024)
 		{
 			size_megabytes = size_kilobytes/1024;
-            size_megabytes = round(size_megabytes);
+			size_megabytes = round(size_megabytes);
 			Panel1->Caption = "Rozmiar pliku: oko³o "+FloatToStr(size_megabytes)+" megabajtów";
 
 		}
 
     //size_panel_display --------------------------------
 	Panel1->Visible = true;
-    }
+	}
    }
    catch (...)
    {
@@ -596,6 +596,26 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
     Form2->event_console->Items->Add("Autozapis: B³¹d");
 	}
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Timer2Timer(TObject *Sender)
+{
+int line_number = tresc->ActiveLineNo+1;
+Panel3->Caption = "Aktywna linia: "+IntToStr(line_number);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
+{
+	try
+	{
+	load_file();
+	}
+	catch(...)
+	{
+    ShowMessage("Wczytanie pliku nie powiod³o siê.");
+    }
 }
 //---------------------------------------------------------------------------
 

@@ -175,7 +175,7 @@ object Form3: TForm3
   object MediaPlayer1: TMediaPlayer
     Left = 334
     Top = 8
-    Width = 29
+    Width = 0
     Height = 30
     ColoredButtons = []
     Enabled = False

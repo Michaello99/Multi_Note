@@ -23,6 +23,7 @@ __published:	// IDE-managed Components
 	TLabel *Label6;
 	TScrollBox *ScrollBox1;
 	TListBox *event_console;
+	TLabel *Label5;
 	void __fastcall ScrollBox1MouseWheelDown(TObject *Sender, TShiftState Shift, TPoint &MousePos,
           bool &Handled);
 	void __fastcall ScrollBox1MouseWheelUp(TObject *Sender, TShiftState Shift, TPoint &MousePos,
