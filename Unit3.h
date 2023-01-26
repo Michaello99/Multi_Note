@@ -42,6 +42,8 @@ __published:	// IDE-managed Components
 	TPanel *Panel3;
 	TTimer *Timer1;
 	TTrayIcon *TrayIcon1;
+	TTimer *max_volume_timer;
+	TTimer *alert_volume_timer;
 	void __fastcall FormActivate(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -59,6 +61,8 @@ __published:	// IDE-managed Components
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall max_volume_timerTimer(TObject *Sender);
+	void __fastcall alert_volume_timerTimer(TObject *Sender);
 private:	// User declarations
 void __fastcall CreateParams(TCreateParams &Params);
 void __fastcall LoadFiles(void);
@@ -69,7 +73,8 @@ public:		// User declarations
 	__fastcall TForm3(TComponent* Owner);
     TStringList *Lista;
 	AnsiString trayshow,opened,pause;
-    int protecttime=0;
+	int protecttime = 0;
+	int protect_alerts = 0;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm3 *Form3;

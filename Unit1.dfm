@@ -308,15 +308,13 @@ object Form1: TForm1
   object OpenDialog1: TOpenDialog
     Filter = 
       'Plik tekstowy bez formatowania (TXT)|*.txt|Plik tekstowy z forma' +
-      'towaniem (RTF)|*.rtf|Plik HTML|*.html|Wszystkie pliki|*.*'
+      'towaniem (RTF)|*.rtf|Wszystkie pliki|*.*'
     Title = 'Wczytaj tekst'
     Left = 160
     Top = 72
   end
   object SaveDialog1: TSaveDialog
-    Filter = 
-      'Plik tekstowy bez formatowania (TXT)|*.txt|Plik tekstowy z forma' +
-      'towaniem (RTF)|*.rtf|Plik HTML|*.html'
+    Filter = 'Plik tekstowy z formatowaniem (RTF)|*.rtf'
     Title = 'Zapisz tekst'
     Left = 224
     Top = 72
@@ -385,7 +383,7 @@ object Form1: TForm1
     end
   end
   object TrayIcon1: TTrayIcon
-    Hint = 'Multi Note 14'
+    Hint = 'Multi Note 15'
     PopupMenu = PopupMenu1
     Visible = True
     OnClick = TrayIcon1Click

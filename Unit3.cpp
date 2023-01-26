@@ -58,6 +58,7 @@ if(pause=="nie")
 	MediaPlayer1->Pause();
 	pause="tak";
 	protecttime=0;
+	Timer1->Enabled = false;
 	}
 	catch(...)
 	{
@@ -92,6 +93,10 @@ try{
 	MediaPlayer1->Play();
 	pause="nie";
 	opened="tak";
+		if(TrackBar1->Position>40000&&Form8->protect&&Timer1->Enabled==false)
+		{
+		Timer1->Enabled=true;
+		}
 	}
 }
 catch(...)
@@ -111,7 +116,8 @@ if(TrackBar1->Position==65535)
    TrackBar1->Position=40000;
 	if (Application->MessageBox(L"Czy na pewno chcesz aktywowaæ maksymaln¹ g³oœnoœæ programu?\n \nUpewnij siê, ¿e g³oœnoœæ ogólna systemu nie jest zbyt wysoka, aby nie naraziæ siê na uszkodzenie s³uchu.",L"Ostrze¿enie",MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
 	{
-	TrackBar1->Position=65530;
+        max_volume_timer->Enabled=true;
+		//TrackBar1->Position=65530;
 	}
 	else
 	{
@@ -121,7 +127,7 @@ if(TrackBar1->Position==65535)
 }
 	if(TrackBar1->Position>40000&&Form8->protect)
 	{
-     Timer1->Enabled=true;
+	 Timer1->Enabled=true;
 	}
 	else
 	{
@@ -284,10 +290,15 @@ void __fastcall TForm3::Image4Click(TObject *Sender)
 {
   if(Form8->protect==true)
   {
-	if (Application->MessageBox(L"Czy na pewno chcesz aktywowaæ maksymaln¹ g³oœnoœæ programu?\n \nUpewnij siê, ¿e g³oœnoœæ ogólna systemu nie jest zbyt wysoka, aby nie naraziæ siê na uszkodzenie s³uchu.",L"Ostrze¿enie",MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
-	{
-	TrackBar1->Position=65534;
-	}
+	 if(TrackBar1->Position<65430){
+		if (Application->MessageBox(L"Czy na pewno chcesz aktywowaæ maksymaln¹ g³oœnoœæ programu?\n \nUpewnij siê, ¿e g³oœnoœæ ogólna systemu nie jest zbyt wysoka, aby nie naraziæ siê na uszkodzenie s³uchu.",L"Ostrze¿enie",MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
+		{
+		max_volume_timer->Enabled=true;
+		}
+	 }
+	 else{
+         return;
+     }
   }
   else
   {
@@ -325,12 +336,14 @@ void __fastcall TForm3::FormShow(TObject *Sender)
 void __fastcall TForm3::Timer1Timer(TObject *Sender)
 {
 protecttime+=1;
-	if(protecttime>=300&&pause=="nie"&&opened=="tak")
+	if(protecttime>=300&&pause=="nie"&&opened=="tak"&&protect_alerts==0)
 	{
 	 protecttime=0;
+	 protect_alerts++;
 	 if(Form8->windows_notifications)
 	 {
 	 TrayIcon1->Visible=true;
+     TrayIcon1->BalloonFlags = bfInfo;
 	 TrayIcon1->BalloonHint="S³uchasz muzyki zbyt g³oœno. Rozwa¿ zmniejszenie g³oœnoœci odtwarzacza";
 	 TrayIcon1->BalloonTitle="Multi Note - Ochrona s³uchu";
 	 TrayIcon1->ShowBalloonHint();
@@ -338,11 +351,48 @@ protecttime+=1;
 	 }
 	 else
 	 {
-      ShowMessage("S³uchasz muzyki zbyt g³oœno. Rozwa¿ zmniejszenie g³oœnoœci odtwarzacza");
-     }
+	  ShowMessage("S³uchasz muzyki zbyt g³oœno. Rozwa¿ zmniejszenie g³oœnoœci odtwarzacza");
+	 }
 	}
+	else if (protecttime>=300&&pause=="nie"&&opened=="tak"&&protect_alerts>0)
+	{
+	 protecttime=0;
+	 protect_alerts++;
+     if(Form8->windows_notifications)
+	 {
+	 TrayIcon1->Visible=true;
+     TrayIcon1->BalloonFlags = bfWarning;
+	 TrayIcon1->BalloonHint="S³uchasz muzyki zbyt g³oœno. Ochrona s³uchu zmniejsza g³oœnoœæ odtwarzacza";
+	 TrayIcon1->BalloonTitle="Multi Note - Ochrona s³uchu";
+	 TrayIcon1->ShowBalloonHint();
+	 TrayIcon1->Visible=false;
+     alert_volume_timer->Enabled=true;
+	 }
+	 else
+	 {
+	  ShowMessage("S³uchasz muzyki zbyt g³oœno. Ochrona s³uchu zmniejsza g³oœnoœæ odtwarzacza");
+	 }
+    }
 }
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall TForm3::max_volume_timerTimer(TObject *Sender)
+{
+	TrackBar1->Position+=100;
+	if(TrackBar1->Position>=65430){
+	max_volume_timer->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm3::alert_volume_timerTimer(TObject *Sender)
+{
+	TrackBar1->Position-=100;
+	if(TrackBar1->Position<=39000){
+	alert_volume_timer->Enabled=false;
+	}
+}
+//---------------------------------------------------------------------------
 

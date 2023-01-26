@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include <filesystem>
 #include <System.IOUtils.hpp>
 #include <process.h>
 #pragma hdrstop
@@ -80,8 +81,8 @@ if (OpenDialog1->Execute())
  {
    try
    {
-   tresc->Lines->LoadFromFile(OpenDialog1->FileName);
    file_name=OpenDialog1->FileName;
+   tresc->Lines->LoadFromFile(OpenDialog1->FileName);
    name_without_path=ExtractFileName(OpenDialog1->FileName);
    Form1->Caption="Multi Note - "+name_without_path;
    file_opened = true;
@@ -128,30 +129,16 @@ void __fastcall TForm1::Zapiszjakonowy1Click(TObject *Sender)
 	   if (SaveDialog1->Execute())
 		{
 
-		try
-		{          //automatyczne dopisywanie rozszerzeñ
+			try
+			{          //automatyczne dopisywanie rozszerzeñ
 			if( SaveDialog1->FilterIndex == 1 )
-			{
-			tresc->PlainText=true;
-			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".txt");
-			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".txt";
-			tresc->PlainText=false;
-			}
-			if( SaveDialog1->FilterIndex == 2 )
 			{
 			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".rtf");
 			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".rtf";
-			}
-			if( SaveDialog1->FilterIndex == 3 )
-			{
-			tresc->PlainText=true;
-			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".html");
-			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".html";
-            tresc->PlainText=false;
-			}
+            }
             file_opened = true;
-		}
-		catch (...)
+			}
+			catch (...)
 			{
             Form2->event_console->Items->Add("Zapisywanie jako nowy plik: B³¹d");
 			ShowMessage("Zapis pliku niemo¿liwy :(");
@@ -618,4 +605,5 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
     }
 }
 //---------------------------------------------------------------------------
+
 

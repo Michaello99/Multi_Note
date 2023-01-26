@@ -636,9 +636,9 @@ object Form2: TForm2
     object Label4: TLabel
       Left = 3
       Top = 3
-      Width = 275
+      Width = 211
       Height = 15
-      Caption = '1. Naprawione drobne mankamenty ochrony s'#322'uchu'
+      Caption = '1. Poprawiony algorytm ochrony s'#322'uchu'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -648,10 +648,23 @@ object Form2: TForm2
     end
     object Label5: TLabel
       Left = 3
-      Top = 19
+      Top = 21
       Width = 233
       Height = 15
       Caption = '2. Wy'#347'wietlanie numeru aktywnej linii tekstu'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label7: TLabel
+      Left = 3
+      Top = 39
+      Width = 243
+      Height = 15
+      Caption = '3. Zapis plik'#243'w tylko w zgodnym formacie RTF'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16

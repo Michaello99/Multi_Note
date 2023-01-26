@@ -175,7 +175,7 @@ object Form3: TForm3
   object MediaPlayer1: TMediaPlayer
     Left = 334
     Top = 8
-    Width = 0
+    Width = 29
     Height = 30
     ColoredButtons = []
     Enabled = False
@@ -470,11 +470,25 @@ object Form3: TForm3
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 152
-    Top = 40
+    Left = 112
+    Top = 64
   end
   object TrayIcon1: TTrayIcon
-    Left = 384
+    Left = 400
+    Top = 64
+  end
+  object max_volume_timer: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = max_volume_timerTimer
+    Left = 208
+    Top = 64
+  end
+  object alert_volume_timer: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = alert_volume_timerTimer
+    Left = 312
     Top = 64
   end
 end

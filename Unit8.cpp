@@ -240,6 +240,8 @@ void __fastcall TForm8::CheckBox8Click(TObject *Sender)
 	Form1->WindowState=wsNormal;
 	Form1->BorderStyle=bsSizeable;
 	Form1->Align=alNone;
+	Form1->Height=470;
+    Form1->Width=680;
 	}
 }
 //---------------------------------------------------------------------------

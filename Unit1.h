@@ -139,7 +139,7 @@ private:	// User declarations
 public:		// User declarations
 	void __fastcall load_file();
 	__fastcall TForm1(TComponent* Owner);
-	AnsiString file_name="";
+	String file_name="";
 	int width  = Screen->Width; // mierzy szerokoœæ ekranu.
 	int height = Screen->Height; // mierzy wysokoœæ ekranu
 

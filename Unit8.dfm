@@ -352,7 +352,7 @@ object Form8: TForm8
       Width = 197
       Height = 24
       Hint = 'Ograniczenie gwa'#322'townych zmian g'#322'o'#347'no'#347'ci i zmniejszenie jej'
-      Caption = 'Tryb ochrony s'#322'uchu'
+      Caption = 'Ochrona s'#322'uchu'
       Checked = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
