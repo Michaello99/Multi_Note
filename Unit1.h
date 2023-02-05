@@ -142,6 +142,8 @@ public:		// User declarations
 	String file_name="";
 	int width  = Screen->Width; // mierzy szerokoœæ ekranu.
 	int height = Screen->Height; // mierzy wysokoœæ ekranu
+	bool file_opened = false;
+    AnsiString name_without_path;
 
 };
 //---------------------------------------------------------------------------

@@ -52,6 +52,7 @@ __published:	// IDE-managed Components
 	TCheckBox *CheckBox8;
 	TCheckBox *CheckBox9;
 	TCheckBox *CheckBox12;
+	TCheckBox *CheckBox13;
 	void __fastcall CheckBox2Click(TObject *Sender);
 	void __fastcall CheckBox6Click(TObject *Sender);
 	void __fastcall CheckBox7Click(TObject *Sender);
@@ -71,6 +72,7 @@ __published:	// IDE-managed Components
 	void __fastcall CheckBox8Click(TObject *Sender);
 	void __fastcall CheckBox9Click(TObject *Sender);
 	void __fastcall CheckBox12Click(TObject *Sender);
+	void __fastcall CheckBox13Click(TObject *Sender);
 
 private:	// User declarations
  void __fastcall CreateParams(TCreateParams &Params);
@@ -81,6 +83,7 @@ public:		// User declarations
 	bool windows_notifications = true;
 	bool autosave = false;
 	bool file_size_panel = false;
+    bool last_file = true;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm8 *Form8;

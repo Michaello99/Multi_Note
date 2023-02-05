@@ -9,6 +9,7 @@
 #include <filesystem>
 #include <System.IOUtils.hpp>
 #include <process.h>
+#include <IniFiles.hpp>
 #pragma hdrstop
 
 #include "Unit1.h"
@@ -26,9 +27,8 @@ float size_bytes;
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-AnsiString name_without_path;
 unsigned int number_of_line;
-bool file_opened = false;
+
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
@@ -36,11 +36,13 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 try
  {
+
   tresc->Lines->LoadFromFile(ParamStr(1));
   file_name=ParamStr(1);
   name_without_path=ExtractFileName(ParamStr(1));
   Form1->Caption="Multi Note - "+name_without_path;
   file_opened = true;
+
  }
  catch(...)
  {
@@ -71,6 +73,11 @@ void __fastcall TForm1::WyczMultiNote1Click(TObject *Sender)
 if (Application->MessageBox(L"Czy jesteœ pewny, ¿e chcesz zamkn¹æ Multi Note?",L"PotwierdŸ",MB_YESNO | MB_ICONQUESTION) == IDYES)
 {
 Form2->event_console->Items->SaveToFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Last_Errors.txt");
+	if(Form8->last_file)
+	{
+	 TIniFile *Ini2 = new TIniFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Variables.ini");
+     Ini2->WriteString("Usprawnienia","ostatniplik",file_name);
+	}
 Application->Terminate();
 }
 }
@@ -514,6 +521,11 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 if (Application->MessageBox(L"Czy jesteœ pewny, ¿e chcesz zamkn¹æ Multi Note?",L"PotwierdŸ",MB_YESNO | MB_ICONQUESTION) == IDYES)
 {
 Form2->event_console->Items->SaveToFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Last_Errors.txt");
+	if(Form8->last_file)
+	{
+	 TIniFile *Ini2 = new TIniFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Variables.ini");
+     Ini2->WriteString("Usprawnienia","ostatniplik",file_name);
+	}
 Application->Terminate();        //zamykanie formy x-em
 }
 else
@@ -526,6 +538,11 @@ Action = caNone;
 void __fastcall TForm1::WyczMultiNote2Click(TObject *Sender)
 {
 Form2->event_console->Items->SaveToFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Last_Errors.txt");
+	if(Form8->last_file)
+	{
+	 TIniFile *Ini2 = new TIniFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Variables.ini");
+     Ini2->WriteString("Usprawnienia","ostatniplik",file_name);
+	}
 Application->Terminate();
 }
 //---------------------------------------------------------------------------

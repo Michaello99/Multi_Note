@@ -307,8 +307,8 @@ object Form1: TForm1
   end
   object OpenDialog1: TOpenDialog
     Filter = 
-      'Plik tekstowy bez formatowania (TXT)|*.txt|Plik tekstowy z forma' +
-      'towaniem (RTF)|*.rtf|Wszystkie pliki|*.*'
+      'Plik tekstowy z formatowaniem (RTF)|*.rtf|Plik tekstowy bez form' +
+      'atowania (TXT)|*.txt|Wszystkie pliki|*.*'
     Title = 'Wczytaj tekst'
     Left = 160
     Top = 72

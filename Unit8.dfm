@@ -174,7 +174,7 @@ object Form8: TForm8
     OnMouseWheelUp = ScrollBox1MouseWheelUp
     object Label8: TLabel
       Left = 3
-      Top = 126
+      Top = 158
       Width = 109
       Height = 30
       Caption = 'Odtwarzacz'
@@ -187,7 +187,7 @@ object Form8: TForm8
     end
     object Label10: TLabel
       Left = 3
-      Top = 220
+      Top = 252
       Width = 92
       Height = 30
       Caption = 'Kalkulator'
@@ -200,7 +200,7 @@ object Form8: TForm8
     end
     object Label3: TLabel
       Left = 3
-      Top = 288
+      Top = 320
       Width = 66
       Height = 30
       Caption = 'Obrazy'
@@ -213,7 +213,7 @@ object Form8: TForm8
     end
     object Label12: TLabel
       Left = 3
-      Top = 373
+      Top = 405
       Width = 86
       Height = 30
       Caption = 'Rysownik'
@@ -226,7 +226,7 @@ object Form8: TForm8
     end
     object Label14: TLabel
       Left = 144
-      Top = 545
+      Top = 577
       Width = 30
       Height = 15
       Alignment = taCenter
@@ -240,7 +240,7 @@ object Form8: TForm8
     end
     object Label6: TLabel
       Left = 3
-      Top = 434
+      Top = 466
       Width = 207
       Height = 30
       Caption = 'Integracja z systemem'
@@ -266,7 +266,7 @@ object Form8: TForm8
     end
     object CheckBox2: TCheckBox
       Left = 3
-      Top = 162
+      Top = 194
       Width = 197
       Height = 24
       Hint = 
@@ -288,7 +288,7 @@ object Form8: TForm8
     end
     object CheckBox3: TCheckBox
       Left = 3
-      Top = 256
+      Top = 288
       Width = 214
       Height = 26
       Hint = 
@@ -309,7 +309,7 @@ object Form8: TForm8
     end
     object CheckBox4: TCheckBox
       Left = 3
-      Top = 324
+      Top = 356
       Width = 242
       Height = 19
       Hint = 'Gdy zaznaczone, lista pokazuje si'#281' i ukrywa automatycznie'
@@ -328,7 +328,7 @@ object Form8: TForm8
     end
     object CheckBox6: TCheckBox
       Left = 3
-      Top = 409
+      Top = 441
       Width = 242
       Height = 19
       Hint = 
@@ -348,7 +348,7 @@ object Form8: TForm8
     end
     object CheckBox7: TCheckBox
       Left = 3
-      Top = 190
+      Top = 222
       Width = 197
       Height = 24
       Hint = 'Ograniczenie gwa'#322'townych zmian g'#322'o'#347'no'#347'ci i zmniejszenie jej'
@@ -368,7 +368,7 @@ object Form8: TForm8
     end
     object CheckBox10: TCheckBox
       Left = 3
-      Top = 470
+      Top = 502
       Width = 286
       Height = 19
       Hint = 
@@ -390,7 +390,7 @@ object Form8: TForm8
     end
     object CheckBox11: TCheckBox
       Left = 3
-      Top = 495
+      Top = 527
       Width = 262
       Height = 19
       Hint = 'Pozwala na pokazywanie powiadomie'#324' akcji Multi Note'
@@ -449,7 +449,7 @@ object Form8: TForm8
     end
     object CheckBox8: TCheckBox
       Left = 3
-      Top = 520
+      Top = 552
       Width = 262
       Height = 19
       Hint = 'Wype'#322'nia ekran oknem programu'
@@ -468,7 +468,7 @@ object Form8: TForm8
     end
     object CheckBox9: TCheckBox
       Left = 3
-      Top = 349
+      Top = 381
       Width = 262
       Height = 19
       Hint = 'Obrazek wczytuje si'#281' szybciej kosztem jako'#347'ci'
@@ -486,7 +486,7 @@ object Form8: TForm8
     end
     object CheckBox12: TCheckBox
       Left = 3
-      Top = 98
+      Top = 96
       Width = 295
       Height = 19
       Hint = 'Pokazuje numer linii, na kt'#243'rej znajduje si'#281' kursor tekstu'
@@ -503,6 +503,26 @@ object Form8: TForm8
       State = cbChecked
       TabOrder = 11
       OnClick = CheckBox12Click
+    end
+    object CheckBox13: TCheckBox
+      Left = 3
+      Top = 123
+      Width = 295
+      Height = 19
+      Hint = 'Wczytaj plik otwarty przy poprzednim zamykaniu programu'
+      Caption = 'Wczytuj ostatnio otwarty plik'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 12
+      OnClick = CheckBox13Click
     end
   end
   object ScrollBox2: TScrollBox

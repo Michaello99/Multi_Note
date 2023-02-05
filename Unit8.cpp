@@ -15,6 +15,8 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm8 *Form8;
+
+fstream ostatni_plik;
 //---------------------------------------------------------------------------
 __fastcall TForm8::TForm8(TComponent* Owner)
 	: TForm(Owner)
@@ -120,15 +122,38 @@ CheckBox10->Checked=Ini->ReadBool("Ustawienia","interaktywnaikona",true);
 CheckBox11->Checked=Ini->ReadBool("Ustawienia","powiadomieniawysuwane",true);
 CheckBox5->Checked=Ini->ReadBool("Ustawienia","obliczanierozmiarupliku",false);
 CheckBox12->Checked=Ini->ReadBool("Ustawienia","aktywnalinia",true);
-	try{
+CheckBox13->Checked=Ini->ReadBool("Ustawienia","ostatniplik",true);
+	try
+	{
 	CheckBox6->Checked=Ini->ReadBool("Ustawienia","adaptacyjnypedzel",false);
 	}
 	catch(...)
 	{
 	return;
 	}
+
+
 delete Ini;
+
+if(last_file){
+	try
+	{
+	TIniFile *Ini2 = new TIniFile(ExtractFilePath(Application->ExeName)+"\\MultiNote_Data\\Variables.ini");
+	Form1->file_name=Ini2->ReadString("Usprawnienia","ostatniplik","");
+	Form1->tresc->Lines->LoadFromFile(Form1->file_name);
+	Form1->name_without_path=ExtractFileName(Form1->file_name);
+	Form1->Caption="Multi Note - "+Form1->name_without_path;
+	Form1->file_opened = true;
+	delete Ini2;
+	}
+	catch(...)
+	{
+    return;
+	}
+
+}
 //---------------
+
 
 }
 //---------------------------------------------------------------------------
@@ -145,6 +170,8 @@ Ini->WriteBool("Ustawienia","interaktywnaikona", CheckBox10->Checked);
 Ini->WriteBool("Ustawienia","powiadomieniawysuwane", CheckBox11->Checked);
 Ini->WriteBool("Ustawienia","obliczanierozmiarupliku",CheckBox5->Checked);
 Ini->WriteBool("Ustawienia","aktywnalinia",CheckBox12->Checked);
+Ini->WriteBool("Ustawienia","ostatniplik",CheckBox13->Checked);
+
 delete Ini;
 }
 //---------------------------------------------------------------------------
@@ -267,7 +294,20 @@ void __fastcall TForm8::CheckBox12Click(TObject *Sender)
 	}                                           //aktywna linia
 	else
 	{
-    Form1->Panel3->Visible = false;
+	Form1->Panel3->Visible = false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox13Click(TObject *Sender)
+{
+	if(CheckBox13->Checked)
+	{
+	last_file=true;
+	}
+	else                       //ostatni plik
+	{
+    last_file=false;
     }
 }
 //---------------------------------------------------------------------------

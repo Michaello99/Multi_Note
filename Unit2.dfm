@@ -672,6 +672,19 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
+    object Label8: TLabel
+      Left = 3
+      Top = 57
+      Width = 279
+      Height = 15
+      Caption = '4. Funkcja autowczytywania ostatnio otwartego pliku'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
   end
   object event_console: TListBox
     Left = 0
