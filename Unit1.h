@@ -86,6 +86,7 @@ __published:	// IDE-managed Components
 	TTimer *Timer1;
 	TPanel *Panel3;
 	TTimer *Timer2;
+	TMenuItem *Odtwarzaczwideo1;
 	void __fastcall Oprogramie1Click(TObject *Sender);
 	void __fastcall Nowyplik1Click(TObject *Sender);
 	void __fastcall WyczMultiNote1Click(TObject *Sender);
@@ -134,6 +135,7 @@ __published:	// IDE-managed Components
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall Timer2Timer(TObject *Sender);
 	void __fastcall Wczytajplik1Click(TObject *Sender);
+	void __fastcall Odtwarzaczwideo1Click(TObject *Sender);
 private:	// User declarations
 
 public:		// User declarations

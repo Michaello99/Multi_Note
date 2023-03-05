@@ -208,8 +208,12 @@ object Form1: TForm1
     object Czynnoci1: TMenuItem
       Caption = 'Czynno'#347'ci'
       object Odtwarzacz1: TMenuItem
-        Caption = 'Odtwarzacz'
+        Caption = 'Odtwarzacz muzyki'
         OnClick = Odtwarzacz1Click
+      end
+      object Odtwarzaczwideo1: TMenuItem
+        Caption = 'Odtwarzacz wideo'
+        OnClick = Odtwarzaczwideo1Click
       end
       object Przegldarkaobrazw1: TMenuItem
         Caption = 'Obrazy'
@@ -332,7 +336,7 @@ object Form1: TForm1
     Left = 376
     Top = 72
     object Odtwarzacz2: TMenuItem
-      Caption = 'Odtwarzacz'
+      Caption = 'Odtwarzacz muzyki'
       object Wznw1: TMenuItem
         Caption = 'Wzn'#243'w'
         OnClick = Wznw1Click

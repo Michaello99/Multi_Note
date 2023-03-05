@@ -175,9 +175,9 @@ object Form8: TForm8
     object Label8: TLabel
       Left = 3
       Top = 158
-      Width = 109
+      Width = 120
       Height = 30
-      Caption = 'Odtwarzacz'
+      Caption = 'Odtwarzacze'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 30

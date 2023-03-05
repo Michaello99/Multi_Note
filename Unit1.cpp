@@ -20,6 +20,7 @@
 #include "Unit6.h"
 #include "Unit7.h"
 #include "Unit8.h"
+#include "Unit9.h"
 using namespace std;
 float size_kilobytes,size_megabytes;
 float size_bytes;
@@ -623,4 +624,11 @@ void __fastcall TForm1::Wczytajplik1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Odtwarzaczwideo1Click(TObject *Sender)
+{
+Form9->Show();
+Form9->WindowState = wsNormal;
+}
+//---------------------------------------------------------------------------
 

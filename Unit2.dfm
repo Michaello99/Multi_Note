@@ -685,6 +685,19 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
+    object Label9: TLabel
+      Left = 3
+      Top = 75
+      Width = 108
+      Height = 15
+      Caption = '5. Odtwarzacz wideo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
   end
   object event_console: TListBox
     Left = 0

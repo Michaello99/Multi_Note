@@ -63,6 +63,7 @@ __published:	// IDE-managed Components
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall max_volume_timerTimer(TObject *Sender);
 	void __fastcall alert_volume_timerTimer(TObject *Sender);
+
 private:	// User declarations
 void __fastcall CreateParams(TCreateParams &Params);
 void __fastcall LoadFiles(void);

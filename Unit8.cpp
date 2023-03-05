@@ -10,6 +10,7 @@
 #include "Unit6.h"
 #include "Unit7.h"
 #include "Unit8.h"
+#include "Unit9.h"
 #include <IniFiles.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)

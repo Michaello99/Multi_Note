@@ -1,7 +1,7 @@
 object Form3: TForm3
   Left = 0
   Top = 0
-  Caption = 'Odtwarzacz'
+  Caption = 'Odtwarzacz muzyki'
   ClientHeight = 516
   ClientWidth = 556
   Color = clBtnFace
@@ -204,9 +204,9 @@ object Form3: TForm3
     object Label10: TLabel
       Left = 111
       Top = 10
-      Width = 129
+      Width = 213
       Height = 35
-      Caption = 'Odtwarzacz'
+      Caption = 'Odtwarzacz muzyki'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 35
