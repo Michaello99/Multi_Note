@@ -178,55 +178,55 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit1.h</DependentOn>
-            <BuildOrder>2</BuildOrder>
+            <BuildOrder>1</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit2.cpp">
             <Form>Form2</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit2.h</DependentOn>
-            <BuildOrder>3</BuildOrder>
+            <BuildOrder>2</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit3.cpp">
             <Form>Form3</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit3.h</DependentOn>
-            <BuildOrder>4</BuildOrder>
+            <BuildOrder>3</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit4.cpp">
             <Form>Form4</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit4.h</DependentOn>
-            <BuildOrder>5</BuildOrder>
+            <BuildOrder>4</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit5.cpp">
             <Form>Form5</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit5.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
+            <BuildOrder>5</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit6.cpp">
             <Form>Form6</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit6.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
+            <BuildOrder>6</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit7.cpp">
             <Form>Form7</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit7.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
+            <BuildOrder>7</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit8.cpp">
             <Form>Form8</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit8.h</DependentOn>
-            <BuildOrder>9</BuildOrder>
+            <BuildOrder>8</BuildOrder>
         </CppCompile>
         <CppCompile Include="Unit9.cpp">
             <Form>Form9</Form>
             <FormType>dfm</FormType>
             <DependentOn>Unit9.h</DependentOn>
-            <BuildOrder>11</BuildOrder>
+            <BuildOrder>9</BuildOrder>
         </CppCompile>
         <FormResources Include="Unit6.dfm"/>
         <FormResources Include="Unit5.dfm"/>
@@ -274,8 +274,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
-                    <Platform Name="OSX64">
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
+                    <Platform Name="Win32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -338,8 +338,8 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin\cc32c270mt.dll" Class="DependencyModule">
-                    <Platform Name="Win32">
+                <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx64\libcgcrtl.dylib" Class="DependencyModule">
+                    <Platform Name="OSX64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

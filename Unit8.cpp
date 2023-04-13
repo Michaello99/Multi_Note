@@ -292,10 +292,12 @@ void __fastcall TForm8::CheckBox12Click(TObject *Sender)
 	if(CheckBox12->Checked)
 	{
 	Form1->Panel3->Visible = true;
+	Form1->Timer2->Enabled = true;
 	}                                           //aktywna linia
 	else
 	{
 	Form1->Panel3->Visible = false;
+    Form1->Timer2->Enabled = false;
 	}
 }
 //---------------------------------------------------------------------------

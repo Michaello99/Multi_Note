@@ -119,7 +119,7 @@ if (OpenDialog1->Execute())
 
 		}
 
-    //size_panel_display --------------------------------
+    //filesize_panel_display --------------------------------
 	Panel1->Visible = true;
 	}
    }

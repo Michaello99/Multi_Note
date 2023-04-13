@@ -29,9 +29,6 @@ object Form9: TForm9
     ShowCaption = False
     ShowHint = True
     TabOrder = 0
-    ExplicitLeft = -68
-    ExplicitTop = -3
-    ExplicitWidth = 602
     DesignSize = (
       664
       58)
@@ -141,7 +138,7 @@ object Form9: TForm9
     object MediaPlayer1: TMediaPlayer
       Left = 269
       Top = 10
-      Width = 0
+      Width = 29
       Height = 30
       VisibleButtons = []
       DoubleBuffered = True
@@ -164,8 +161,6 @@ object Form9: TForm9
     ShowCaption = False
     TabOrder = 1
     ExplicitTop = 61
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
   object Panel3: TPanel
     Left = 0
