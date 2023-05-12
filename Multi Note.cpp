@@ -22,7 +22,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
-		TStyleManager::TrySetStyle("Windows10 Dark");
+		TStyleManager::TrySetStyle("Windows11 Modern Dark");
 		Application->Title = "Multi Note";
 		Application->CreateForm(__classid(TForm1), &Form1);
 		Application->CreateForm(__classid(TForm7), &Form7);

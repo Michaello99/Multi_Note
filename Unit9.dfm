@@ -12,9 +12,7 @@ object Form9: TForm9
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnResize = FormResize
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -102,6 +100,7 @@ object Form9: TForm9
       ParentFont = False
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitLeft = 500
     end
     object Button2: TButton
       Left = 424
@@ -118,6 +117,7 @@ object Form9: TForm9
       ParentFont = False
       TabOrder = 1
       OnClick = Button2Click
+      ExplicitLeft = 420
     end
     object Button3: TButton
       Left = 320
@@ -134,6 +134,7 @@ object Form9: TForm9
       ParentFont = False
       TabOrder = 2
       OnClick = Button3Click
+      ExplicitLeft = 316
     end
     object MediaPlayer1: TMediaPlayer
       Left = 269
@@ -160,7 +161,8 @@ object Form9: TForm9
     ParentDoubleBuffered = False
     ShowCaption = False
     TabOrder = 1
-    ExplicitTop = 61
+    ExplicitWidth = 660
+    ExplicitHeight = 317
   end
   object Panel3: TPanel
     Left = 0
@@ -169,7 +171,10 @@ object Form9: TForm9
     Height = 17
     Align = alBottom
     Caption = 'Zmiana g'#322'o'#347'no'#347'ci w oknie odtwarzacza muzyki'
+    FullRepaint = False
     TabOrder = 2
+    ExplicitTop = 375
+    ExplicitWidth = 660
   end
   object OpenDialog1: TOpenDialog
     Left = 608

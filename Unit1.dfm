@@ -16,11 +16,9 @@ object Form1: TForm1
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
-  OldCreateOrder = False
   Visible = True
   OnClose = FormClose
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 20
   object tresc: TRichEdit
     Left = 0
@@ -32,6 +30,7 @@ object Form1: TForm1
     BevelOuter = bvNone
     BorderStyle = bsNone
     Color = clWhite
+    EnableURLs = True
     Font.Charset = EASTEUROPE_CHARSET
     Font.Color = clGray
     Font.Height = 25
@@ -42,9 +41,12 @@ object Form1: TForm1
       '')
     ParentFont = False
     ScrollBars = ssVertical
+    ShowURLHint = True
+    SpellChecking = True
     TabOrder = 0
     WantTabs = True
-    Zoom = 100
+    ExplicitWidth = 668
+    ExplicitHeight = 291
   end
   object Panel1: TPanel
     Left = 0
@@ -63,6 +65,8 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 1
     Visible = False
+    ExplicitTop = 383
+    ExplicitWidth = 668
   end
   object Panel2: TPanel
     Left = 0
@@ -75,6 +79,7 @@ object Form1: TForm1
     ShowCaption = False
     TabOrder = 2
     Visible = False
+    ExplicitWidth = 668
     DesignSize = (
       672
       65)
@@ -94,6 +99,7 @@ object Form1: TForm1
       TabOrder = 0
       Visible = False
       OnKeyDown = Edit1KeyDown
+      ExplicitWidth = 333
     end
     object Button1: TButton
       Left = 495
@@ -108,6 +114,7 @@ object Form1: TForm1
       TabOrder = 1
       Visible = False
       OnClick = Button1Click
+      ExplicitLeft = 491
     end
     object Button2: TButton
       Left = 582
@@ -118,6 +125,7 @@ object Form1: TForm1
       Caption = 'Zamknij'
       TabOrder = 2
       OnClick = Button2Click
+      ExplicitLeft = 578
     end
     object CheckBox1: TCheckBox
       Left = 8
@@ -154,6 +162,8 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    ExplicitTop = 356
+    ExplicitWidth = 668
   end
   object MainMenu1: TMainMenu
     BiDiMode = bdLeftToRight
@@ -329,6 +339,7 @@ object Form1: TForm1
     Font.Height = -20
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Options = []
     Left = 296
     Top = 72
   end

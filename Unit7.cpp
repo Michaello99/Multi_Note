@@ -90,7 +90,7 @@ void __fastcall TForm7::Image2Click(TObject *Sender)
     }
 	else if(Form8->adaptivedraw==true)
     {
-    ShowMessage("Adaptacyjny kolor pióra jest w³¹czony. Wy³¹cz go w Ustawieniach.");
+    ShowMessage("Adaptacyjny kolor pêdzla jest w³¹czony. Wy³¹cz go w Ustawieniach.");
     }
 }
 //---------------------------------------------------------------------------

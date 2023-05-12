@@ -32,8 +32,6 @@ object Form2: TForm2
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
@@ -526,12 +524,12 @@ object Form2: TForm2
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 393
+    Left = 387
     Top = 86
-    Width = 90
+    Width = 106
     Height = 30
     Alignment = taCenter
-    Caption = 'Wersja 15'
+    Caption = 'Wersja 15.1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
@@ -561,6 +559,7 @@ object Form2: TForm2
     DockSite = True
     ShowCaption = False
     TabOrder = 0
+    ExplicitWidth = 593
     object Image2: TImage
       Left = 0
       Top = 0
@@ -636,9 +635,9 @@ object Form2: TForm2
     object Label4: TLabel
       Left = 3
       Top = 3
-      Width = 211
+      Width = 205
       Height = 15
-      Caption = '1. Poprawiony algorytm ochrony s'#322'uchu'
+      Caption = '1. Nowy interfejs zgodny z Windows 11'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -648,10 +647,10 @@ object Form2: TForm2
     end
     object Label5: TLabel
       Left = 3
-      Top = 21
-      Width = 233
+      Top = 24
+      Width = 151
       Height = 15
-      Caption = '2. Wy'#347'wietlanie numeru aktywnej linii tekstu'
+      Caption = '2. Poprawki pola tekstowego'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -661,36 +660,10 @@ object Form2: TForm2
     end
     object Label7: TLabel
       Left = 3
-      Top = 39
-      Width = 243
+      Top = 45
+      Width = 122
       Height = 15
-      Caption = '3. Zapis plik'#243'w tylko w zgodnym formacie RTF'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label8: TLabel
-      Left = 3
-      Top = 57
-      Width = 279
-      Height = 15
-      Caption = '4. Funkcja autowczytywania ostatnio otwartego pliku'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label9: TLabel
-      Left = 3
-      Top = 75
-      Width = 108
-      Height = 15
-      Caption = '5. Odtwarzacz wideo'
+      Caption = '3. Sprawdzanie pisowni'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -708,5 +681,7 @@ object Form2: TForm2
     ItemHeight = 13
     TabOrder = 2
     Visible = False
+    ExplicitTop = 317
+    ExplicitWidth = 593
   end
 end

@@ -15,8 +15,6 @@ object Form5: TForm5
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 7
@@ -175,6 +173,7 @@ object Form5: TForm5
     ParentShowHint = False
     ShowHint = True
     TabOrder = 7
+    ExplicitWidth = 422
     object Label10: TLabel
       Left = 52
       Top = 10

@@ -124,6 +124,7 @@ CheckBox11->Checked=Ini->ReadBool("Ustawienia","powiadomieniawysuwane",true);
 CheckBox5->Checked=Ini->ReadBool("Ustawienia","obliczanierozmiarupliku",false);
 CheckBox12->Checked=Ini->ReadBool("Ustawienia","aktywnalinia",true);
 CheckBox13->Checked=Ini->ReadBool("Ustawienia","ostatniplik",true);
+CheckBox14->Checked=Ini->ReadBool("Ustawienia","asystentpisowni",true);
 	try
 	{
 	CheckBox6->Checked=Ini->ReadBool("Ustawienia","adaptacyjnypedzel",false);
@@ -172,7 +173,7 @@ Ini->WriteBool("Ustawienia","powiadomieniawysuwane", CheckBox11->Checked);
 Ini->WriteBool("Ustawienia","obliczanierozmiarupliku",CheckBox5->Checked);
 Ini->WriteBool("Ustawienia","aktywnalinia",CheckBox12->Checked);
 Ini->WriteBool("Ustawienia","ostatniplik",CheckBox13->Checked);
-
+Ini->WriteBool("Ustawienia","asystentpisowni",CheckBox14->Checked);
 delete Ini;
 }
 //---------------------------------------------------------------------------
@@ -310,8 +311,21 @@ void __fastcall TForm8::CheckBox13Click(TObject *Sender)
 	}
 	else                       //ostatni plik
 	{
-    last_file=false;
-    }
+	last_file=false;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm8::CheckBox14Click(TObject *Sender)
+{
+	if(CheckBox14->Checked)
+	{
+	Form1->tresc->SpellChecking=true;
+	}
+	else                       //asystent pisowni
+	{
+	Form1->tresc->SpellChecking=false;
+	}
 }
 //---------------------------------------------------------------------------
 

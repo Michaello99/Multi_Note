@@ -53,6 +53,7 @@ __published:	// IDE-managed Components
 	TCheckBox *CheckBox9;
 	TCheckBox *CheckBox12;
 	TCheckBox *CheckBox13;
+	TCheckBox *CheckBox14;
 	void __fastcall CheckBox2Click(TObject *Sender);
 	void __fastcall CheckBox6Click(TObject *Sender);
 	void __fastcall CheckBox7Click(TObject *Sender);
@@ -73,6 +74,7 @@ __published:	// IDE-managed Components
 	void __fastcall CheckBox9Click(TObject *Sender);
 	void __fastcall CheckBox12Click(TObject *Sender);
 	void __fastcall CheckBox13Click(TObject *Sender);
+	void __fastcall CheckBox14Click(TObject *Sender);
 
 private:	// User declarations
  void __fastcall CreateParams(TCreateParams &Params);

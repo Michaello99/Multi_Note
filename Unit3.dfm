@@ -3,7 +3,7 @@ object Form3: TForm3
   Top = 0
   Caption = 'Odtwarzacz muzyki'
   ClientHeight = 516
-  ClientWidth = 556
+  ClientWidth = 559
   Color = clBtnFace
   Constraints.MinHeight = 483
   Constraints.MinWidth = 571
@@ -15,15 +15,13 @@ object Form3: TForm3
   Font.Height = 20
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = False
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
   DesignSize = (
-    556
+    559
     516)
-  PixelsPerInch = 96
   TextHeight = 20
   object Label1: TLabel
     Left = 8
@@ -65,7 +63,7 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 194
+    Left = 196
     Top = 257
     Width = 147
     Height = 25
@@ -117,7 +115,7 @@ object Form3: TForm3
     OnClick = Image3Click
   end
   object Image4: TImage
-    Left = 507
+    Left = 510
     Top = 442
     Width = 41
     Height = 43
@@ -188,7 +186,7 @@ object Form3: TForm3
   object Panel1: TPanel
     Left = -46
     Top = -3
-    Width = 602
+    Width = 605
     Height = 58
     Hint = 'Panel g'#243'rny'
     Anchors = [akLeft, akTop, akRight]
@@ -198,8 +196,9 @@ object Form3: TForm3
     ShowCaption = False
     ShowHint = True
     TabOrder = 0
+    ExplicitWidth = 601
     DesignSize = (
-      602
+      605
       58)
     object Label10: TLabel
       Left = 111
@@ -243,7 +242,7 @@ object Form3: TForm3
         F449EF3162848C830000000049454E44AE426082}
     end
     object Button2: TButton
-      Left = 390
+      Left = 393
       Top = 3
       Width = 212
       Height = 54
@@ -257,12 +256,13 @@ object Form3: TForm3
       ParentFont = False
       TabOrder = 0
       OnClick = Button2Click
+      ExplicitLeft = 389
     end
   end
   object ProgressBar1: TProgressBar
     Left = 61
     Top = 127
-    Width = 487
+    Width = 490
     Height = 27
     Anchors = [akLeft, akTop, akRight]
     DoubleBuffered = True
@@ -270,12 +270,13 @@ object Form3: TForm3
     Smooth = True
     SmoothReverse = True
     TabOrder = 1
+    ExplicitWidth = 486
   end
   object ListBox1: TListBox
     Left = 8
     Top = 288
-    Width = 540
-    Height = 109
+    Width = 543
+    Height = 88
     Hint = 'Kliknij plik dwa razy, aby go odtworzy'#263
     Align = alCustom
     Anchors = [akLeft, akTop, akRight, akBottom]
@@ -297,7 +298,7 @@ object Form3: TForm3
   object Button1: TButton
     Left = 8
     Top = 403
-    Width = 540
+    Width = 543
     Height = 33
     Hint = 'Usu'#324' wszystkie pliki z listy odtwarzania'
     Anchors = [akLeft, akRight, akBottom]
@@ -312,11 +313,13 @@ object Form3: TForm3
     ShowHint = True
     TabOrder = 3
     OnClick = Button1Click
+    ExplicitTop = 402
+    ExplicitWidth = 539
   end
   object TrackBar1: TTrackBar
     Left = 59
     Top = 450
-    Width = 442
+    Width = 445
     Height = 31
     Hint = 'Ustaw g'#322'o'#347'no'#347#263' d'#378'wi'#281'ku'
     Anchors = [akLeft, akRight, akBottom]
@@ -326,11 +329,13 @@ object Form3: TForm3
     ShowHint = True
     TabOrder = 4
     OnChange = TrackBar1Change
+    ExplicitTop = 449
+    ExplicitWidth = 441
   end
   object Panel2: TPanel
     Left = 0
     Top = 495
-    Width = 556
+    Width = 559
     Height = 21
     Align = alBottom
     Caption = 'Kliknij dwa razy plik na li'#347'cie odtwarzania, aby go odtworzy'#263' '
@@ -343,9 +348,11 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    ExplicitTop = 494
+    ExplicitWidth = 555
   end
   object Panel3: TPanel
-    Left = 8
+    Left = 10
     Top = 168
     Width = 540
     Height = 83
@@ -354,6 +361,7 @@ object Form3: TForm3
     DockSite = True
     ShowCaption = False
     TabOrder = 7
+    ExplicitLeft = 8
     DesignSize = (
       540
       83)
@@ -458,14 +466,14 @@ object Form3: TForm3
   object OpenDialog1: TOpenDialog
     Filter = 'Wszystkie pliki|*.*|Plik MP4|*.mp4|Plik WAV|*.wav|Plik MP3|*.mp3'
     Title = 'Wczytywanie muzyki'
-    Left = 234
-    Top = 10
+    Left = 450
+    Top = 66
   end
   object Timer2: TTimer
     Enabled = False
     OnTimer = Timer2Timer
-    Left = 296
-    Top = 8
+    Left = 512
+    Top = 64
   end
   object Timer1: TTimer
     Enabled = False
@@ -474,7 +482,7 @@ object Form3: TForm3
     Top = 64
   end
   object TrayIcon1: TTrayIcon
-    Left = 400
+    Left = 376
     Top = 64
   end
   object max_volume_timer: TTimer
@@ -488,7 +496,7 @@ object Form3: TForm3
     Enabled = False
     Interval = 10
     OnTimer = alert_volume_timerTimer
-    Left = 312
+    Left = 280
     Top = 64
   end
 end

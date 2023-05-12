@@ -15,13 +15,11 @@ object Form8: TForm8
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnClose = FormClose
   OnCreate = FormCreate
   DesignSize = (
     625
     392)
-  PixelsPerInch = 96
   TextHeight = 13
   object Label4: TLabel
     Left = 8
@@ -61,6 +59,7 @@ object Form8: TForm8
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
+    ExplicitWidth = 621
     object Image2: TImage
       Left = 0
       Top = 0
@@ -172,9 +171,11 @@ object Form8: TForm8
     TabOrder = 1
     OnMouseWheelDown = ScrollBox1MouseWheelDown
     OnMouseWheelUp = ScrollBox1MouseWheelUp
+    ExplicitWidth = 325
+    ExplicitHeight = 286
     object Label8: TLabel
       Left = 3
-      Top = 158
+      Top = 174
       Width = 120
       Height = 30
       Caption = 'Odtwarzacze'
@@ -187,7 +188,7 @@ object Form8: TForm8
     end
     object Label10: TLabel
       Left = 3
-      Top = 252
+      Top = 268
       Width = 92
       Height = 30
       Caption = 'Kalkulator'
@@ -200,7 +201,7 @@ object Form8: TForm8
     end
     object Label3: TLabel
       Left = 3
-      Top = 320
+      Top = 336
       Width = 66
       Height = 30
       Caption = 'Obrazy'
@@ -213,7 +214,7 @@ object Form8: TForm8
     end
     object Label12: TLabel
       Left = 3
-      Top = 405
+      Top = 421
       Width = 86
       Height = 30
       Caption = 'Rysownik'
@@ -226,7 +227,7 @@ object Form8: TForm8
     end
     object Label14: TLabel
       Left = 144
-      Top = 577
+      Top = 593
       Width = 30
       Height = 15
       Alignment = taCenter
@@ -240,7 +241,7 @@ object Form8: TForm8
     end
     object Label6: TLabel
       Left = 3
-      Top = 466
+      Top = 482
       Width = 207
       Height = 30
       Caption = 'Integracja z systemem'
@@ -266,7 +267,7 @@ object Form8: TForm8
     end
     object CheckBox2: TCheckBox
       Left = 3
-      Top = 194
+      Top = 210
       Width = 197
       Height = 24
       Hint = 
@@ -288,7 +289,7 @@ object Form8: TForm8
     end
     object CheckBox3: TCheckBox
       Left = 3
-      Top = 288
+      Top = 304
       Width = 214
       Height = 26
       Hint = 
@@ -309,7 +310,7 @@ object Form8: TForm8
     end
     object CheckBox4: TCheckBox
       Left = 3
-      Top = 356
+      Top = 372
       Width = 242
       Height = 19
       Hint = 'Gdy zaznaczone, lista pokazuje si'#281' i ukrywa automatycznie'
@@ -328,7 +329,7 @@ object Form8: TForm8
     end
     object CheckBox6: TCheckBox
       Left = 3
-      Top = 441
+      Top = 457
       Width = 242
       Height = 19
       Hint = 
@@ -348,7 +349,7 @@ object Form8: TForm8
     end
     object CheckBox7: TCheckBox
       Left = 3
-      Top = 222
+      Top = 238
       Width = 197
       Height = 24
       Hint = 'Ograniczenie gwa'#322'townych zmian g'#322'o'#347'no'#347'ci i zmniejszenie jej'
@@ -368,7 +369,7 @@ object Form8: TForm8
     end
     object CheckBox10: TCheckBox
       Left = 3
-      Top = 502
+      Top = 518
       Width = 286
       Height = 19
       Hint = 
@@ -390,7 +391,7 @@ object Form8: TForm8
     end
     object CheckBox11: TCheckBox
       Left = 3
-      Top = 527
+      Top = 543
       Width = 262
       Height = 19
       Hint = 'Pozwala na pokazywanie powiadomie'#324' akcji Multi Note'
@@ -449,7 +450,7 @@ object Form8: TForm8
     end
     object CheckBox8: TCheckBox
       Left = 3
-      Top = 552
+      Top = 568
       Width = 262
       Height = 19
       Hint = 'Wype'#322'nia ekran oknem programu'
@@ -468,7 +469,7 @@ object Form8: TForm8
     end
     object CheckBox9: TCheckBox
       Left = 3
-      Top = 381
+      Top = 397
       Width = 262
       Height = 19
       Hint = 'Obrazek wczytuje si'#281' szybciej kosztem jako'#347'ci'
@@ -523,6 +524,28 @@ object Form8: TForm8
       State = cbChecked
       TabOrder = 12
       OnClick = CheckBox13Click
+    end
+    object CheckBox14: TCheckBox
+      Left = 3
+      Top = 149
+      Width = 295
+      Height = 19
+      Hint = 
+        'Sprawdza poprawno'#347#263' pisowni; po klikni'#281'ciu prawym sugeruje zamie' +
+        'nniki'
+      Caption = 'Asystent poprawnej pisowni'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = 20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 13
+      OnClick = CheckBox14Click
     end
   end
   object ScrollBox2: TScrollBox
@@ -608,9 +631,9 @@ object Form8: TForm8
     object Label16: TLabel
       Left = 3
       Top = 3
-      Width = 124
+      Width = 140
       Height = 30
-      Caption = 'Multi Note 15'
+      Caption = 'Multi Note 15.1'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 30

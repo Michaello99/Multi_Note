@@ -15,12 +15,10 @@ object Form4: TForm4
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -34,6 +32,7 @@ object Form4: TForm4
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
+    ExplicitWidth = 639
     DesignSize = (
       643
       63)
@@ -200,6 +199,7 @@ object Form4: TForm4
       ParentFont = False
       TabOrder = 0
       OnClick = Button1Click
+      ExplicitLeft = 482
     end
   end
   object ListBox1: TListBox
@@ -221,6 +221,8 @@ object Form4: TForm4
     TabOrder = 1
     Visible = False
     OnClick = ListBox1Click
+    ExplicitLeft = 482
+    ExplicitHeight = 327
   end
   object Panel2: TPanel
     Left = 0
@@ -234,6 +236,8 @@ object Form4: TForm4
       'j opcji'
     FullRepaint = False
     TabOrder = 2
+    ExplicitTop = 390
+    ExplicitWidth = 639
   end
   object ScrollBox1: TScrollBox
     Left = 0
@@ -252,6 +256,8 @@ object Form4: TForm4
     TabOrder = 3
     OnMouseWheelDown = ScrollBox1MouseWheelDown
     OnMouseWheelUp = ScrollBox1MouseWheelUp
+    ExplicitWidth = 482
+    ExplicitHeight = 327
     object Image1: TImage
       Left = 11
       Top = 13

@@ -15,9 +15,7 @@ object Form7: TForm7
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
@@ -48,6 +46,7 @@ object Form7: TForm7
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
+    ExplicitWidth = 705
     DesignSize = (
       709
       50)
@@ -320,8 +319,7 @@ object Form7: TForm7
       ShowHint = True
       TabOrder = 0
       OnChange = width_trackbarChange
-      ExplicitWidth = 150
-      ExplicitHeight = 36
+      ExplicitWidth = 140
     end
   end
   object SaveDialog1: TSaveDialog
