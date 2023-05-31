@@ -14,6 +14,7 @@
 #include <Vcl.Imaging.pngimage.hpp>
 #include <Vcl.CustomizeDlg.hpp>
 #include <Vcl.Samples.Gauges.hpp>
+#include <Vcl.XPMan.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {

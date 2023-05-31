@@ -529,7 +529,7 @@ object Form2: TForm2
     Width = 106
     Height = 30
     Alignment = taCenter
-    Caption = 'Wersja 15.1'
+    Caption = 'Wersja 15.2'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 30
@@ -635,9 +635,9 @@ object Form2: TForm2
     object Label4: TLabel
       Left = 3
       Top = 3
-      Width = 205
+      Width = 243
       Height = 15
-      Caption = '1. Nowy interfejs zgodny z Windows 11'
+      Caption = '1. Przewijanie utwor'#243'w w odtwarzaczu muzyki'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -648,9 +648,9 @@ object Form2: TForm2
     object Label5: TLabel
       Left = 3
       Top = 24
-      Width = 151
+      Width = 239
       Height = 15
-      Caption = '2. Poprawki pola tekstowego'
+      Caption = '2. Naprawione b'#322#281'dy zapisu w edytorze tekstu'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16
@@ -661,9 +661,9 @@ object Form2: TForm2
     object Label7: TLabel
       Left = 3
       Top = 45
-      Width = 122
+      Width = 228
       Height = 15
-      Caption = '3. Sprawdzanie pisowni'
+      Caption = '3. Naprawiony wyciek pami'#281'ci odtwarzacza'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 16

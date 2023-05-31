@@ -134,13 +134,13 @@
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>Multi Note_Icon1.ico</Icon_MainIcon>
+        <Icon_MainIcon>Multi Note_Icon.ico</Icon_MainIcon>
         <UWP_CppLogo44>..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN15.png</UWP_CppLogo44>
         <UWP_CppLogo150>..\..\Grafika do programów\Logo i ikona N&amp;W\ikonka MN15.png</UWP_CppLogo150>
         <AppExecutionLevel>requireAdministrator</AppExecutionLevel>
         <VerInfo_MajorVer>15</VerInfo_MajorVer>
-        <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=15.1.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=15.2.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <LinkPackageStatics>rtl.lib;vcl.lib;vclimg.lib;vclx.lib;vclwinx.lib;bindengine.lib;bcbsmp.lib;appanalytics.lib;vclactnband.lib;IndyIPServer.lib;IndyIPCommon.lib;CustomIPTransport.lib;IndySystem.lib;IndyProtocols.lib;IndyCore.lib;IndyIPClient.lib;tethering.lib;dbrtl.lib;vcldb.lib;VclSmp.lib</LinkPackageStatics>
         <UsePackages>false</UsePackages>
         <DynamicRTL>false</DynamicRTL>

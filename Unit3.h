@@ -24,7 +24,6 @@ __published:	// IDE-managed Components
 	TTimer *Timer2;
 	TLabel *Label1;
 	TLabel *Label2;
-	TProgressBar *ProgressBar1;
 	TLabel *Label3;
 	TButton *Button5;
 	TButton *Button3;
@@ -44,6 +43,8 @@ __published:	// IDE-managed Components
 	TTrayIcon *TrayIcon1;
 	TTimer *max_volume_timer;
 	TTimer *alert_volume_timer;
+	TTrackBar *TrackBar2;
+	TLabel *Label5;
 	void __fastcall FormActivate(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -63,6 +64,7 @@ __published:	// IDE-managed Components
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall max_volume_timerTimer(TObject *Sender);
 	void __fastcall alert_volume_timerTimer(TObject *Sender);
+	void __fastcall TrackBar2Change(TObject *Sender);
 
 private:	// User declarations
 void __fastcall CreateParams(TCreateParams &Params);

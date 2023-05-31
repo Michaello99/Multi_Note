@@ -144,7 +144,8 @@ void __fastcall TForm1::Zapiszjakonowy1Click(TObject *Sender)
 			tresc->Lines->SaveToFile( SaveDialog1->FileName + ".rtf");
 			Form1->Caption="Multi Note - "+ExtractFileName(SaveDialog1->FileName)+".rtf";
             }
-            file_opened = true;
+			file_opened = true;
+            file_name = SaveDialog1->FileName;
 			}
 			catch (...)
 			{

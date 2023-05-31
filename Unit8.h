@@ -36,11 +36,7 @@ __published:	// IDE-managed Components
 	TCheckBox *CheckBox11;
 	TLabel *Label2;
 	TScrollBox *ScrollBox2;
-	TLabel *Label5;
-	TLabel *Label7;
 	TButton *Button1;
-	TLabel *end_of_support;
-	TLabel *end_of_support2;
 	TLabel *Label9;
 	TLabel *Label11;
 	TButton *Button2;
@@ -67,7 +63,6 @@ __published:	// IDE-managed Components
 	void __fastcall CheckBox11Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
-	void __fastcall Label2DblClick(TObject *Sender);
 	void __fastcall CheckBox1Click(TObject *Sender);
 	void __fastcall CheckBox5Click(TObject *Sender);
 	void __fastcall CheckBox8Click(TObject *Sender);

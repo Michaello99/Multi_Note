@@ -52,9 +52,9 @@ object Form3: TForm3
   object Label3: TLabel
     Left = 8
     Top = 95
-    Width = 59
+    Width = 113
     Height = 21
-    Caption = 'D'#322'ugo'#347#263':'
+    Caption = 'D'#322'ugo'#347#263' utworu:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = 22
@@ -63,8 +63,8 @@ object Form3: TForm3
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 196
-    Top = 257
+    Left = 204
+    Top = 258
     Width = 147
     Height = 25
     Alignment = taCenter
@@ -76,7 +76,6 @@ object Form3: TForm3
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    ExplicitLeft = 216
   end
   object Image3: TImage
     Left = 8
@@ -170,6 +169,22 @@ object Form3: TForm3
     OnClick = Image4Click
     ExplicitLeft = 553
   end
+  object Label5: TLabel
+    Left = 136
+    Top = 155
+    Width = 283
+    Height = 15
+    Alignment = taCenter
+    Anchors = [akLeft, akTop, akRight]
+    Caption = 'Aby przewin'#261#263' utw'#243'r w czasie, wstrzymaj odtwarzanie'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = 15
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    Layout = tlCenter
+  end
   object MediaPlayer1: TMediaPlayer
     Left = 334
     Top = 8
@@ -181,7 +196,7 @@ object Form3: TForm3
     DoubleBuffered = True
     Visible = False
     ParentDoubleBuffered = False
-    TabOrder = 6
+    TabOrder = 5
   end
   object Panel1: TPanel
     Left = -46
@@ -259,24 +274,11 @@ object Form3: TForm3
       ExplicitLeft = 389
     end
   end
-  object ProgressBar1: TProgressBar
-    Left = 61
-    Top = 127
-    Width = 490
-    Height = 27
-    Anchors = [akLeft, akTop, akRight]
-    DoubleBuffered = True
-    ParentDoubleBuffered = False
-    Smooth = True
-    SmoothReverse = True
-    TabOrder = 1
-    ExplicitWidth = 486
-  end
   object ListBox1: TListBox
     Left = 8
     Top = 288
     Width = 543
-    Height = 88
+    Height = 109
     Hint = 'Kliknij plik dwa razy, aby go odtworzy'#263
     Align = alCustom
     Anchors = [akLeft, akTop, akRight, akBottom]
@@ -292,7 +294,7 @@ object Form3: TForm3
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 2
+    TabOrder = 1
     OnDblClick = ListBox1DblClick
   end
   object Button1: TButton
@@ -311,7 +313,7 @@ object Form3: TForm3
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Button1Click
     ExplicitTop = 402
     ExplicitWidth = 539
@@ -327,7 +329,8 @@ object Form3: TForm3
     ParentShowHint = False
     Position = 13000
     ShowHint = True
-    TabOrder = 4
+    TabOrder = 3
+    StyleName = 'Windows10 Dark'
     OnChange = TrackBar1Change
     ExplicitTop = 449
     ExplicitWidth = 441
@@ -347,27 +350,28 @@ object Form3: TForm3
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
     ExplicitTop = 494
     ExplicitWidth = 555
   end
   object Panel3: TPanel
-    Left = 10
-    Top = 168
+    Left = 11
+    Top = 176
     Width = 540
     Height = 83
     Anchors = [akTop]
     BevelOuter = bvNone
     DockSite = True
+    FullRepaint = False
     ShowCaption = False
-    TabOrder = 7
-    ExplicitLeft = 8
+    TabOrder = 6
+    ExplicitLeft = 9
     DesignSize = (
       540
       83)
     object Button3: TButton
-      Left = 141
-      Top = 1
+      Left = 138
+      Top = 0
       Width = 255
       Height = 35
       Hint = 'Pauza w odtwarzaniu'
@@ -386,8 +390,8 @@ object Form3: TForm3
       OnClick = Button3Click
     end
     object Button4: TButton
-      Left = 402
-      Top = 1
+      Left = 399
+      Top = 0
       Width = 135
       Height = 35
       Hint = 'Przewi'#324' do pocz'#261'tku'
@@ -406,8 +410,8 @@ object Form3: TForm3
       OnClick = Button4Click
     end
     object Button5: TButton
-      Left = 3
-      Top = 1
+      Left = 0
+      Top = 0
       Width = 132
       Height = 35
       Hint = 'Kontynuuj odtwarzanie zatrzymanego pliku'
@@ -425,8 +429,8 @@ object Form3: TForm3
       OnClick = Button5Click
     end
     object Button6: TButton
-      Left = 3
-      Top = 40
+      Left = 0
+      Top = 41
       Width = 260
       Height = 35
       Hint = 'Odtw'#243'rz poprzedni plik z listy'
@@ -444,8 +448,8 @@ object Form3: TForm3
       OnClick = Button6Click
     end
     object Button7: TButton
-      Left = 269
-      Top = 40
+      Left = 266
+      Top = 41
       Width = 268
       Height = 35
       Hint = 'Odtw'#243'rz nast'#281'pny plik z listy'
@@ -463,6 +467,17 @@ object Form3: TForm3
       OnClick = Button7Click
     end
   end
+  object TrackBar2: TTrackBar
+    Left = 63
+    Top = 128
+    Width = 488
+    Height = 26
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 7
+    TickStyle = tsNone
+    OnChange = TrackBar2Change
+    ExplicitWidth = 484
+  end
   object OpenDialog1: TOpenDialog
     Filter = 'Wszystkie pliki|*.*|Plik MP4|*.mp4|Plik WAV|*.wav|Plik MP3|*.mp3'
     Title = 'Wczytywanie muzyki'
@@ -478,7 +493,7 @@ object Form3: TForm3
   object Timer1: TTimer
     Enabled = False
     OnTimer = Timer1Timer
-    Left = 112
+    Left = 128
     Top = 64
   end
   object TrayIcon1: TTrayIcon

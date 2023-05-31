@@ -30,7 +30,6 @@ private:	// User declarations
  void __fastcall CreateParams(TCreateParams &Params);
 public:		// User declarations
 	__fastcall TForm6(TComponent* Owner);
-    bool support_ended = false;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm6 *Form6;

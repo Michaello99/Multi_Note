@@ -25,6 +25,10 @@ object Form1: TForm1
     Top = 65
     Width = 672
     Height = 292
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 0
     Align = alClient
     BevelInner = bvNone
     BevelOuter = bvNone
@@ -45,8 +49,6 @@ object Form1: TForm1
     SpellChecking = True
     TabOrder = 0
     WantTabs = True
-    ExplicitWidth = 668
-    ExplicitHeight = 291
   end
   object Panel1: TPanel
     Left = 0
@@ -99,7 +101,6 @@ object Form1: TForm1
       TabOrder = 0
       Visible = False
       OnKeyDown = Edit1KeyDown
-      ExplicitWidth = 333
     end
     object Button1: TButton
       Left = 495

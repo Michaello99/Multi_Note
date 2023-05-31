@@ -179,12 +179,12 @@ AnsiString TForm3::FullTime(void)
 {
   String MediaLength = "??:??:??";
   MediaPlayer1->TimeFormat = tfMilliseconds;
-  int Time = MediaPlayer1->Length / 1000;
-  int Hours = Time / 3600;
-  int Minutes = (Time - (Hours*3600)) / 60;
-  int Seconds = Time - (Hours*3600) - (Minutes*60);
+  int Time = MediaPlayer1->Length / 1000;  //sekundy z milisekund
+  int Hours = Time / 3600;   //podzial sekund na godzine
+  int Minutes = (Time - (Hours*3600)) / 60;   //odjac godziny i reszte podzielic na minuty
+  int Seconds = Time - (Hours*3600) - (Minutes*60);    //odjac godziny i minuty (wazne int)
 
-  MediaLength = FormatCurr("D³ugoœæ: 0#:", Hours);
+  MediaLength = FormatCurr("D³ugoœæ utworu: 0#:", Hours);
   MediaLength += FormatCurr("0#:", Minutes);
   MediaLength += FormatCurr("0#", Seconds);
 
@@ -202,7 +202,7 @@ void __fastcall TForm3::PlayFile(int index)
 		Label1->Caption=ExtractFileName(MediaPlayer1->FileName);
 		trayshow=Label1->Caption;
 		MediaPlayer1->Enabled=true;
-		ProgressBar1->Max = MediaPlayer1->Length;
+		TrackBar2->Max = MediaPlayer1->Length;
 		MediaPlayer1->Play();
 		Timer2->Enabled = true;
 		Label3->Caption=FullTime();
@@ -217,15 +217,17 @@ void __fastcall TForm3::PlayFile(int index)
 	}
 	catch(...)
 	{
-    		ShowMessage("B³¹d odtwarzania. SprawdŸ stan pliku.");
+    		Timer2->Enabled=false;
+			ShowMessage("B³¹d odtwarzania. SprawdŸ stan pliku.");
+
 	}
 }
 //------------------------------------------
 
 void __fastcall TForm3::Timer2Timer(TObject *Sender)
 {
-	ProgressBar1->Position = MediaPlayer1->Position;
-	if(ProgressBar1->Position == MediaPlayer1->Length)
+	TrackBar2->Position = MediaPlayer1->Position;
+	if(TrackBar2->Position == MediaPlayer1->Length)
 	{
 	   Timer2->Enabled = false;
 	   if(Form8->autoplay==true)
@@ -396,4 +398,13 @@ void __fastcall TForm3::alert_volume_timerTimer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm3::TrackBar2Change(TObject *Sender)
+{
+	if(pause=="tak")
+	{
+        MediaPlayer1->Position = TrackBar2->Position;
+    }
+}
+//---------------------------------------------------------------------------
 

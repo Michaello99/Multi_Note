@@ -15,12 +15,10 @@ object Form6: TForm6
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
   DesignSize = (
     529
     317)
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0

@@ -220,12 +220,6 @@ ShellExecuteA(NULL, _NULL, LPCSTR("mailto:michaello99@op.pl"), NULL, NULL, SW_SH
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm8::Label2DblClick(TObject *Sender)
-{
-Form8->ScrollBox1->Enabled=true;            //anulowanie zakonczenia wsparcia
-Form6->support_ended = false;
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TForm8::CheckBox1Click(TObject *Sender)
 {

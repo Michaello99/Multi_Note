@@ -46,7 +46,6 @@ object Form8: TForm8
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
-    OnDblClick = Label2DblClick
   end
   object Panel1: TPanel
     Left = 0
@@ -124,34 +123,6 @@ object Form8: TForm8
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-    end
-    object end_of_support2: TLabel
-      Left = 352
-      Top = 28
-      Width = 228
-      Height = 15
-      Caption = 'Pobierz nowsz'#261' wersj'#281' (przycisk poni'#380'ej).'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = 15
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      Visible = False
-    end
-    object end_of_support: TLabel
-      Left = 352
-      Top = 9
-      Width = 254
-      Height = 15
-      Caption = 'Wsparcie dla tej wersji programu zako'#324'czone.'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = 15
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-      Visible = False
     end
   end
   object ScrollBox1: TScrollBox
@@ -560,35 +531,9 @@ object Form8: TForm8
     BevelOuter = bvNone
     BorderStyle = bsNone
     TabOrder = 2
-    object Label5: TLabel
-      Left = 3
-      Top = 39
-      Width = 188
-      Height = 28
-      Caption = 'Zako'#324'czenie wsparcia'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 28
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label7: TLabel
-      Left = 3
-      Top = 68
-      Width = 107
-      Height = 20
-      Caption = '31 grudnia 2027'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 20
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label9: TLabel
       Left = 3
-      Top = 101
+      Top = 45
       Width = 209
       Height = 15
       Caption = 'Wsparcie mo'#380'esz uzyska'#263' pod adresem:'
@@ -601,7 +546,7 @@ object Form8: TForm8
     end
     object Label11: TLabel
       Left = 3
-      Top = 122
+      Top = 66
       Width = 105
       Height = 15
       Caption = 'michaello99@op.pl'
@@ -633,7 +578,7 @@ object Form8: TForm8
       Top = 3
       Width = 140
       Height = 30
-      Caption = 'Multi Note 15.1'
+      Caption = 'Multi Note 15.2'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = 30
@@ -643,9 +588,9 @@ object Form8: TForm8
     end
     object Button2: TButton
       Left = 0
-      Top = 143
+      Top = 136
       Width = 265
-      Height = 31
+      Height = 38
       Hint = 'Skontaktuj si'#281' z zespo'#322'em wsparcia Multi Note'
       Caption = 'Uzyskaj wsparcie'
       Font.Charset = DEFAULT_CHARSET
